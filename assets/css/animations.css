@@ -1,0 +1,23 @@
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); box-shadow: 0 14px 28px rgba(143,95,53,.24); }
+  50% { transform: scale(1.025); box-shadow: 0 20px 38px rgba(143,95,53,.34); }
+}
+
+.screen > * { animation: rise .55s ease both; }
+.screen > *:nth-child(2) { animation-delay: .06s; }
+.screen > *:nth-child(3) { animation-delay: .12s; }
+.screen > *:nth-child(4) { animation-delay: .18s; }
+.home-screen .cta { animation: pulse-soft 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Conectados na Verdade",
+  "short_name": "Conectados",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f4eadc",
+  "theme_color": "#8f5f35",
+  "description": "Site estático do projeto Conectados na Verdade."
+}

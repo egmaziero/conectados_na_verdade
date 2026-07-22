@@ -1,0 +1,12 @@
+@media (min-width: 900px) {
+  body::before {
+    content: "Conectados na Verdade";
+    position: fixed;
+    left: 40px;
+    bottom: 34px;
+    color: rgba(75,52,31,.28);
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+}
