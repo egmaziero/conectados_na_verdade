@@ -1,3 +1,10 @@
+const splashBody = document.querySelector("[data-splash]");
+if (splashBody) {
+  document.addEventListener("click", () => {
+    window.location.href = "inicio.html";
+  });
+}
+
 const audioButton = document.querySelector("[data-play-welcome]");
 const welcomeAudio = document.querySelector("#welcome-audio");
 

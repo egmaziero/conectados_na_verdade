@@ -52,6 +52,21 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(255,255,255,.75);
 }
 
+.splash-body {
+  cursor: pointer;
+}
+
+.splash-frame {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.splash-screen {
+  min-height: inherit;
+  width: 100%;
+}
+
 .phone-frame::before {
   content: "";
   position: absolute;
@@ -184,8 +199,15 @@ button.cta {
   border-radius: 16px;
   display: grid;
   place-items: center;
+  overflow: hidden;
   background: #f1ddbf;
-  font-size: 24px;
+}
+
+.icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .menu-card strong { display: block; margin-bottom: 3px; }
