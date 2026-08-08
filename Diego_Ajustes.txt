@@ -1,0 +1,11 @@
+1. Incluir em todas as páginas os botões:
+	Home
+	Quem Somos
+	Missão
+	Voltar
+	
+2. A página professor.html não localizei referência
+
+3. Falta
+	professor
+	videos

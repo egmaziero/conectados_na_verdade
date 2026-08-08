@@ -1,23 +1,57 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Formulário de Matrícula</title><link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/animations.css"><link rel="stylesheet" href="assets/css/responsive.css"></head>
-<body><main class="page-shell"><section class="phone-frame"><div class="screen">
-  <div class="topbar"><a class="back" href="matriculas.html">←</a><div class="topbar-title"><strong>Formulário</strong><span>Dados para matrícula</span></div></div>
-  <form class="panel form" data-enrollment-form>
-    <p class="kicker">Matrícula</p><h2>Preencha os dados</h2><p>Depois do envio, siga para a página de PIX. Em até 24 horas confirmaremos o pagamento e enviaremos pelo WhatsApp a senha para aquisição do material.</p>
-    <label>Nome completo<input name="nome" required></label>
-    <label>CPF<input name="cpf" inputmode="numeric"></label>
-    <label>RG<input name="rg"></label>
-    <label>Data de nascimento<input type="date" name="nascimento"></label>
-    <label>Telefone<input name="telefone" inputmode="tel" required></label>
-    <label>Email<input type="email" name="email"></label>
-    <label>Rua<input name="rua"></label>
-    <label>Número<input name="numero"></label>
-    <label>Bairro<input name="bairro"></label>
-    <label>CEP<input name="cep" inputmode="numeric"></label>
-    <label>Cidade<input name="cidade"></label>
-    <label>Estado<input name="estado" maxlength="2"></label>
-    <label>Curso/segmento<select name="curso"><option>Educação Infantil</option><option>Fundamental I</option><option>Fundamental II</option><option>Tutoria</option><option>Curso para Pais</option></select></label>
-    <button class="cta" type="submit">Enviar pelo WhatsApp</button>
-    <a class="cta ghost" href="pix.html">Seguir para o PIX</a>
-  </form>
-</div></section></main><script src="assets/js/app.js"></script></body></html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulário de Matrícula</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="phone-frame">
+      <div class="screen">
+        <div class="topbar"><a class="back" href="matriculas.html">←</a>
+          <div class="topbar-title"><strong>Voltar</strong></div>
+        </div>
+        <form class="panel form" data-enrollment-form>
+          <p class="kicker">
+            <center>Matrícula
+          </p>
+          <h2>Preencha os dados</h2>
+          <p>Apóso envio, siga para a página de PIX. Em até 24 horas confirmaremos o pagamento e enviaremos pelo
+            WhatsApp a senha para aquisição do material.</p>
+          </center>
+          <label>Nome completo<input name="nome" required></label>
+          <label>CPF<input name="cpf" inputmode="numeric"></label>
+          <label>RG<input name="rg"></label>
+          <label>Data de nascimento<input type="date" name="nascimento"></label>
+          <label>Telefone<input name="telefone" inputmode="tel" required></label>
+          <label>E-mail<input type="email" name="email"></label>
+          <label>Endereço<input name="endereco"></label>
+          <label>Complemento<input name="complemento"></label>
+          <label>Número<input name="numero"></label>
+          <label>Bairro<input name="bairro"></label>
+          <label>Cidade<input name="cidade"></label>
+          <label>Estado<input name="estado" maxlength="2"></label>
+          <label>CEP<input name="cep" inputmode="numeric"></label>
+          <label>Curso/segmento<select name="curso">
+              <option>Educação Infantil</option>
+              <option>Fundamental I</option>
+              <option>Fundamental II</option>
+              <option>Tutoria</option>
+              <option>Curso para Pais</option>
+            </select></label>
+          <button class="cta" type="submit">Enviar pelo WhatsApp</button>
+          <a class="cta ghost" href="pix.html">Seguir para o PIX</a>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
