@@ -4,8 +4,6 @@
 	Missão
 	Voltar
 	
-2. A página professor.html não localizei referência
+2. A página professor.html não localizei referência/link em nenhuma outra página
 
-3. Falta
-	professor
-	videos
+3. A página videos.html não localizei referência/link em nenhuma outra página
