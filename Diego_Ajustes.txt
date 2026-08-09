@@ -1,11 +1,7 @@
-https://github.com/egmaziero/conectados_na_verdade
+Link do GitHub -> https://github.com/egmaziero/conectados_na_verdade
 
 1. Incluir em todas as páginas os botões:
 	Home
 	Quem Somos
 	Missão
 	Voltar
-	
-2. A página professor.html não localizei referência/link em nenhuma outra página
-
-3. A página videos.html não localizei referência/link em nenhuma outra página
