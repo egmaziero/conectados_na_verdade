@@ -323,32 +323,11 @@ button.cta {
 .english-screen { padding: 16px 10px 24px; }
 .english-screen .topbar { margin: 0 12px 14px; }
 .english-hero {
-  min-height: 190px;
-  padding: 20px;
   border-radius: 26px 26px 0 0;
-  background: linear-gradient(120deg, rgba(255,243,224,.88), rgba(160,92,34,.2)), url("../img/home-bg.png") center/cover;
-  display: flex;
-  align-items: flex-end;
+  overflow: hidden;
+  line-height: 0;
 }
-.english-brand { align-self: flex-start; color: #714019; font-family: Georgia, serif; font-size: 19px; font-weight: 700; }
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  width: 60%;
-  margin-left: auto;
-  padding: 7px;
-  border: 6px solid #17130f;
-  border-radius: 12px;
-  background: #17130f;
-}
-.video-person {
-  aspect-ratio: 1.25;
-  border-radius: 3px;
-  background: linear-gradient(135deg, #c98750, #f4d2af 55%, #5b3624);
-}
-.video-person:nth-child(2n) { background: linear-gradient(135deg, #314552, #eba87c 55%, #e7d4bf); }
-.video-person:nth-child(3n) { background: linear-gradient(135deg, #503525, #bd7446 48%, #f5ccac); }
+.english-hero img { display: block; width: 100%; height: auto; }
 .english-list-card {
   padding: 16px 12px 20px;
   border-radius: 0 0 26px 26px;
