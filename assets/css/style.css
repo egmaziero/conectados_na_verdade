@@ -159,6 +159,31 @@ button.cta {
   border: 1px solid rgba(80,58,37,.1);
 }
 
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid rgba(80,58,37,.12);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), #b77a43);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.home-button--floating {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 3;
+  box-shadow: 0 8px 18px rgba(50, 28, 12, .18);
+}
+
+.home-button--splash { position: fixed; }
+
 .topbar-title { flex: 1; }
 .topbar-title strong { display: block; font-size: 15px; color: var(--ink); }
 .topbar-title span { display: block; color: #5f4634; font-size: 12px; }
