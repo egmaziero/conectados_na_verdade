@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".back").forEach((backButton) => {
+    backButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.history.back();
+    });
+  });
+
   const homeButton = document.createElement("a");
   homeButton.className = "home-button";
   homeButton.href = "inicio.html";
