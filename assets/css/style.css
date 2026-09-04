@@ -231,6 +231,58 @@ button.cta {
   margin-top: 16px;
 }
 
+.testimonials-heading { text-align: center; }
+.testimonials-heading h2 { max-width: 340px; margin-inline: auto; }
+.testimonials-heading p:last-child { margin-bottom: 0; }
+.testimonials-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+.testimonial-card {
+  position: relative;
+  padding: 21px 18px 18px;
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 24px;
+  background: rgba(255,250,242,.92);
+  box-shadow: 0 10px 28px rgba(75,52,31,.10);
+}
+.testimonial-icon {
+  position: absolute;
+  top: 14px;
+  right: 17px;
+  color: rgba(143,95,53,.23);
+  font-family: Georgia, serif;
+  font-size: 58px;
+  line-height: .7;
+}
+.testimonial-label {
+  position: relative;
+  margin: 0 42px 12px 0;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.testimonial-card blockquote { margin: 0; }
+.testimonial-card blockquote p {
+  margin-bottom: 12px;
+  color: #5f4938;
+  font-size: 14px;
+  line-height: 1.58;
+}
+.testimonial-card blockquote p:last-child { margin-bottom: 16px; }
+.testimonial-card footer {
+  padding-top: 12px;
+  border-top: 1px solid rgba(143,95,53,.18);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+}
+.testimonial-card footer span { color: var(--muted); font-size: 12px; font-weight: 600; }
+
 .menu-card {
   display: flex;
   gap: 14px;
@@ -588,3 +640,11 @@ textarea { min-height: 92px; resize: vertical; }
 .teacher-bio p { margin-bottom: 9px; color: #594331; font-size: 13px; line-height: 1.38; }
 .teacher-bio p:last-child { margin-bottom: 0; }
 .teacher-verse { font-weight: 800; color: var(--accent) !important; }
+
+/* Apresentações em áudio dos professores. */
+.teacher-audio-link { min-height: 40px; margin-top: 4px; border-radius: 13px; font-size: 13px; box-shadow: 0 8px 18px rgba(143,95,53,.2); }
+.teacher-audio-screen { justify-content: flex-end; }
+.teacher-audio-card { width: 100%; padding: 22px; border: 1px solid rgba(255,255,255,.84); border-radius: 24px; background: rgba(255,250,242,.94); box-shadow: 0 18px 42px rgba(35,20,10,.28); backdrop-filter: blur(10px); }
+.teacher-audio-card h1 { margin-bottom: 8px; font-size: 27px; }
+.teacher-audio-card p { margin-bottom: 18px; color: #594331; }
+.teacher-audio-card audio { display: block; width: 100%; }
