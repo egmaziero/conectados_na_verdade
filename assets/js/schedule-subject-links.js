@@ -1,6 +1,6 @@
 const scheduleLinks = {
-  "Inglês I": "materia-ingles.html",
-  "Inglês B": "materia-ingles.html",
+  Inglês: "turmas/turmas-ingles.html",
+  Inglês_I: "materia-ingles.html",
   Tutoria: "materia-tutoria.html",
   Extra: "materia-extra.html",
   Extras: "materia-extra.html",
