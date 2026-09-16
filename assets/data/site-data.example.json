@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "atualizadoEm": "2026-09-16",
+  "configuracao": {
+    "moeda": "BRL",
+    "idioma": "pt-BR",
+    "anoLetivo": 2026,
+    "pagamento": {
+      "pix": {
+        "chave": "pix@exemplo.com.br",
+        "qrCodeUrl": null,
+        "prazoConfirmacaoHoras": 24
+      }
+    }
+  },
+  "professores": [
+    {
+      "id": "mariana-lacerda",
+      "nome": "Mariana Lacerda",
+      "tratamento": "Teacher",
+      "fotoUrl": "assets/img/mariana-lacerda.png",
+      "pagina": "professor-mariana-lacerda.html",
+      "audio": { "url": "assets/audio/professor-mariana-lacerda.mp3", "descricao": "Conheça a Teacher Mariana em sua própria voz." },
+      "biografia": ["Sou casada há 2 anos com o Davi e mãe da Ana Cecília, de 9 meses."],
+      "ativo": true
+    },
+    {
+      "id": "karine-guillem",
+      "nome": "Karine Guillem",
+      "tratamento": "Teacher",
+      "fotoUrl": "assets/img/karine-guillem.png",
+      "pagina": "professor-karine-guillem.html",
+      "audio": { "url": "assets/audio/professor-karine-guillem.mp3", "descricao": "Conheça a Teacher Karine em sua própria voz." },
+      "biografia": ["Me chamo Karine, tenho 21 anos, sou filha da Tânia e do Ronei e irmã do Lehel."],
+      "ativo": true
+    },
+    { "id": "tania-guillem", "nome": "Tânia Guillem", "tratamento": "Teacher", "pagina": "professor-tania-guillem.html", "ativo": true },
+    { "id": "rogerio-muniz", "nome": "Rogério Muniz", "tratamento": "Teacher", "pagina": "professor-rogerio-muniz.html", "ativo": true },
+    { "id": "luisa-dresch", "nome": "Luísa Dresch Prediguer", "tratamento": "Teacher", "pagina": "professor-luisa-dresch.html", "ativo": true }
+  ],
+  "materias": [
+    { "id": "ingles", "nome": "Inglês", "cargaSemanalMinutos": 120, "precoCentavos": 10000, "pagina": "materia-ingles.html", "ofertaIds": ["ingles"] },
+    { "id": "matematica", "nome": "Matemática", "cargaSemanalMinutos": 240, "precoCentavos": null, "rotuloPreco": "Valor sob consulta", "pagina": "materia-matematica.html", "ofertaIds": [] },
+    { "id": "tutoria", "nome": "Tutoria", "cargaSemanalMinutos": 120, "precoCentavos": null, "rotuloPreco": "Valor sob consulta", "pagina": "materia-tutoria.html", "ofertaIds": [] }
+  ],
+  "ofertas": [
+    { "id": "ingles", "nome": "Inglês", "materiaId": "ingles", "pagina": "turmas/turmas-ingles.html", "ativo": true },
+    { "id": "aprendendo-palavra", "nome": "Aprendendo a Palavra", "materiaId": "ingles", "pagina": "turmas/turmas-aprendendo-palavra.html", "ativo": true }
+  ],
+  "turmas": [
+    {
+      "id": "ingles-iniciante-4-6-1100",
+      "ofertaId": "ingles",
+      "publico": { "idadeMin": 4, "idadeMax": 6, "nivel": "iniciante" },
+      "horaInicio": "11:00",
+      "dias": [1, 2, 3, 4],
+      "duracaoMinutos": 30,
+      "professorId": "mariana-lacerda",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 10
+    },
+    {
+      "id": "ingles-conversacao-avancada-2000",
+      "ofertaId": "ingles",
+      "publico": { "rotulo": "Adolescentes e Adultos", "nivel": "conversação avançada" },
+      "horaInicio": "20:00",
+      "dias": [1],
+      "duracaoMinutos": 60,
+      "professorId": "luisa-dresch",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 150
+    }
+  ],
+  "series": [
+    {
+      "id": "3-ano",
+      "nome": "3º ano",
+      "idadeMin": 7,
+      "idadeMax": 9,
+      "observacao": "crianças alfabetizadas",
+      "pagina": "horarios-3-ano.html",
+      "encontros": [
+        { "dia": 1, "horaInicio": "08:30", "materiaId": "historia", "duracaoMinutos": 120 },
+        { "dia": 4, "horaInicio": "08:30", "status": "sem-aula" },
+        { "dia": 1, "horaInicio": "15:30", "ofertaId": "ingles", "rotulo": "Inglês I", "duracaoMinutos": 30 }
+      ]
+    }
+  ],
+  "materiais": [
+    {
+      "id": "infantil",
+      "nome": "Ensino Infantil",
+      "idadeMin": 1,
+      "idadeMax": 5,
+      "precoCentavos": 54890,
+      "maxParcelas": 12,
+      "frete": true,
+      "links": { "planoCurricular": "https://editoracrista.org/Alicerces/2024/PlanoCurricular/index.html" }
+    },
+    { "id": "desatualizado", "nome": "Material Desatualizado", "edicoes": [2023, 2024], "precoCentavos": 25000, "maxParcelas": 1, "frete": true }
+  ],
+  "programas": {
+    "tutoria": { "responsavelId": "filipe-carota", "precoCentavos": 5000, "ano": 2026, "dias": [3], "horaInicio": "19:00", "horaFim": "20:00", "plataforma": "Google Meet" },
+    "cursoPais": { "nome": "Renovando a Mente do Educador", "plataforma": "AECEP", "precoCentavos": 30000, "maxParcelas": 12, "obrigatorio": true }
+  }
+}
