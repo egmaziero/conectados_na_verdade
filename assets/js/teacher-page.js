@@ -1,0 +1,63 @@
+(() => {
+  const content = document.querySelector("[data-teacher-content]");
+  const frame = document.querySelector("[data-teacher-frame]");
+  const topbar = document.querySelector("[data-teacher-topbar]");
+  const professorId = new URLSearchParams(window.location.search).get("professor");
+
+  const showMessage = (title, message) => {
+    document.title = `${title} | Conectados na Verdade`;
+    content.replaceChildren();
+    const heading = document.createElement("h1");
+    heading.textContent = title;
+    const paragraph = document.createElement("p");
+    paragraph.textContent = message;
+    content.append(heading, paragraph);
+  };
+
+  if (!professorId) {
+    showMessage("Professor não informado", "Use um link como professor.html?professor=karine-guillem.");
+    return;
+  }
+
+  fetch("assets/data/site-data.example.json")
+    .then((response) => {
+      if (!response.ok) throw new Error("Falha ao carregar os perfis.");
+      return response.json();
+    })
+    .then((data) => {
+      const professor = data.professores.find((item) => item.id === professorId && item.ativo);
+      if (!professor) {
+        showMessage("Professor não encontrado", "Confira o endereço usado para abrir este perfil.");
+        return;
+      }
+
+      document.title = `${professor.tratamento} ${professor.nome} | Conectados na Verdade`;
+      topbar.textContent = "Conheça o professor";
+      if (professor.fotoUrl) frame.style.backgroundImage = `url("${encodeURI(professor.fotoUrl)}")`;
+
+      content.replaceChildren();
+      const kicker = document.createElement("p");
+      kicker.className = "kicker";
+      kicker.textContent = professor.tratamento;
+      const heading = document.createElement("h1");
+      heading.textContent = professor.nome;
+      content.append(kicker, heading);
+
+      (professor.biografia || []).forEach((texto) => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = texto;
+        content.append(paragraph);
+      });
+
+      if (professor.audio?.url) {
+        const description = document.createElement("p");
+        description.textContent = professor.audio.descricao || "Ouça a apresentação.";
+        const audio = document.createElement("audio");
+        audio.controls = true;
+        audio.preload = "metadata";
+        audio.src = professor.audio.url;
+        content.append(description, audio);
+      }
+    })
+    .catch(() => showMessage("Perfil indisponível", "Não foi possível carregar os dados do professor agora."));
+})();

@@ -1,35 +1,29 @@
 <!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Material do Professor</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <script src="assets/js/home-button.js" defer></script>
-</head>
-
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Professor | Conectados na Verdade</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="preload" href="assets/data/site-data.example.json" as="fetch" crossorigin />
+    <script src="assets/js/teacher-page.js" defer></script>
+  </head>
+  <body data-page="professor">
     <main class="page-shell">
-        <section class="phone-frame">
-            <div class="screen">
-                <div class="topbar"><a class="back" href="menu.html">←</a>
-                    <div class="topbar-title"><strong>Voltar</strong></div>
-                </div>
-                <div class="panel">
-                    <center>
-                        <p class="kicker">Professor</p>
-                        <h2>Mestre Filipe Carota</h2>
-                        <p>Inclua aqui o link para orientações, planejamentos, materiais extras ou Canva</p>
-                    </center><a class="cta secondary" href="#">Abrir material do professor</a>
-                </div>
-                <div class="footer-nav"><a href="infantil.html">Infantil</a><a href="fundamental1.html">Fund. I</a><a
-                        href="fundamental2.html">Fund. II</a></div>
-            </div>
-        </section>
+      <section class="phone-frame teacher-frame" data-teacher-frame>
+        <div class="screen teacher-screen">
+          <div class="topbar">
+            <a class="back" href="aulas-online.html" aria-label="Voltar às aulas online">←</a>
+            <div class="topbar-title"><strong data-teacher-topbar>Conheça o professor</strong><span>Conectados na Verdade</span></div>
+          </div>
+          <article class="teacher-bio" aria-live="polite" data-teacher-content>
+            <p class="kicker">Professor</p>
+            <h1>Carregando perfil…</h1>
+          </article>
+        </div>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>
