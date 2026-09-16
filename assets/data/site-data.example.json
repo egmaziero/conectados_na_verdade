@@ -19,7 +19,7 @@
       "nome": "Mariana Lacerda",
       "tratamento": "Teacher",
       "fotoUrl": "assets/img/mariana-lacerda.png",
-      "pagina": "professor-mariana-lacerda.html",
+      "rota": "professor.html?professor=mariana-lacerda",
       "audio": { "url": "assets/audio/professor-mariana-lacerda.mp3", "descricao": "Conheça a Teacher Mariana em sua própria voz." },
       "biografia": ["Sou casada há 2 anos com o Davi e mãe da Ana Cecília, de 9 meses."],
       "ativo": true
@@ -29,23 +29,23 @@
       "nome": "Karine Guillem",
       "tratamento": "Teacher",
       "fotoUrl": "assets/img/karine-guillem.png",
-      "pagina": "professor-karine-guillem.html",
+      "rota": "professor.html?professor=karine-guillem",
       "audio": { "url": "assets/audio/professor-karine-guillem.mp3", "descricao": "Conheça a Teacher Karine em sua própria voz." },
       "biografia": ["Me chamo Karine, tenho 21 anos, sou filha da Tânia e do Ronei e irmã do Lehel."],
       "ativo": true
     },
-    { "id": "tania-guillem", "nome": "Tânia Guillem", "tratamento": "Teacher", "pagina": "professor-tania-guillem.html", "ativo": true },
-    { "id": "rogerio-muniz", "nome": "Rogério Muniz", "tratamento": "Teacher", "pagina": "professor-rogerio-muniz.html", "ativo": true },
-    { "id": "luisa-dresch", "nome": "Luísa Dresch Prediguer", "tratamento": "Teacher", "pagina": "professor-luisa-dresch.html", "ativo": true }
+    { "id": "tania-guillem", "nome": "Tânia Guillem", "tratamento": "Teacher", "rota": "professor.html?professor=tania-guillem", "ativo": true },
+    { "id": "rogerio-muniz", "nome": "Rogério Muniz", "tratamento": "Teacher", "rota": "professor.html?professor=rogerio-muniz", "ativo": true },
+    { "id": "luisa-dresch", "nome": "Luísa Dresch Prediguer", "tratamento": "Teacher", "rota": "professor.html?professor=luisa-dresch", "ativo": true }
   ],
   "materias": [
-    { "id": "ingles", "nome": "Inglês", "cargaSemanalMinutos": 120, "precoCentavos": 10000, "pagina": "materia-ingles.html", "ofertaIds": ["ingles"] },
-    { "id": "matematica", "nome": "Matemática", "cargaSemanalMinutos": 240, "precoCentavos": null, "rotuloPreco": "Valor sob consulta", "pagina": "materia-matematica.html", "ofertaIds": [] },
-    { "id": "tutoria", "nome": "Tutoria", "cargaSemanalMinutos": 120, "precoCentavos": null, "rotuloPreco": "Valor sob consulta", "pagina": "materia-tutoria.html", "ofertaIds": [] }
+    { "id": "ingles", "nome": "Inglês", "cargaSemanalMinutos": 120, "precoCentavos": 10000, "rota": "materia.html?materia=ingles", "ofertaIds": ["ingles"] },
+    { "id": "matematica", "nome": "Matemática", "cargaSemanalMinutos": 240, "precoCentavos": null, "rotuloPreco": "Valor sob consulta", "rota": "materia.html?materia=matematica", "ofertaIds": [] },
+    { "id": "tutoria", "nome": "Tutoria", "cargaSemanalMinutos": 120, "precoCentavos": null, "rotuloPreco": "Valor sob consulta", "rota": "materia.html?materia=tutoria", "ofertaIds": [] }
   ],
   "ofertas": [
-    { "id": "ingles", "nome": "Inglês", "materiaId": "ingles", "pagina": "turmas/turmas-ingles.html", "ativo": true },
-    { "id": "aprendendo-palavra", "nome": "Aprendendo a Palavra", "materiaId": "ingles", "pagina": "turmas/turmas-aprendendo-palavra.html", "ativo": true }
+    { "id": "ingles", "nome": "Inglês", "materiaId": "ingles", "rota": "turma.html?oferta=ingles", "ativo": true },
+    { "id": "aprendendo-palavra", "nome": "Aprendendo a Palavra", "materiaId": "ingles", "rota": "turma.html?oferta=aprendendo-palavra", "ativo": true }
   ],
   "turmas": [
     {
@@ -80,7 +80,7 @@
       "idadeMin": 7,
       "idadeMax": 9,
       "observacao": "crianças alfabetizadas",
-      "pagina": "horarios-3-ano.html",
+      "rota": "horarios.html?serie=3-ano",
       "encontros": [
         { "dia": 1, "horaInicio": "08:30", "materiaId": "historia", "duracaoMinutos": 120 },
         { "dia": 4, "horaInicio": "08:30", "status": "sem-aula" },

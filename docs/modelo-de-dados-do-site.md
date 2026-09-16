@@ -17,7 +17,7 @@ Foram encontrados 51 HTMLs: 39 na raiz e 12 em `turmas/`. O conteúdo que deve d
 
 `index.html`, `inicio.html`, `menu.html` e as estruturas visuais das páginas têm, em geral, conteúdo estável. Podem continuar estáticos; apenas textos promocionais, links e mídia que se pretendem editar com frequência precisam entrar no JSON.
 
-Também há links locais sem arquivo correspondente: `nosso-chamado.html`, `como-functionamos.html` e `conheca-os-missionarios-que-alcancamos.html` são referidos por `quem-somos.html`; os perfis de professores referem `turmas-ingles.html`, enquanto a página existente está em `turmas/turmas-ingles.html`. Ao centralizar URLs em `pagina`/`links`, essa validação deve rodar no build.
+Também há links locais sem arquivo correspondente: `nosso-chamado.html`, `como-functionamos.html` e `conheca-os-missionarios-que-alcancamos.html` são referidos por `quem-somos.html`; os perfis de professores referem `turmas-ingles.html`, enquanto a página existente está em `turmas/turmas-ingles.html`. Ao centralizar URLs em `rota`/`links`, essa validação deve rodar no build.
 
 ## Modelo recomendado
 
@@ -48,7 +48,26 @@ Não é recomendável criar um campo genérico como `pages: { "qualquer-html": "
 
 ## Como as páginas devem consumir os dados
 
-1. Cada página mantém HTML semântico mínimo (títulos, regiões e uma área de carregamento), identificado por `data-page` ou `data-offering-id`.
+## Páginas-modelo e rotas
+
+Em vez de um HTML por registro, usar uma página-modelo por tipo de conteúdo. O identificador vem na *query string* da URL, que é compartilhável, recarregável e funciona com os botões do navegador:
+
+| Conteúdo | Página-modelo | Exemplos de URL |
+| --- | --- | --- |
+| Oferta/lista de turmas | `turma.html` | `turma.html?oferta=ingles`, `turma.html?oferta=aprendendo-palavra` |
+| Perfil de professor | `professor.html` | `professor.html?professor=karine-guillem`, `professor.html?professor=luisa-dresch` |
+| Áudio de professor | `audio-professor.html` | `audio-professor.html?professor=karine-guillem` |
+| Página de matéria | `materia.html` | `materia.html?materia=matematica` |
+| Grade por série | `horarios.html` | `horarios.html?serie=3-ano` |
+| Nível de material | `material-nivel.html` | `material-nivel.html?material=infantil` |
+
+O valor do parâmetro é exatamente o `id` do JSON, nunca o nome exibido. O carregador usa `new URLSearchParams(location.search)`, procura a entidade e renderiza-a. Se faltar ou não existir, mostra uma tela 404 amigável, sem tentar adivinhar pelo texto. A URL padrão de uma página-modelo pode redirecionar para uma lista, por exemplo `turma.html` para `aulas-online.html`.
+
+Não usar `#ingles` como identificador principal: hashes não são enviados ao servidor, dificultam analytics, SEO e o fallback de páginas estáticas. Também não usar `turma.html?nome=Inglês`; nomes contêm acentos, podem mudar e não são um identificador seguro.
+
+Os campos `rota` do JSON já exemplificam esse formato. De preferência, o JavaScript deve derivá-los do ID (`turma.html?oferta=${id}`), em vez de armazená-los repetidamente. Assim não há 12 URLs manuais para atualizar, nem o risco de uma página apontar para outra oferta. URLs antigas, como `turmas/turmas-ingles.html`, podem permanecer como redirecionamentos curtos para a nova rota durante a transição.
+
+1. Cada página-modelo mantém HTML semântico mínimo (títulos, regiões e uma área de carregamento), identificado por `data-page`.
 2. Um único `assets/js/data-loader.js`, carregado com `defer`, busca a fonte, valida sua versão e renderiza só o trecho da página atual.
 3. A tabela de turmas é criada a partir de `turmas` filtradas por `ofertaId`; uma alteração de preço/horário/docente então ocorre uma única vez.
 4. A grade é criada a partir de `series[].encontros`; não deve inferir links pelo texto da matéria, como ocorre hoje em `schedule-subject-links.js`.
