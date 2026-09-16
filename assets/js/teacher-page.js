@@ -15,7 +15,10 @@
   };
 
   if (!professorId) {
-    showMessage("Professor não informado", "Use um link como professor.html?professor=karine-guillem.");
+    const message = window.location.protocol === "file:"
+      ? "A prévia por arquivo local não preserva o parâmetro nesta visualização. Abra o site por HTTP e use professor.html?professor=karine-guillem."
+      : "Use um link como professor.html?professor=karine-guillem.";
+    showMessage("Professor não informado", message);
     return;
   }
 
@@ -59,5 +62,10 @@
         content.append(description, audio);
       }
     })
-    .catch(() => showMessage("Perfil indisponível", "Não foi possível carregar os dados do professor agora."));
+    .catch(() => {
+      const message = window.location.protocol === "file:"
+        ? "A leitura do JSON requer que o site seja aberto por HTTP, não diretamente por file://."
+        : "Não foi possível carregar os dados do professor agora.";
+      showMessage("Perfil indisponível", message);
+    });
 })();
