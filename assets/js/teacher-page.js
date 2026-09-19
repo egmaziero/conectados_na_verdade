@@ -35,7 +35,7 @@
       }
 
       document.title = `${professor.tratamento} ${professor.nome} | Conectados na Verdade`;
-      topbar.textContent = "Conheça o professor";
+      topbar.textContent = "Voltar";
       if (professor.fotoUrl) frame.style.backgroundImage = `url("${encodeURI(professor.fotoUrl)}")`;
 
       content.replaceChildren();
