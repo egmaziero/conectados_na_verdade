@@ -30,7 +30,6 @@
       "tratamento": "Teacher",
       "fotoUrl": "assets/img/karine-guillem.png",
       "rota": "professor.html?professor=karine-guillem",
-      "audio": { "url": "assets/audio/Teacher%20Karine%20Guillem.opus", "descricao": "Conheça a Teacher Karine em sua própria voz." },
       "biografia": ["Me chamo Karine, tenho 21 anos, sou filha da Tânia e do Ronei e irmã do Lehel.", "Moro em Porto Alegre, RS, e congrego na igreja Brasa Zona Norte, onde sirvo no ministério infantil e de comunicação.", "Sou cristã desde que nasci, alfabetizada em inglês e graduanda em biomedicina. Tive a oportunidade de vivenciar a primeira infância na Inglaterra, aprendendo o inglês como primeira língua.", "Amo ensinar e estou animada para contribuir com o aprendizado da língua inglesa."],
       "ativo": true
     },
