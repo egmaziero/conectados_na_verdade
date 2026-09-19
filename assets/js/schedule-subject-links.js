@@ -1,17 +1,17 @@
 const scheduleLinks = {
   Inglês: "turmas/turmas-ingles.html",
-  Inglês_I: "materia-ingles.html",
-  Tutoria: "materia-tutoria.html",
-  Extra: "materia-extra.html",
-  Extras: "materia-extra.html",
-  História: "materia-historia.html",
-  Geografia: "materia-geografia.html",
-  Ciências: "materia-ciencias.html",
-  "Qui/Fís": "materia-quimica-fisica.html",
-  "Química/Física": "materia-quimica-fisica.html",
-  "Química /Física": "materia-quimica-fisica.html",
-  Matemática: "materia-matematica.html",
-  Português: "materia-portugues.html"
+  Inglês_I: "materias/materia-ingles.html",
+  Tutoria: "materias/materia-tutoria.html",
+  Extra: "materias/materia-extra.html",
+  Extras: "materias/materia-extra.html",
+  História: "materias/materia-historia.html",
+  Geografia: "materias/materia-geografia.html",
+  Ciências: "materias/materia-ciencias.html",
+  "Qui/Fís": "materias/materia-quimica-fisica.html",
+  "Química/Física": "materias/materia-quimica-fisica.html",
+  "Química /Física": "materias/materia-quimica-fisica.html",
+  Matemática: "materias/materia-matematica.html",
+  Português: "materias/materia-portugues.html"
 };
 
 document.querySelectorAll(".schedule-table td").forEach((cell) => {

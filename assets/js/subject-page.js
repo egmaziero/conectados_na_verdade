@@ -5,7 +5,7 @@ const subjectPages = {
   historia: { name: "História", hours: "2 horas por semana", price: "Valor sob consulta" },
   geografia: { name: "Geografia", hours: "2 horas por semana", price: "Valor sob consulta" },
   ciencias: { name: "Ciências", hours: "2 horas por semana", price: "Valor sob consulta" },
-  "quimica-fisica": { name: "Química e Física", hours: "2 horas por semana", price: "Valor sob consulta" },
+  quimica-fisica: { name: "Química e Física", hours: "2 horas por semana", price: "Valor sob consulta" },
   matematica: { name: "Matemática", hours: "4 horas por semana", price: "Valor sob consulta" },
   portugues: { name: "Português", hours: "4 horas por semana", price: "Valor sob consulta" }
 };
