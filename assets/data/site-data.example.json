@@ -52,6 +52,14 @@
       "tratamento": "Teacher",
       "fotoUrl": "assets/img/tania-guillem.png",
       "rota": "professor.html?professor=tania-guillem",
+      "biografia": [
+        "Sou formada em Letras – Português/ Inglês e suas respectivas Literaturas.",
+        "Pós graduada em Gestão Escolar e em Orientação. Leciono Inglês há 20 anos. ",
+        "Deus me deu a oportunidade de morar por 2 anos e 4 meses na Inglaterra. ",
+        "Neste período estudei na escola Open Heart fazendo um curso de extensão e servi na igreja Hub Church atuando como líder do ministério Infantil.",
+        "Por este tempo, obtive minha certificação de proficiência da Universidade de Cambridge em UK.",
+        "Amo trabalhar com o ensino da Língua Inglesa com os pequenos e acredito no grande potencial que cada um deles tem para a aquisição de um novo idioma."
+      ],
       "ativo": true
     },
     {
@@ -60,6 +68,11 @@
       "tratamento": "Teacher",
       "fotoUrl": "assets/img/rogerio-muniz.png",
       "rota": "professor.html?professor=rogerio-muniz",
+      "biografia": [
+        "Professor de Inglês regular e Inglês a partir da Bíblia (Seminário Batista de Sul 2020 -2023).",
+        "Lecionando  desde 2013, para alunos de diferentes faixas etárias em diferentes estados.",
+        "Marido da professora de hebraico Margaret, pai e avô. Missionário na JOCUM desde 1992 e servido (em tempo parcial) ao Movimento Global de Tradução da Bíblia."
+      ],
       "ativo": true
     },
     {
@@ -68,6 +81,9 @@
       "tratamento": "Teacher",
       "fotoUrl": "assets/img/luisa-dresch.png",
       "rota": "professor.html?professor=luisa-dresch",
+      "biografia": [
+        "Arquiteta, pedagoga com especialização em língua inglesa, cursando especialização por princípios pela faculdade Dunamis, tem mais de 15 anos de experiência em aulas de inglês, esposa e mãe e acima de tudo é discípula de Jesus."
+      ],
       "ativo": true
     }
   ],
