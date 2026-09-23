@@ -54,10 +54,10 @@
       const header = document.createElement("header");
       header.className = "subject-heading";
       
-      const kicker = document.createElement("div");
+      const kicker = document.createElement("img");
       kicker.className = "online-mark";
-      kicker.setAttribute("aria-hidden", "true");
-      kicker.textContent = "⌁";
+      kicker.src = "assets/img/logo_conectados.png";
+      kicker.alt = "";
       
       const title = document.createElement("h1");
       title.innerHTML = `${subjectName} <br><span class="subject-name" style="font-size: 0.6em; line-height: 1.2;">${professor.tratamento} ${professor.nome}</span>`;
@@ -86,11 +86,11 @@
         </a>
       `;
 
-      // 2. Detalhes da Turma
+      // 2. Depoimentos
       nav.innerHTML += `
-        <a class="subject-action" href="turma-detalhes?turma=${turma.id}">
-          <b class="subject-icon"><img src="assets/icons/course-2.png" alt="" /></b>
-          <span>Ver <em>detalhes e horários</em> da turma;</span>
+        <a class="subject-action" href="depoimentos/depoimentos-ingles?professor=${professor.id}">
+          <b class="subject-icon"><img src="assets/icons/heart.png" alt="" /></b>
+          <span>Ouça os <em>depoimentos</em> das famílias;</span>
         </a>
       `;
 

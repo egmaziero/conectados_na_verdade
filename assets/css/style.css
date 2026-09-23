@@ -511,6 +511,11 @@ button.cta {
 }
 .subject-heading { text-align: center; }
 .subject-heading .online-mark { margin: 2px 0 15px; }
+.subject-heading img.online-mark {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
 .subject-heading h1 {
   margin-bottom: 14px;
   color: #3f2b20;
