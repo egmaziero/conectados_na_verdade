@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "atualizadoEm": "2026-09-16",
+  "atualizadoEm": "2026-09-23",
   "configuracao": {
     "moeda": "BRL",
     "idioma": "pt-BR",
@@ -138,7 +138,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 10,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_11_SEG_A_QUI_MAR.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_11_SEG_A_QUI_MAR.ogg",
       "materialId": "infantil"
     },
     {
@@ -161,7 +161,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 20,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_16_SEG_A_QUI_KAR.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/karine-guillem/ka_audio.ogg",
       "materialId": "infantil"
     },
     {
@@ -184,7 +184,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 30,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_10_30_SEG_A_QUI_MAR.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_10_30_SEG_A_QUI_MAR.ogg",
       "materialId": "infantil"
     },
     {
@@ -207,7 +207,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 40,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_13_30_SEG_A_QUI_TAN.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/tania-guillem/tania_audio.ogg",
       "materialId": "infantil"
     },
     {
@@ -230,7 +230,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 50,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_14_00_SEG_A_QUI_TAN.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/tania-guillem/tania_audio.ogg",
       "materialId": "infantil"
     },
     {
@@ -253,7 +253,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 60,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_14_30_SEG_A_QUI_TAN.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/tania-guillem/tania_audio.ogg",
       "materialId": "infantil"
     },
     {
@@ -276,7 +276,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 70,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_08_SEG_A_QUI_MAR.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_08_SEG_A_QUI_MAR.ogg",
       "materialId": "material-teens"
     },
     {
@@ -299,7 +299,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 80,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_15_30_SEG_A_QUI_KAR.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/karine-guillem/ka_audio.ogg",
       "materialId": "material-teens"
     },
     {
@@ -322,7 +322,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 90,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_16_30_SEG_A_QUI_KAR.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/karine-guillem/ka_audio.ogg",
       "materialId": "material-teens"
     },
     {
@@ -345,7 +345,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 100,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_17_SEG_A_QUI_KAR.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/karine-guillem/ka_audio.ogg",
       "materialId": "infantil"
     },
     {
@@ -367,7 +367,7 @@
       "precoCentavos": 10000,
       "ativo": true,
       "ordem": 110,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_07_30_SEG_A_QUI_MAR.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_07_30_SEG_A_QUI_MAR.ogg",
       "materialId": "material-teens"
     },
     {
@@ -386,7 +386,7 @@
       "precoCentavos": 5000,
       "ativo": true,
       "ordem": 120,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_20_QUI_ROG.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/rogerio-muniz/rogerio_audio_ingles.ogg",
       "materialId": "material-teens"
     },
     {
@@ -405,7 +405,7 @@
       "precoCentavos": 5000,
       "ativo": true,
       "ordem": 130,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_20_30_QUA_ROG.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/rogerio-muniz/rogerio_audio_ingles.ogg",
       "materialId": "material-teens"
     },
     {
@@ -424,7 +424,7 @@
       "precoCentavos": 5000,
       "ativo": true,
       "ordem": 140,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_16_SEG_LUI.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/luisa-dresch/ING_16_SEG_LUI/ING_16_SEG_LUI_AUDIO.ogg",
       "materialId": "material-teens"
     },
     {
@@ -443,7 +443,7 @@
       "precoCentavos": 5000,
       "ativo": true,
       "ordem": 150,
-      "audioEpecificoUrl": "assets/audio/turmas/ING_20_TER_LUI.mp3",
+      "audioEpecificoUrl": "assets/audio/turmas/ingles/luisa-dresch/ING_20_TER_LUI/ING_20_TER_LUI_AUDIO.ogg",
       "materialId": "material-teens"
     }
   ],

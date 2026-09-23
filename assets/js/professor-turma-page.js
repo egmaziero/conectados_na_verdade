@@ -115,7 +115,7 @@
       // 5. Material Utilizado
       if (turma.materialId) {
         nav.innerHTML += `
-          <a class="subject-action" href="turma-material?turma=${turma.id}">
+          <a class="subject-action" href="material-em-fase-escolha.html?turma=${turma.id}">
             <b class="subject-icon"><img src="assets/icons/book.png" alt="" /></b>
             <span>Confira o <em>material</em> utilizado;</span>
           </a>

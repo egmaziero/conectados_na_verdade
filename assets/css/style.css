@@ -32,6 +32,12 @@ body {
   font-family: "Trebuchet MS", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+.material-choice-frame {
+  background-image: url("../img/material_em_fase_escolha.png");
+  background-position: center;
+  background-size: cover;
+}
+
 a { color: inherit; text-decoration: none; }
 
 .page-shell {
