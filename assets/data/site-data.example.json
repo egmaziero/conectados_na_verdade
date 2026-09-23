@@ -50,6 +50,7 @@
       "id": "tania-guillem",
       "nome": "Tânia Guillem",
       "tratamento": "Teacher",
+      "fotoUrl": "assets/img/tania-guillem.png",
       "rota": "professor.html?professor=tania-guillem",
       "ativo": true
     },
@@ -57,6 +58,7 @@
       "id": "rogerio-muniz",
       "nome": "Rogério Muniz",
       "tratamento": "Teacher",
+      "fotoUrl": "assets/img/rogerio-muniz.png",
       "rota": "professor.html?professor=rogerio-muniz",
       "ativo": true
     },
@@ -64,6 +66,7 @@
       "id": "luisa-dresch",
       "nome": "Luísa Dresch Prediguer",
       "tratamento": "Teacher",
+      "fotoUrl": "assets/img/luisa-dresch.png",
       "rota": "professor.html?professor=luisa-dresch",
       "ativo": true
     }
@@ -116,12 +119,12 @@
   ],
   "turmas": [
     {
-      "id": "ingles-iniciante-4-6-1100",
+      "id": "ING_11_SEG_A_QUI_MAR",
       "ofertaId": "ingles",
       "publico": {
+        "nivel": "iniciante",
         "idadeMin": 4,
-        "idadeMax": 6,
-        "nivel": "iniciante"
+        "idadeMax": 6
       },
       "horaInicio": "11:00",
       "dias": [
@@ -134,16 +137,285 @@
       "professorId": "mariana-lacerda",
       "precoCentavos": 10000,
       "ativo": true,
-      "ordem": 10
+      "ordem": 10,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_11_SEG_A_QUI_MAR.mp3",
+      "materialId": "infantil"
     },
     {
-      "id": "ingles-conversacao-avancada-2000",
+      "id": "ING_16_SEG_A_QUI_KAR",
       "ofertaId": "ingles",
       "publico": {
-        "rotulo": "Adolescentes e Adultos",
-        "nivel": "conversação avançada"
+        "nivel": "iniciante",
+        "idadeMin": 4,
+        "idadeMax": 6
+      },
+      "horaInicio": "16:00",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "karine-guillem",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 20,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_16_SEG_A_QUI_KAR.mp3",
+      "materialId": "infantil"
+    },
+    {
+      "id": "ING_10_30_SEG_A_QUI_MAR",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "iniciante",
+        "idadeMin": 6,
+        "idadeMax": 8
+      },
+      "horaInicio": "10:30",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "mariana-lacerda",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 30,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_10_30_SEG_A_QUI_MAR.mp3",
+      "materialId": "infantil"
+    },
+    {
+      "id": "ING_13_30_SEG_A_QUI_TAN",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "iniciante",
+        "idadeMin": 8,
+        "idadeMax": 10
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "tania-guillem",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 40,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_13_30_SEG_A_QUI_TAN.mp3",
+      "materialId": "infantil"
+    },
+    {
+      "id": "ING_14_00_SEG_A_QUI_TAN",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "iniciante",
+        "idadeMin": 8,
+        "idadeMax": 10
+      },
+      "horaInicio": "14:00",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "tania-guillem",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 50,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_14_00_SEG_A_QUI_TAN.mp3",
+      "materialId": "infantil"
+    },
+    {
+      "id": "ING_14_30_SEG_A_QUI_TAN",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "iniciante",
+        "idadeMin": 8,
+        "idadeMax": 10
+      },
+      "horaInicio": "14:30",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "tania-guillem",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 60,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_14_30_SEG_A_QUI_TAN.mp3",
+      "materialId": "infantil"
+    },
+    {
+      "id": "ING_08_SEG_A_QUI_MAR",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "básico",
+        "idadeMin": 8,
+        "idadeMax": 12
+      },
+      "horaInicio": "08:00",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "mariana-lacerda",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 70,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_08_SEG_A_QUI_MAR.mp3",
+      "materialId": "material-teens"
+    },
+    {
+      "id": "ING_15_30_SEG_A_QUI_KAR",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "básico com gramática",
+        "idadeMin": 10,
+        "idadeMax": 14
+      },
+      "horaInicio": "15:30",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "karine-guillem",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 80,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_15_30_SEG_A_QUI_KAR.mp3",
+      "materialId": "material-teens"
+    },
+    {
+      "id": "ING_16_30_SEG_A_QUI_KAR",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "básico com gramática",
+        "idadeMin": 10,
+        "idadeMax": 14
+      },
+      "horaInicio": "16:30",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "karine-guillem",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 90,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_16_30_SEG_A_QUI_KAR.mp3",
+      "materialId": "material-teens"
+    },
+    {
+      "id": "ING_17_SEG_A_QUI_KAR",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "iniciante",
+        "idadeMin": 7,
+        "idadeMax": 10
+      },
+      "horaInicio": "17:00",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "karine-guillem",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 100,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_17_SEG_A_QUI_KAR.mp3",
+      "materialId": "infantil"
+    },
+    {
+      "id": "ING_07_30_SEG_A_QUI_MAR",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "médio com gramática",
+        "rotulo": "Adolescentes e Adultos"
+      },
+      "horaInicio": "07:30",
+      "dias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "duracaoMinutos": 30,
+      "professorId": "mariana-lacerda",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 110,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_07_30_SEG_A_QUI_MAR.mp3",
+      "materialId": "material-teens"
+    },
+    {
+      "id": "ING_20_QUI_ROG",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "iniciante",
+        "rotulo": "Adolescentes e Adultos"
       },
       "horaInicio": "20:00",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 90,
+      "professorId": "rogerio-muniz",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 120,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_20_QUI_ROG.mp3",
+      "materialId": "material-teens"
+    },
+    {
+      "id": "ING_20_30_QUA_ROG",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "iniciante",
+        "rotulo": "Adolescentes e Adultos"
+      },
+      "horaInicio": "20:30",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 90,
+      "professorId": "rogerio-muniz",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 130,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_20_30_QUA_ROG.mp3",
+      "materialId": "material-teens"
+    },
+    {
+      "id": "ING_16_SEG_LUI",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "quase conversação",
+        "rotulo": "Misto"
+      },
+      "horaInicio": "16:00",
       "dias": [
         1
       ],
@@ -151,7 +423,28 @@
       "professorId": "luisa-dresch",
       "precoCentavos": 5000,
       "ativo": true,
-      "ordem": 150
+      "ordem": 140,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_16_SEG_LUI.mp3",
+      "materialId": "material-teens"
+    },
+    {
+      "id": "ING_20_TER_LUI",
+      "ofertaId": "ingles",
+      "publico": {
+        "nivel": "conversação avançada",
+        "rotulo": "Adolescentes e Adultos"
+      },
+      "horaInicio": "20:00",
+      "dias": [
+        2
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "luisa-dresch",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 150,
+      "audioEpecificoUrl": "assets/audio/turmas/ING_20_TER_LUI.mp3",
+      "materialId": "material-teens"
     }
   ],
   "series": [

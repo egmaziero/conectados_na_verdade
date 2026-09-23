@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Professor | Conectados na Verdade</title>
+    <title>Turma | Conectados na Verdade</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/animations.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
@@ -13,29 +13,30 @@
       as="fetch"
       crossorigin
     />
-    <script src="assets/js/teacher-page.js" defer></script>
+    <script src="assets/js/professor-turma-page.js" defer></script>
     <script src="assets/js/home-button.js" defer></script>
   </head>
-  <body data-page="professor">
+  <body data-page="turma">
     <main class="page-shell">
-      <section class="phone-frame teacher-frame" data-teacher-frame>
-        <div class="screen teacher-screen">
+      <section class="phone-frame">
+        <div class="screen subject-screen">
           <div class="topbar">
             <a
               class="back"
               href="javascript:history.back()"
-              aria-label="Voltar às aulas online"
+              aria-label="Voltar"
               >←</a
             >
             <div class="topbar-title">
               <strong data-teacher-topbar>Voltar</strong>
             </div>
           </div>
-          <article class="teacher-bio" aria-live="polite" data-teacher-content>
-            <p class="kicker">Professor</p>
-            <h1>Carregando perfil…</h1>
-          </article>
-          <div class="teacher-audio-card" style="margin-top: 16px; display: none;" data-teacher-audio></div>
+          <div data-teacher-content>
+            <article class="teacher-bio" aria-live="polite">
+              <p class="kicker">Turma</p>
+              <h1>Carregando turma…</h1>
+            </article>
+          </div>
         </div>
       </section>
     </main>

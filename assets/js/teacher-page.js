@@ -52,6 +52,12 @@
         content.append(paragraph);
       });
 
+      const audioContainer = document.querySelector("[data-teacher-audio]");
+      if (audioContainer) {
+        audioContainer.replaceChildren();
+        audioContainer.style.display = "none";
+      }
+
       if (professor.audio?.url) {
         const description = document.createElement("p");
         description.textContent = professor.audio.descricao || "Ouça a apresentação.";
@@ -59,7 +65,13 @@
         audio.controls = true;
         audio.preload = "metadata";
         audio.src = professor.audio.url;
-        content.append(description, audio);
+        
+        if (audioContainer) {
+          audioContainer.style.display = "block";
+          audioContainer.append(description, audio);
+        } else {
+          content.append(description, audio);
+        }
       }
     })
     .catch(() => {
