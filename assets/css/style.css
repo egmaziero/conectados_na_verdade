@@ -654,6 +654,7 @@ textarea { min-height: 92px; resize: vertical; }
 .teacher-bio p { margin-bottom: 9px; color: #594331; font-size: 13px; line-height: 1.38; }
 .teacher-bio p:last-child { margin-bottom: 0; }
 .teacher-verse { font-weight: 800; color: var(--accent) !important; }
+.teacher-notice { width: 100%; margin-top: 12px; padding: 10px 14px; border-radius: 14px; background: rgba(255,250,242,.78); border: 1px solid rgba(255,255,255,.6); backdrop-filter: blur(8px); color: rgba(89,67,49,.8); font-size: 11px; line-height: 1.4; text-align: center; }
 
 /* Apresentações em áudio dos professores. */
 .teacher-audio-link { min-height: 40px; margin-top: 4px; border-radius: 13px; font-size: 13px; box-shadow: 0 8px 18px rgba(143,95,53,.2); }
