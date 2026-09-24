@@ -51,28 +51,6 @@
         paragraph.textContent = texto;
         content.append(paragraph);
       });
-
-      const audioContainer = document.querySelector("[data-teacher-audio]");
-      if (audioContainer) {
-        audioContainer.replaceChildren();
-        audioContainer.style.display = "none";
-      }
-
-      if (professor.audio?.url) {
-        const description = document.createElement("p");
-        description.textContent = professor.audio.descricao || "Ouça a apresentação.";
-        const audio = document.createElement("audio");
-        audio.controls = true;
-        audio.preload = "metadata";
-        audio.src = professor.audio.url;
-        
-        if (audioContainer) {
-          audioContainer.style.display = "block";
-          audioContainer.append(description, audio);
-        } else {
-          content.append(description, audio);
-        }
-      }
     })
     .catch(() => {
       const message = window.location.protocol === "file:"
