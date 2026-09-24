@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "atualizadoEm": "2026-09-23",
+  "precoCentavos": 10000,
   "configuracao": {
     "moeda": "BRL",
     "idioma": "pt-BR",
@@ -85,6 +86,185 @@
         "Arquiteta, pedagoga com especialização em língua inglesa, cursando especialização por princípios pela faculdade Dunamis, tem mais de 15 anos de experiência em aulas de inglês, esposa e mãe e acima de tudo é discípula de Jesus."
       ],
       "ativo": true
+    }
+  ],
+  "depoimentos": [
+    {
+      "professorId": "karine-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Eloa",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/ingles/karine-guillem/ING_KA_DEP_ELOA_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "karine-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Sara",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/ingles/karine-guillem/ING_KA_DEP_SARA_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "karine-guillem",
+      "materia": "inglês",
+      "tipo": "texto",
+      "autor": "Simone",
+      "estado": "RS",
+      "texto": "A aula de inglês com a professora Karine é maravilhosa. Minha filha adora. A professora é muito atenciosa e dedicada. Estamos tendo uma excelente experiência."
+    },
+    {
+      "professorId": "karine-guillem",
+      "materia": "inglês",
+      "tipo": "texto",
+      "autor": "Edjane",
+      "estado": "AL",
+      "texto": "Minhas filhas de 15 e 13 anos têm aulas com o teacher Rogério e com a teacher Karine, sempre que consigo acompanho as aulas com elas, vejo que estão se aprimorando no aprendizado do idioma com eficácia. É visível a dedicação no ensino prestado, parabéns pelo trabalho que estão realizando!"
+    },
+    {
+      "professorId": "karine-guillem",
+      "materia": "inglês",
+      "tipo": "texto",
+      "autor": "Gesana",
+      "estado": "SP",
+      "autorDesc": "mãe de aluno de 6 anos",
+      "texto": "As aulas da teacher Karine são cheias de amor para os menores, respeitando a individualidade de cada aluno."
+    },
+    {
+      "professorId": "karine-guillem",
+      "materia": "inglês",
+      "tipo": "texto",
+      "autor": "Greice",
+      "estado": "MS",
+      "texto": "Tem sido uma excelente experiência para nossa família. Primeiro porque vemos a gramática sendo explicada e detalhada de uma forma clara e em seguida vem o momento da conversação para auxiliar na compreensão do conhecimento.\n\nNossa filha gosta muito da didática e da maneira que a professora trata ela e os colegas!\n\nTem sido uma benção."
+    },
+    {
+      "professorId": "mariana-lacerda",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Davi",
+      "estado": "BA",
+      "audioUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_08_SEG_A_QUI_MAR_DEP_DAVI_BA.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "mariana-lacerda",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Sofia",
+      "estado": "RS",
+      "audioUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_08_SEG_A_QUI_MAR_DEP_SOFIA_RS.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "mariana-lacerda",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Samantha",
+      "estado": "BA",
+      "audioUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_MARI_DEP_SAMANTHA_BA.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "luisa-dresch",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Sofia",
+      "estado": "RS",
+      "audioUrl": "assets/audio/turmas/ingles/luisa-dresch/ING_16_SEG_LUI/ING_LUI_DEP_SOFIA_RS.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "luisa-dresch",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Sofia",
+      "estado": "RS",
+      "audioUrl": "assets/audio/turmas/ingles/luisa-dresch/ING_20_TER_LUI/ING_LUI_DEP_SOFIA_RS.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Amanda",
+      "estado": "BA",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_AMANDA_BA.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Ana",
+      "estado": "MG",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_ANA_MG.mp4",
+      "audioTipo": "audio/mp4"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Estela",
+      "estado": "MG",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_ESTELA_MG.mp4",
+      "audioTipo": "audio/mp4"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Hadassa",
+      "estado": "BA",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_HADASSA_BA.mp4",
+      "audioTipo": "audio/mp4"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Lis",
+      "estado": "MG",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_LIS_MG.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Miriam",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_MIRIAM_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Natália",
+      "estado": "MG",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_NATALIA_MG.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Vinícius",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_VINICIUS_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "tania-guillem",
+      "materia": "inglês",
+      "tipo": "audio",
+      "autor": "Zoe",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_ZOE_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
     }
   ],
   "materias": [

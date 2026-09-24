@@ -1,71 +1,95 @@
 (() => {
-  const testimonials = [
-    ["karine-guillem", "Karine", "Eloa", "SP", "assets/audio/turmas/ingles/karine-guillem/ING_KA_DEP_ELOA_SP.ogg", "audio/ogg; codecs=opus"],
-    ["karine-guillem", "Karine", "Sara", "SP", "assets/audio/turmas/ingles/karine-guillem/ING_KA_DEP_SARA_SP.ogg", "audio/ogg; codecs=opus"],
-    ["mariana-lacerda", "Mariana", "Davi", "BA", "assets/audio/turmas/ingles/mariana-lacerda/ING_08_SEG_A_QUI_MAR_DEP_DAVI_BA.ogg", "audio/ogg; codecs=opus"],
-    ["mariana-lacerda", "Mariana", "Sofia", "RS", "assets/audio/turmas/ingles/mariana-lacerda/ING_08_SEG_A_QUI_MAR_DEP_SOFIA_RS.ogg", "audio/ogg; codecs=opus"],
-    ["mariana-lacerda", "Mariana", "Samantha", "BA", "assets/audio/turmas/ingles/mariana-lacerda/ING_MARI_DEP_SAMANTHA_BA.ogg", "audio/ogg; codecs=opus"],
-    ["luisa-dresch", "Luísa", "Sofia", "RS", "assets/audio/turmas/ingles/luisa-dresch/ING_16_SEG_LUI/ING_LUI_DEP_SOFIA_RS.ogg", "audio/ogg; codecs=opus"],
-    ["luisa-dresch", "Luísa", "Sofia", "RS", "assets/audio/turmas/ingles/luisa-dresch/ING_20_TER_LUI/ING_LUI_DEP_SOFIA_RS.ogg", "audio/ogg; codecs=opus"],
-    ["tania-guillem", "Tânia", "Amanda", "BA", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_AMANDA_BA.ogg", "audio/ogg; codecs=opus"],
-    ["tania-guillem", "Tânia", "Ana", "MG", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_ANA_MG.mp4", "audio/mp4"],
-    ["tania-guillem", "Tânia", "Estela", "MG", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_ESTELA_MG.mp4", "audio/mp4"],
-    ["tania-guillem", "Tânia", "Hadassa", "BA", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_HADASSA_BA.mp4", "audio/mp4"],
-    ["tania-guillem", "Tânia", "Lis", "MG", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_LIS_MG.ogg", "audio/ogg; codecs=opus"],
-    ["tania-guillem", "Tânia", "Miriam", "SP", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_MIRIAM_SP.ogg", "audio/ogg; codecs=opus"],
-    ["tania-guillem", "Tânia", "Natália", "MG", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_NATALIA_MG.ogg", "audio/ogg; codecs=opus"],
-    ["tania-guillem", "Tânia", "Vinícius", "SP", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_VINICIUS_SP.ogg", "audio/ogg; codecs=opus"],
-    ["tania-guillem", "Tânia", "Zoe", "SP", "assets/audio/turmas/ingles/tania-guillem/ING_DEP_ZOE_SP.ogg", "audio/ogg; codecs=opus"],
-  ];
+  const DATA_URL = "../assets/data/site-data.example.json";
 
   const professorId = new URLSearchParams(window.location.search).get("professor");
   const list = document.querySelector("[data-testimonials-list]");
   const title = document.querySelector("[data-testimonials-title]");
-  const visibleTestimonials = professorId
-    ? testimonials.filter(([teacherId]) => teacherId === professorId)
-    : testimonials;
 
-  if (professorId && visibleTestimonials.length) {
-    title.textContent = `O que as famílias testemunham sobre as aulas da Teacher ${visibleTestimonials[0][1]}`;
-  }
-
-  visibleTestimonials.forEach(([, teacher, student, state, src, type]) => {
+  const renderCard = (dep, professorNome) => {
     const card = document.createElement("article");
     card.className = "testimonial-card";
 
     const icon = document.createElement("div");
     icon.className = "testimonial-icon";
     icon.setAttribute("aria-hidden", "true");
-    icon.textContent = "“";
+    icon.textContent = "\u201c";
 
     const label = document.createElement("p");
     label.className = "testimonial-label";
-    label.innerHTML = `Depoimento de <b>inglês</b> com a professora <b>${teacher}</b>`;
+    label.innerHTML = `Depoimento de <b>${dep.materia}</b> com a professora <b>${professorNome}</b>`;
 
     const quote = document.createElement("blockquote");
-    const audio = document.createElement("audio");
-    audio.controls = true;
-    audio.preload = "metadata";
-    const source = document.createElement("source");
-    source.src = `../${src}`;
-    source.type = type;
-    audio.append(source, "Seu navegador não suporta a reprodução de áudio.");
-    quote.append(audio);
+
+    if (dep.tipo === "audio") {
+      const audio = document.createElement("audio");
+      audio.controls = true;
+      audio.preload = "metadata";
+      const source = document.createElement("source");
+      source.src = `../${dep.audioUrl}`;
+      source.type = dep.audioTipo;
+      audio.append(source, "Seu navegador não suporta a reprodução de áudio.");
+      const p = document.createElement("p");
+      p.append(audio);
+      quote.append(p);
+    } else if (dep.tipo === "texto") {
+      // Cada parágrafo separado por \n\n vira um <p> próprio
+      const paragrafos = dep.texto.split(/\n\n+/);
+      paragrafos.forEach((paragrafo) => {
+        const p = document.createElement("p");
+        p.textContent = paragrafo.trim();
+        quote.append(p);
+      });
+    }
 
     const footer = document.createElement("footer");
-    footer.append(student, " ");
-    const stateTag = document.createElement("span");
-    stateTag.textContent = state;
-    footer.append(stateTag);
+    const footerLabel = dep.autorDesc
+      ? `${dep.autor} <span>(${dep.autorDesc}), ${dep.estado}</span>`
+      : `${dep.autor} <span>${dep.estado}</span>`;
+    footer.innerHTML = footerLabel;
 
     card.append(icon, label, quote, footer);
-    list.append(card);
-  });
+    return card;
+  };
 
-  if (!visibleTestimonials.length) {
-    const message = document.createElement("p");
-    message.className = "mini";
-    message.textContent = "Ainda não há depoimentos em áudio para esta professora.";
-    list.append(message);
-  }
+  fetch(DATA_URL)
+    .then((r) => {
+      if (!r.ok) throw new Error("Falha ao carregar os dados.");
+      return r.json();
+    })
+    .then((data) => {
+      const depoimentos = data.depoimentos ?? [];
+      const visíveis = professorId
+        ? depoimentos.filter((d) => d.professorId === professorId)
+        : depoimentos;
+
+      if (professorId && visíveis.length) {
+        const professor = data.professores.find((p) => p.id === professorId);
+        const nomeProf = professor ? `${professor.tratamento} ${professor.nome}` : professorId;
+        title.textContent = `O que as famílias testemunham sobre as aulas da ${nomeProf}`;
+      }
+
+      if (!visíveis.length) {
+        const message = document.createElement("p");
+        message.className = "mini";
+        message.textContent = "Ainda não há depoimentos para esta professora.";
+        list.append(message);
+        return;
+      }
+
+      visíveis.forEach((dep) => {
+        const professor = data.professores.find((p) => p.id === dep.professorId);
+        const nomeProf = professor ? professor.nome : dep.professorId;
+        list.append(renderCard(dep, nomeProf));
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+      const message = document.createElement("p");
+      message.className = "mini";
+      message.textContent =
+        window.location.protocol === "file:"
+          ? "A leitura do JSON requer HTTP."
+          : "Não foi possível carregar os depoimentos agora.";
+      list.append(message);
+    });
 })();

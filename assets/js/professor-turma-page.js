@@ -41,7 +41,8 @@
       const topbar = document.querySelector(".topbar-title strong");
       if (topbar) topbar.textContent = "Voltar";
 
-      const subjectName = data.ofertas.find(o => o.id === turma.ofertaId)?.nome || "Matéria";
+      const oferta = data.ofertas.find(o => o.id === turma.ofertaId);
+      const subjectName = oferta?.nome || "Matéria";
       document.title = `${subjectName} com ${professor.nome} | Conectados na Verdade`;
 
       content.replaceChildren();
@@ -67,8 +68,14 @@
       
       const diasNomes = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
       const diasStr = turma.dias ? turma.dias.map(d => diasNomes[d]).join(", ") : "";
+
+      const precoCentavos = data.precoCentavos ?? turma.precoCentavos;
+      const precoFormatado = precoCentavos != null
+        ? (precoCentavos / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+        : null;
       
-      meta.innerHTML = `<span><i>◷</i><b class="subject-hours">${turma.horaInicio} (${diasStr})</b></span>`;
+      meta.innerHTML = `<span><i>◷</i><b class="subject-hours">${turma.horaInicio} (${diasStr})</b></span>`
+        + (precoFormatado ? `<span><i>◉</i><b class="subject-price">${precoFormatado}</b></span>` : "");
       
       header.append(kicker, title, meta);
       subjectCard.append(header);
@@ -82,7 +89,7 @@
       nav.innerHTML += `
         <a class="subject-action" href="professor?professor=${professor.id}">
           <b class="subject-icon"><img src="assets/icons/teacher-1.png" alt="" /></b>
-          <span>Conheça o(a) <em>professor(a)</em>;</span>
+          <span>Conheça o(a) <em>professor(a)</em></span>
         </a>
       `;
 
@@ -90,7 +97,7 @@
       nav.innerHTML += `
         <a class="subject-action" href="depoimentos/depoimentos-ingles?professor=${professor.id}">
           <b class="subject-icon"><img src="assets/icons/heart.png" alt="" /></b>
-          <span>Ouça os <em>depoimentos</em> das famílias;</span>
+          <span><em>Depoimentos</em> das famílias</span>
         </a>
       `;
 
@@ -99,7 +106,7 @@
         nav.innerHTML += `
           <a class="subject-action" href="turma-mensagem?turma=${turma.id}">
             <b class="subject-icon"><img src="assets/icons/tutoring.png" alt="" /></b>
-            <span>Ouça uma <em>mensagem</em> para a turma;</span>
+            <span>Ouça uma <em>mensagem</em> para a turma</span>
           </a>
         `;
       }
@@ -108,7 +115,7 @@
       nav.innerHTML += `
         <a class="subject-action" href="videos.html">
           <b class="subject-icon"><img src="assets/icons/video.png" alt="" /></b>
-          <span>Veja um trecho das <em>aulas online</em>;</span>
+          <span>Veja um trecho das <em>aulas online</em></span>
         </a>
       `;
 
@@ -117,10 +124,20 @@
         nav.innerHTML += `
           <a class="subject-action" href="material-em-fase-escolha.html?turma=${turma.id}">
             <b class="subject-icon"><img src="assets/icons/book.png" alt="" /></b>
-            <span>Confira o <em>material</em> utilizado;</span>
+            <span>Confira o <em>material</em> utilizado</span>
           </a>
         `;
       }
+
+      // 6. Ver todas as opções de horários (link para a página de turmas da matéria)
+      const materiaId = data.materias.find(m => m.ofertaIds?.includes(turma.ofertaId))?.id
+        ?? turma.ofertaId;
+      nav.innerHTML += `
+        <a class="subject-action subject-schedule" href="turmas/turmas-${materiaId}.html">
+          <b class="subject-icon"><img src="assets/icons/course-2.png" alt="" /></b>
+          <span>Ver todas as opções de <em>horários</em> desta matéria</span>
+        </a>
+      `;
 
       subjectCard.append(nav);
       content.append(subjectCard);
