@@ -16,7 +16,8 @@ labels = [
     "ING_20_QUI_ROG",
     "ING_20_30_QUA_ROG",
     "ING_16_SEG_LUI",
-    "ING_20_TER_LUI"
+    "ING_20_TER_LUI",
+    "TUT_11_SEG_A_QUI_MAR"
 ]
 
 html_path = 'turmas/turmas-ingles.html'
