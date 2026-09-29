@@ -15,8 +15,7 @@ labels = [
     "ING_20_QUI_ROG",
     "ING_20_30_QUA_ROG",
     "ING_16_SEG_LUI",
-    "ING_20_TER_LUI",
-    "TUT_11_SEG_A_QUI_MAR"
+    "ING_20_TER_LUI"
 ]
 
 html_path = 'turmas/turmas-ingles.html'
@@ -34,4 +33,3 @@ new_html = re.sub(r'data-href="[^"]+"', replace_func, html)
 
 with open(html_path, 'w', encoding='utf-8') as f:
     f.write(new_html)
-

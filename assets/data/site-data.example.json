@@ -15,21 +15,6 @@
     }
   },
   "professores": [
-	{
-      "id": "diego-silva",
-      "nome": "Diego Silva",
-      "tratamento": "Teacher",
-      "fotoUrl": "assets/img/diego-silva.png",
-      "rota": "professor.html?professor=diego-silva",
-      "audio": {
-        "url": "assets/audio/Teacher-diego-silva.opus",
-        "descricao": "Conheça o Teacher Diego em sua própria voz."
-      },
-      "biografia": [
-        "Sou Diego Silva",
-        ],
-      "ativo": true
-    },
     {
       "id": "mariana-lacerda",
       "nome": "Mariana Lacerda",
@@ -104,14 +89,6 @@
     }
   ],
   "depoimentos": [
-    {
-      "professorId": "diego-silva",
-      "materia": "tutoria",
-      "tipo": "audio",
-      "autor": "Eloa",
-      "estado": "SP",
-      "texto": "O professor Diego é ótimo!"
-    },
     {
       "professorId": "karine-guillem",
       "materia": "inglês",
@@ -337,29 +314,6 @@
     }
   ],
   "turmas": [
-	{
-      "id": "TUT_11_SEG_A_QUI_MAR",
-      "ofertaId": "tutoria",
-      "publico": {
-        "nivel": "iniciante",
-        "idadeMin": 4,
-        "idadeMax": 6
-      },
-      "horaInicio": "11:00",
-      "dias": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "duracaoMinutos": 30,
-      "professorId": "diego-silva",
-      "precoCentavos": 10000,
-      "ativo": true,
-      "ordem": 10,
-      "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_11_SEG_A_QUI_MAR.ogg",
-      "materialId": "infantil"
-    },
     {
       "id": "ING_11_SEG_A_QUI_MAR",
       "ofertaId": "ingles",
