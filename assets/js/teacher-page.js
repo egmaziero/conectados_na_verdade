@@ -51,6 +51,13 @@
         paragraph.textContent = texto;
         content.append(paragraph);
       });
+
+      if (professor.versiculo) {
+        const verse = document.createElement("p");
+        verse.className = "teacher-verse";
+        verse.textContent = professor.versiculo;
+        content.append(verse);
+      }
     })
     .catch(() => {
       const message = window.location.protocol === "file:"

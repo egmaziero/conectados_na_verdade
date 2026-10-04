@@ -132,8 +132,9 @@
       // 6. Ver todas as opções de horários (link para a página de turmas da matéria)
       const materiaId = data.materias.find(m => m.ofertaIds?.includes(turma.ofertaId))?.id
         ?? turma.ofertaId;
+      const scheduleRoute = oferta?.rota || (materiaId ? `turmas/turmas-${materiaId}.html` : "horarios.html");
       nav.innerHTML += `
-        <a class="subject-action subject-schedule" href="turmas/turmas-${materiaId}.html">
+        <a class="subject-action subject-schedule" href="${scheduleRoute}">
           <b class="subject-icon"><img src="assets/icons/course-2.png" alt="" /></b>
           <span>Ver todas as opções de <em>horários</em> desta matéria</span>
         </a>

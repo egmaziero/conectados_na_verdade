@@ -11,7 +11,14 @@ document.querySelectorAll(".english-list tbody tr[data-href]").forEach((row) => 
   );
 
   const open = () => {
-    window.location.href = destination;
+    let target = destination;
+    const hasHtmlExt = window.location.pathname.endsWith(".html");
+    if (hasHtmlExt) {
+      target = target.replace(/^([^?]+)/, (p) => (p.endsWith(".html") ? p : `${p}.html`));
+    } else {
+      target = target.replace(/\.html(\?|$)/, "$1");
+    }
+    window.location.href = target;
   };
 
   row.addEventListener("click", open);
@@ -22,3 +29,4 @@ document.querySelectorAll(".english-list tbody tr[data-href]").forEach((row) => 
     }
   });
 });
+

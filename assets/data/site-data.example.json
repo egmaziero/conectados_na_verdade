@@ -86,6 +86,134 @@
         "Arquiteta, pedagoga com especialização em língua inglesa, cursando especialização por princípios pela faculdade Dunamis, tem mais de 15 anos de experiência em aulas de inglês, esposa e mãe e acima de tudo é discípula de Jesus."
       ],
       "ativo": true
+    },
+    {
+      "id": "filipe-carota",
+      "nome": "Filipe Carota",
+      "tratamento": "Professor",
+      "fotoUrl": "assets/img/filipe-carota.png",
+      "rota": "professor.html?professor=filipe-carota",
+      "instagram": "@filipecarota",
+      "versiculo": "Salmos 127:3",
+      "biografia": [
+        "Cristão, vocacionado por Educação Cristã e História Providencial.",
+        "Moro em Ribeirão Preto - SP, sou casado, papai de duas filhas.",
+        "Pós Graduado em Educação Empreendedora e em Ensino Religioso. Bacharel e Licenciado em História, Geografia e Pedagogia. Experiência como Professor Universitário, Educação Básica e Produção de Materiais Didáticos. Coordenador Pedagógico da Alicerces do Ensino – Conectados na Verdade – membro da Gestão do Conhecimento da AECEP."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "ticiano-castoldi",
+      "nome": "Ticiano Castoldi",
+      "tratamento": "Professor",
+      "fotoUrl": null,
+      "rota": "professor.html?professor=ticiano-castoldi",
+      "versiculo": "Porque dele, por meio dele e para ele são todas as coisas. A Ele, pois, a glória eternamente. Amém. Romanos 11:36",
+      "biografia": [
+        "Pecador redimido pela Graça, chamado para servir. Moro em Encantado, no Rio Grande do Sul, e sou casado com Laura Castoldi e leciono ao Projeto há 3 anos.",
+        "Sou cristão e busco ensinar considerando a centralidade de Cristo e os valores bíblicos. Sou professor, palestrante e ministro cursos livres nas áreas de ciência e fé, história e teologia.",
+        "Tenho formação em teologia (Seminário Teológico de Gamado), graduação em história (UNIVATES) e pós-graduação em geografia (Centro Universitário Barão de Mauá)."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "edilaine-santichi",
+      "nome": "Edilaine Santichi Soares",
+      "tratamento": "Professora",
+      "fotoUrl": null,
+      "rota": "professor.html?professor=edilaine-santichi",
+      "versiculo": "Salmos 104:24",
+      "biografia": [
+        "Sou serva do Criador e amante da criação.",
+        "Moro em Mira Estrela - SP, sou casada com Ademilso há 17 anos e mãe do Pedro, aluno do 8° ano do projeto Conectados na Verdade.",
+        "Formada em Biomedicina, após 10 anos atuando na área clínica me apaixonei pelo ensino de ciências.",
+        "Atuo como professora de Ciências do projeto Conectados e busco ensinar através daquilo que Deus criou, pois, 'cheia está a terra das suas riquezas'."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "luzimara-monte-alto",
+      "nome": "Luzimara Monte Alto",
+      "tratamento": "Professora",
+      "fotoUrl": null,
+      "rota": "professor.html?professor=luzimara-monte-alto",
+      "versiculo": "Marcos 16:15",
+      "biografia": [
+        "Sou cristã e tenho como propósito ensinar a língua Portuguesa para anunciar o amor de Jesus.",
+        "Sou professora licenciada em Língua Portuguesa, inglesa e literatura desde 2010, pós graduada em metodologia de ensino de língua estrangeira e Portuguesa e tenho cursos de formação na área. Trabalho com aulas online desde 2020."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "carolina-doege",
+      "nome": "Carolina Doege",
+      "tratamento": "Professora",
+      "fotoUrl": "assets/img/carolina-doege.png",
+      "rota": "professor.html?professor=carolina-doege",
+      "instagram": "@carolinadoege",
+      "versiculo": "João 15:15",
+      "biografia": [
+        "Sou cristã desde berço onde aprendi a ter relacionamento com Jesus e amo ler a Palavra de Deus desde minha infância.",
+        "Formada em Odontologia mas, como sempre quis ser professora, fiz mestrado e doutorado com o objetivo de aprender sobre a arte do ensino e sobre a pesquisa na área acadêmica.",
+        "Sou professora de curso técnico e tutora em AVA na área da saúde. Trabalho com as crianças na igreja desde meus 12 anos, tendo hoje também ensino e liderança com os jovens da igreja."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "danni-dallagnol",
+      "nome": "Danni Dallagnol",
+      "tratamento": "Professora",
+      "fotoUrl": "assets/img/danni-dallagnol.png",
+      "rota": "professor.html?professor=danni-dallagnol",
+      "instagram": "@dannidallagnol",
+      "versiculo": "Jó 42:5",
+      "biografia": [
+        "Cristã Reformada, opto sempre por uma aula cristocêntrica.",
+        "Cantora, professora de canto, formação em técnicas vocais, musicalização infantil, regente, líder de música desde 2010, especializada em crianças neurodivergentes."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "margaret-muniz",
+      "nome": "Margaret Muniz",
+      "tratamento": "Professora",
+      "fotoUrl": "assets/img/margaret-muniz.png",
+      "rota": "professor.html?professor=margaret-muniz",
+      "instagram": "@shemaywam",
+      "versiculo": "Josué 1:8",
+      "biografia": [
+        "Margaret é voluntária da JOCUM há mais de 35 anos, dedicando-se com fervor tanto no Brasil quanto no exterior. Casada e mãe de família, tem um desejo ardente de ver a palavra de Deus acessível aos povos em sua língua materna.",
+        "Margaret agora é Mestre em Linguística Aplicada à Tradução Bíblica pela University of the Nations. Ela concentra seus esforços no ministério da tradução oral da Bíblia para uma comunidade no Mato Grosso."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "luciana-guimaraes",
+      "nome": "Luciana Guimarães",
+      "tratamento": "Professora",
+      "fotoUrl": "assets/img/luciana-guimaraes.png",
+      "rota": "professor.html?professor=luciana-guimaraes",
+      "instagram": "@metodo_origem",
+      "versiculo": "João 3:16",
+      "biografia": [
+        "Sou serva do Altíssimo, esposa, mãe de 4 filhos. Há mais de 15 anos me dedico à vocação de ensinar, somando vivência no ensino regular e no ministério infantil. Atualmente, leciono Ciências, Química e Física online para alunos a partir de 8 anos utilizando recursos que promovem a iniciação científica através do deslumbramento.",
+        "Praticante da AEP, junto a fé e rigor acadêmico através da minha formação em Pedagogia, Licenciatura em Química, Tecnologia de Alimentos e estudos Teológicos pela Escola Charles Spurgeon."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "fulvia-cortez",
+      "nome": "Fúlvia Cortez",
+      "tratamento": "Professora",
+      "fotoUrl": "assets/img/fulvia-cortez.png",
+      "rota": "professor.html?professor=fulvia-cortez",
+      "versiculo": "Provérbios 9:9",
+      "biografia": [
+        "Professora há quase 30 anos no ensino de Língua Portuguesa e Espanhol para crianças, jovens e adultos. Experiência no Ensino Superior, Educação Básica e cursos de idiomas.",
+        "Pós-graduada em língua e literatura espanhola pela Universidade Complutense de Madrid e Licenciada em Letras – Português e Espanhol pela Unesp. Trabalho também com traduções e cursos preparatórios para exames de certificação e proficiência em Espanhol.",
+        "Sou cristã vocacionada ao ensino, seguindo as trilhas do Senhor. Moro em São José do Rio Preto/SP. Sou casada e mãe de um casal de filhos."
+      ],
+      "ativo": true
     }
   ],
   "depoimentos": [
@@ -265,6 +393,285 @@
       "estado": "SP",
       "audioUrl": "assets/audio/turmas/ingles/tania-guillem/ING_DEP_ZOE_SP.ogg",
       "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "filipe-carota",
+      "materia": "matemática",
+      "tipo": "texto",
+      "autor": "Gesana",
+      "estado": "SP",
+      "texto": "O projeto Conectados na Verdade é uma bênção para meus filhos de 6 e 8 anos. As aulas on-line ajudam muito no processo de aprendizado em casa. Os professores são muito atenciosos e o ambiente on-line também propicia bons relacionamentos, além do ambiente seguro e respeitoso. As aulas de matemática são dinâmicas e divertidas, incluindo o método, o livro escolhido e o professor Filipe."
+    },
+    {
+      "professorId": "filipe-carota",
+      "materia": "matemática",
+      "tipo": "texto",
+      "autor": "Tatiana",
+      "estado": "SP",
+      "texto": "O Programa Conectados na Verdade fez uma diferença muito grande na aprendizagem da nossa filha, de 9 anos, especialmente nas aulas de Matemática. Percebemos não apenas um avanço no conhecimento, mas também uma mudança na forma como ela passou a enxergar os estudos. As aulas on-line, o material cristão e a maneira como os professores conduzem cada conteúdo tornaram o aprendizado mais significativo e prazeroso."
+    },
+    {
+      "professorId": "filipe-carota",
+      "materia": "matemática",
+      "tipo": "texto",
+      "autor": "Thamires",
+      "estado": "RO",
+      "texto": "O Conectados com a Verdade foi um presente de Deus para a nossa família! Conhecemos o projeto em junho deste ano e ficamos encantados com a excelência, a dedicação e o carinho dos professores. Meu filho de 9 anos faz Matemática do 4º ano, Química e Italiano. Somos muito gratos por todo o aprendizado!"
+    },
+    {
+      "professorId": "filipe-carota",
+      "materia": "matemática",
+      "tipo": "texto",
+      "autor": "Mislene",
+      "estado": "MG",
+      "texto": "O ministério tem sido um grande aliado ao meu tipo de educação, que busca valores, responsabilidade e aprendizado real. Matemática: professor didático, aulas bem ordenadas, as crianças se sentem à vontade para tirar dúvidas e participar. Temos gostado muito mesmo."
+    },
+    {
+      "professorId": "luzimara-monte-alto",
+      "materia": "português",
+      "tipo": "texto",
+      "autor": "Isa",
+      "estado": "MG",
+      "texto": "Olá! Eu sou uma menina cristã que estudo no Projeto Conectados na Verdade e vim aqui para dizer o quanto este projeto é uma bênção para mim! Através dele, estou cada dia mais aprendendo sobre a Língua Portuguesa! Português tem sido a minha matéria preferida, e se torna mais incrível ainda com a Professora Luzimara. A Tia Luzi é uma bênção na minha vida, e amo aprender não só sobre a matéria, mas também sobre Jesus!"
+    },
+    {
+      "professorId": "luzimara-monte-alto",
+      "materia": "português",
+      "tipo": "texto",
+      "autor": "Marjorie (aluna)",
+      "estado": "SP",
+      "texto": "Eu sou aluna de Português com a professora Luzimara. Ela é uma ótima professora, uma pessoa ungida e preparada por Deus para ensinar. Com ela, eu aprendo várias coisas de um modo fácil, com brincadeiras, quizzes e salas temáticas. A aula dela é leve e conseguimos aprender de uma forma muito boa."
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "história, geografia e ciências",
+      "tipo": "texto",
+      "autor": "Isa",
+      "estado": "MG",
+      "texto": "Através deste projeto, estou cada dia mais aprendendo sobre três matérias incríveis: História, Geografia e Ciências! Elas são muito interessantes, e se tornam ainda mais com o professor Ticiano Castoldi. Ele é um ótimo professor, que nos ensina com amor e carinho, sendo muito paciente e bondoso."
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "ciências",
+      "tipo": "texto",
+      "autor": "Marjorie (aluna)",
+      "estado": "SP",
+      "texto": "O professor Ticiano é muito legal, ele brinca e é muito engraçado. Adoro as aulas dele; ele nos faz aprender com experiências e trabalhos. Nas aulas de Ciências, aprendo sobre o universo, sobre como a Terra foi criada, baseado no que a Bíblia ensina."
+    },
+    {
+      "professorId": "edilaine-santichi",
+      "materia": "ciências",
+      "tipo": "texto",
+      "autor": "Edilaine",
+      "estado": "SP",
+      "texto": "Matricular nosso filho no Projeto Conectados na Verdade foi uma das melhores decisões que já tomamos! O que nos encanta é ver como os mestres são dedicados, ensinando com amor genuíno e cosmovisão bíblica. Ver nosso filho crescendo em conhecimento, comunhão e respeito mostra que estamos no lugar certo."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Débora",
+      "estado": "PI",
+      "texto": "Meu filho de 10 anos tem laudo de autismo e TDAH e faz aulas com a profª Luciana de introdução à física e química. Nunca pensei que ele teria tanto prazer em passar 2 horas em uma aula online. A prof é muito dedicada e criativa."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Viviane",
+      "estado": "SP",
+      "texto": "Tem sido muito prazeroso acompanhar as descobertas da minha filha de 14 anos com a matéria de Introdução à Química e Física. Os vários experimentos tornam o aprendizado concreto e despertam a curiosidade científica com base bíblica."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Cathy",
+      "estado": "Portugal",
+      "texto": "Minha filha entrou na turma de Química e Física e que surpresa foram estas aulas! Ela se interessou de tal maneira que passa o tempo inteiro falando sobre Química. A professora Luciana é uma bênção: as aulas são participativas, com paciência e preparo excelente."
+    },
+    {
+      "professorId": "margaret-muniz",
+      "materia": "hebraico",
+      "tipo": "texto",
+      "autor": "Lindemar",
+      "estado": "MG",
+      "texto": "Mesmo aos 46 anos, achava que não seria possível aprender um novo idioma, muito menos hebraico bíblico. Mas as aulas têm me mostrado que é possível, sim! A dedicação e didática da professora Margaret tornam tudo muito agradável e enriquecedor."
+    },
+    {
+      "professorId": "margaret-muniz",
+      "materia": "hebraico",
+      "tipo": "texto",
+      "autor": "Jemima",
+      "estado": "SP",
+      "texto": "Para quem acha que aprender hebraico é um monstro de sete cabeças, com a professora Margaret não é! É possível aprender de forma dinâmica, leve e cheia de conteúdo bíblico e histórico profundo."
+    },
+    {
+      "professorId": "danni-dallagnol",
+      "materia": "música",
+      "tipo": "texto",
+      "autor": "Viviane",
+      "estado": "SP",
+      "texto": "Minha filha de 8 anos participou das aulas de Música e foi muito especial perceber como a música entrou na nossa rotina. Mais do que instrumentos, ela foi despertada para ouvir, perceber ritmos e expressar adoração a Deus."
+    },
+    {
+      "professorId": "danni-dallagnol",
+      "materia": "música",
+      "tipo": "texto",
+      "autor": "Simone",
+      "estado": "SP",
+      "texto": "As aulas de Música têm sido uma experiência muito especial para minha filha. Percebo que despertam percepção, criatividade, disciplina e confiança, com muito carinho e dedicação."
+    },
+    {
+      "professorId": "carolina-doege",
+      "materia": "aprendendo a palavra",
+      "tipo": "texto",
+      "autor": "Edson",
+      "estado": "RS",
+      "texto": "As aulas são um acompanhamento semanal que molda caráter e ensina a Palavra de Deus. A experiência de trocar ideias em grupo e aprofundar a fé com a professora Carolina tem sido fundamental para o crescimento da minha filha."
+    },
+    {
+      "professorId": "fulvia-cortez",
+      "materia": "espanhol",
+      "tipo": "texto",
+      "autor": "Família",
+      "estado": "PR",
+      "texto": "Sou mãe de alunos da profª Fúlvia. Meus filhos gostam muito da aula e da professora. A didática é acolhedora e o aprendizado tem sido excelente."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "audio",
+      "autor": "Família da Sofia",
+      "estado": "RS",
+      "audioUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/qui_fis_depoim_Sofia_RS.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "audio",
+      "autor": "Família da Antonela",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/qui_fis_dep_Antonela_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "audio",
+      "autor": "Família da Ana Sophia",
+      "estado": "Portugal",
+      "audioUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/QUI_FIS_DEP_ANA_SOPHIA_PORTUGAL.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "audio",
+      "autor": "Família da Eloá",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/QUI_FIS_DEP_ELOA_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "audio",
+      "autor": "Família da Sara",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/QUI_FIS_DEP_SARA_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "fulvia-cortez",
+      "materia": "espanhol",
+      "tipo": "audio",
+      "autor": "Família da Ana Júlia",
+      "estado": "SC",
+      "audioUrl": "assets/audio/turmas/espanhol/fulvia-cortez/ESP_DEP_ANA_JULIA_SC.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "fulvia-cortez",
+      "materia": "espanhol",
+      "tipo": "audio",
+      "autor": "Família da Antonela",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/espanhol/fulvia-cortez/esp_dep_Antonela_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "margaret-muniz",
+      "materia": "hebraico",
+      "tipo": "audio",
+      "autor": "Aluna Hanah",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/hebraico/margaret-muniz/heb_dep_aluna_Hanah_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "margaret-muniz",
+      "materia": "hebraico",
+      "tipo": "audio",
+      "autor": "Família da Antonela",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/hebraico/margaret-muniz/heb_dep_Antonela_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "margaret-muniz",
+      "materia": "hebraico",
+      "tipo": "audio",
+      "autor": "Família da Sophia",
+      "estado": "SC",
+      "audioUrl": "assets/audio/turmas/hebraico/margaret-muniz/HEB_DEP_SOPHIA_SC.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "filipe-carota",
+      "materia": "tutoria",
+      "tipo": "audio",
+      "autor": "Michele",
+      "estado": "SC",
+      "audioUrl": "assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_michele.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "carolina-doege",
+      "materia": "aprendendo a palavra",
+      "tipo": "audio",
+      "autor": "Família da Antonela",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/apren_pala_dep_Antonela_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "carolina-doege",
+      "materia": "aprendendo a palavra",
+      "tipo": "audio",
+      "autor": "Família da Sofia",
+      "estado": "RS",
+      "audioUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_depoim_Sofia_RS.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "carolina-doege",
+      "materia": "aprendendo a palavra",
+      "tipo": "audio",
+      "autor": "Família da Antonela",
+      "estado": "PI",
+      "audioUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/PAL_DEP_ANTONELA_PI.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "danni-dallagnol",
+      "materia": "música",
+      "tipo": "audio",
+      "autor": "Família do Tiago",
+      "estado": "MG",
+      "audioUrl": "assets/audio/turmas/musica/danni-dallagnol/MUS_DEP_Tiago_MG.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
     }
   ],
   "materias": [
@@ -295,6 +702,46 @@
       "rotuloPreco": "Valor sob consulta",
       "rota": "materia.html?materia=tutoria",
       "ofertaIds": []
+    },
+    {
+      "id": "quimica-fisica",
+      "nome": "Química e Física",
+      "cargaSemanalMinutos": 120,
+      "precoCentavos": 10000,
+      "rota": "materias/materia-quimica-fisica.html",
+      "ofertaIds": [
+        "quimica-fisica"
+      ]
+    },
+    {
+      "id": "espanhol",
+      "nome": "Espanhol",
+      "cargaSemanalMinutos": 60,
+      "precoCentavos": 5000,
+      "rota": "turmas/turmas-espanhol.html",
+      "ofertaIds": [
+        "espanhol"
+      ]
+    },
+    {
+      "id": "musica",
+      "nome": "Música",
+      "cargaSemanalMinutos": 60,
+      "precoCentavos": 5000,
+      "rota": "turmas/turmas-musica.html",
+      "ofertaIds": [
+        "musica"
+      ]
+    },
+    {
+      "id": "hebraico",
+      "nome": "Hebraico",
+      "cargaSemanalMinutos": 60,
+      "precoCentavos": 5400,
+      "rota": "turmas/turmas-hebraico.html",
+      "ofertaIds": [
+        "hebraico"
+      ]
     }
   ],
   "ofertas": [
@@ -310,6 +757,41 @@
       "nome": "Aprendendo a Palavra",
       "materiaId": "ingles",
       "rota": "turma.html?oferta=aprendendo-palavra",
+      "ativo": true
+    },
+    {
+      "id": "quimica-fisica",
+      "nome": "Introdução à Química e Física",
+      "materiaId": "quimica-fisica",
+      "rota": "turmas/turmas-fisica-quimica.html",
+      "ativo": true
+    },
+    {
+      "id": "espanhol",
+      "nome": "Espanhol",
+      "materiaId": "espanhol",
+      "rota": "turmas/turmas-espanhol.html",
+      "ativo": true
+    },
+    {
+      "id": "musica",
+      "nome": "Música",
+      "materiaId": "musica",
+      "rota": "turmas/turmas-musica.html",
+      "ativo": true
+    },
+    {
+      "id": "hebraico",
+      "nome": "Hebraico",
+      "materiaId": "hebraico",
+      "rota": "turmas/turmas-hebraico.html",
+      "ativo": true
+    },
+    {
+      "id": "tutoria",
+      "nome": "Tutoria",
+      "materiaId": "tutoria",
+      "rota": "turmas/turmas-tutoria.html",
       "ativo": true
     }
   ],
@@ -641,6 +1123,421 @@
       "ordem": 150,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/luisa-dresch/ING_20_TER_LUI/ING_20_TER_LUI_AUDIO.ogg",
       "materialId": "material-teens"
+    },
+    {
+      "id": "IFQ_8_30_QUI_LUC",
+      "ofertaId": "quimica-fisica",
+      "publico": {
+        "nivel": "Adicional ao 5º ano",
+        "idadeMin": 8,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 8 a 11 anos – Adicional ao 5º ano"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "luciana-guimaraes",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 200,
+      "materialId": "infantil",
+      "audioEpecificoUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/int_qui_fis_audio_luciana.ogg"
+    },
+    {
+      "id": "IFQ_13_30_QUI_LUC",
+      "ofertaId": "quimica-fisica",
+      "publico": {
+        "nivel": "Adicional ao 7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – Adicional ao 7º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "luciana-guimaraes",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 210,
+      "materialId": "material-teens",
+      "audioEpecificoUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/int_qui_fis_audio_luciana.ogg"
+    },
+    {
+      "id": "IFQ_13_30_QUA_LUC",
+      "ofertaId": "quimica-fisica",
+      "publico": {
+        "nivel": "Adicional ao 9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – Adicional ao 9º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "luciana-guimaraes",
+      "precoCentavos": 10000,
+      "ativo": true,
+      "ordem": 220,
+      "materialId": "material-teens",
+      "audioEpecificoUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/int_qui_fis_audio_luciana.ogg"
+    },
+    {
+      "id": "ESP_17_QUI_FUL",
+      "ofertaId": "espanhol",
+      "publico": {
+        "nivel": "Iniciante",
+        "idadeMin": 8,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 8 a 11 anos – Nível Iniciante"
+      },
+      "horaInicio": "17:00",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "fulvia-cortez",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 230,
+      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg"
+    },
+    {
+      "id": "ESP_16_QUI_FUL",
+      "ofertaId": "espanhol",
+      "publico": {
+        "nivel": "Iniciante",
+        "idadeMin": 11,
+        "idadeMax": 16,
+        "rotulo": "Crianças de 11 a 16 anos – Nível Iniciante"
+      },
+      "horaInicio": "16:00",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "fulvia-cortez",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 240,
+      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg"
+    },
+    {
+      "id": "ESP_8_SEX_FUL",
+      "ofertaId": "espanhol",
+      "publico": {
+        "nivel": "Básico",
+        "idadeMin": 7,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 7 a 11 anos – Nível Básico"
+      },
+      "horaInicio": "08:00",
+      "dias": [
+        5
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "fulvia-cortez",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 250,
+      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg"
+    },
+    {
+      "id": "APA_17_TER_CAR",
+      "ofertaId": "aprendendo-palavra",
+      "publico": {
+        "nivel": "Volume 4",
+        "idadeMin": 8,
+        "idadeMax": 10,
+        "rotulo": "Crianças de 8 a 10 anos – Volume 4"
+      },
+      "horaInicio": "17:00",
+      "dias": [
+        2
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "carolina-doege",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 260,
+      "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg"
+    },
+    {
+      "id": "APA_16_TER_CAR",
+      "ofertaId": "aprendendo-palavra",
+      "publico": {
+        "nivel": "Volume 5",
+        "idadeMin": 11,
+        "idadeMax": 14,
+        "rotulo": "Crianças de 11 a 14 anos – Volume 5"
+      },
+      "horaInicio": "16:00",
+      "dias": [
+        2
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "carolina-doege",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 270,
+      "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg"
+    },
+    {
+      "id": "MUS_8_30_TER_DAN",
+      "ofertaId": "musica",
+      "publico": {
+        "nivel": "Nível II",
+        "idadeMin": 5,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 5 a 9 anos – Nível II"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        2
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "danni-dallagnol",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 280,
+      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4"
+    },
+    {
+      "id": "MUS_16_30_SEX_DAN",
+      "ofertaId": "musica",
+      "publico": {
+        "nivel": "Nível II",
+        "idadeMin": 11,
+        "idadeMax": 16,
+        "rotulo": "Crianças de 11 a 16 anos – Nível II"
+      },
+      "horaInicio": "16:30",
+      "dias": [
+        5
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "danni-dallagnol",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 290,
+      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4"
+    },
+    {
+      "id": "MUS_17_QUA_DAN",
+      "ofertaId": "musica",
+      "publico": {
+        "nivel": "Nível I",
+        "idadeMin": 8,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 8 a 11 anos – Nível I"
+      },
+      "horaInicio": "17:00",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "danni-dallagnol",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 300,
+      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4"
+    },
+    {
+      "id": "MUS_16_QUA_DAN",
+      "ofertaId": "musica",
+      "publico": {
+        "nivel": "Nível I",
+        "idadeMin": 11,
+        "idadeMax": 16,
+        "rotulo": "Crianças de 11 a 16 anos – Nível I"
+      },
+      "horaInicio": "16:00",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "danni-dallagnol",
+      "precoCentavos": 5000,
+      "ativo": true,
+      "ordem": 310,
+      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4"
+    },
+    {
+      "id": "HEB_16_QUI_MAR",
+      "ofertaId": "hebraico",
+      "publico": {
+        "nivel": "Nível I / III",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – Nível I / III"
+      },
+      "horaInicio": "16:00",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "margaret-muniz",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 320,
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+    },
+    {
+      "id": "HEB_17_QUI_MAR",
+      "ofertaId": "hebraico",
+      "publico": {
+        "nivel": "Nível I / III",
+        "idadeMin": 10,
+        "idadeMax": 16,
+        "rotulo": "Crianças de 10 a 16 anos – Nível I / III"
+      },
+      "horaInicio": "17:00",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "margaret-muniz",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 330,
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+    },
+    {
+      "id": "HEB_9_30_SEX_MAR",
+      "ofertaId": "hebraico",
+      "publico": {
+        "nivel": "Nível II / III",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – Nível II / III"
+      },
+      "horaInicio": "09:30",
+      "dias": [
+        5
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "margaret-muniz",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 340,
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+    },
+    {
+      "id": "HEB_20_30_SEG_MAR",
+      "ofertaId": "hebraico",
+      "publico": {
+        "nivel": "Nível II / III",
+        "rotulo": "Adultos e Adolescentes – Nível II / III"
+      },
+      "horaInicio": "20:30",
+      "dias": [
+        1
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "margaret-muniz",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 350,
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+    },
+    {
+      "id": "HEB_8_30_SEX_MAR",
+      "ofertaId": "hebraico",
+      "publico": {
+        "nivel": "Nível III / III",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – Nível III / III"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        5
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "margaret-muniz",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 360,
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+    },
+    {
+      "id": "HEB_13_30_SEX_MAR",
+      "ofertaId": "hebraico",
+      "publico": {
+        "nivel": "Nível III / III",
+        "idadeMin": 10,
+        "idadeMax": 16,
+        "rotulo": "Crianças de 10 a 16 anos – Nível III / III"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        5
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "margaret-muniz",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 370,
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+    },
+    {
+      "id": "TUT_19_QUA_FIL",
+      "ofertaId": "tutoria",
+      "publico": {
+        "nivel": "Fundamental II",
+        "rotulo": "Famílias educadoras de 6º a 9º ano"
+      },
+      "horaInicio": "19:00",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "filipe-carota",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 380,
+      "audioEpecificoUrl": "assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg"
+    },
+    {
+      "id": "TUT_20_QUA_FIL",
+      "ofertaId": "tutoria",
+      "publico": {
+        "nivel": "Fundamental I",
+        "rotulo": "Famílias educadoras de 2º a 5º ano"
+      },
+      "horaInicio": "20:00",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "filipe-carota",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 390,
+      "audioEpecificoUrl": "assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg"
+    },
+    {
+      "id": "TUT_21_QUA_FIL",
+      "ofertaId": "tutoria",
+      "publico": {
+        "nivel": "Ensino Infantil",
+        "rotulo": "Famílias educadoras de 0 a 5 anos"
+      },
+      "horaInicio": "21:00",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "filipe-carota",
+      "precoCentavos": 5400,
+      "ativo": true,
+      "ordem": 400,
+      "audioEpecificoUrl": "assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg"
     }
   ],
   "series": [

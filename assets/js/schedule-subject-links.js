@@ -9,7 +9,9 @@ const scheduleLinks = {
   Ciências: "turmas/turmas-ciencias.html",
   "Química/Física": "turmas/turmas-fisica-quimica.html",
   Matemática: "turmas/turmas-matematica.html",
-  Português: "turmas/turmas-portugues.html"
+  Português: "turmas/turmas-portugues.html",
+  "Português Bilíngue": "turmas/turmas-portugues.html",
+  "Matemática Bilíngue": "turmas/turmas-matematica.html"
 };
 
 document.querySelectorAll(".schedule-table td").forEach((cell) => {
@@ -17,14 +19,19 @@ document.querySelectorAll(".schedule-table td").forEach((cell) => {
   const destination = scheduleLinks[label];
   if (!destination) return;
 
+  let target = destination;
+  if (!window.location.pathname.endsWith(".html")) {
+    target = target.replace(/\.html$/, "");
+  }
+
   const existingLink = cell.querySelector("a");
   if (existingLink) {
-    existingLink.href = destination;
+    existingLink.href = target;
     return;
   }
 
   const link = document.createElement("a");
-  link.href = destination;
+  link.href = target;
   link.append(...cell.childNodes);
   cell.append(link);
 });

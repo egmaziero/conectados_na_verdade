@@ -16,7 +16,7 @@
 
     const label = document.createElement("p");
     label.className = "testimonial-label";
-    label.innerHTML = `Depoimento de <b>${dep.materia}</b> com a professora <b>${professorNome}</b>`;
+    label.innerHTML = `Depoimento de <b>${dep.materia}</b> com <b>${professorNome}</b>`;
 
     const quote = document.createElement("blockquote");
 
@@ -65,13 +65,13 @@
       if (professorId && visíveis.length) {
         const professor = data.professores.find((p) => p.id === professorId);
         const nomeProf = professor ? `${professor.tratamento} ${professor.nome}` : professorId;
-        title.textContent = `O que as famílias testemunham sobre as aulas da ${nomeProf}`;
+        title.textContent = `O que as famílias testemunham sobre as aulas de ${nomeProf}`;
       }
 
       if (!visíveis.length) {
         const message = document.createElement("p");
         message.className = "mini";
-        message.textContent = "Ainda não há depoimentos para esta professora.";
+        message.textContent = "Ainda não há depoimentos cadastrados para esta turma.";
         list.append(message);
         return;
       }

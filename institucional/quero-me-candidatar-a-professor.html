@@ -191,6 +191,34 @@
                 </td>
               </tr>
             </table>
+
+            <div style="margin-top: 24px; text-align: center;">
+              <p style="font-weight: bold; margin-bottom: 12px;">Acesse o link abaixo, preencha os dados e encaminhe o seu currículo e ficha!</p>
+              <a class="cta" href="../formulario.html" style="display: block; text-decoration: none;">Preencher Ficha e Candidatar-se</a>
+            </div>
+
+            <div style="margin-top: 24px; padding: 16px; background: #fff8ef; border: 1px solid #dfcfbc; border-radius: 10px;">
+              <h3 style="color: #2f4f2f; margin-bottom: 10px;">Quer sugerir uma matéria diferente?</h3>
+              <form onsubmit="event.preventDefault(); alert('Sugestão enviada com sucesso! Entraremos em contato.');">
+                <label style="display: block; margin-bottom: 8px; font-size: 13px;">
+                  Quero sugerir a matéria:
+                  <input type="text" style="width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 6px;" placeholder="Ex: Robótica, Xadrez, etc." required>
+                </label>
+                <label style="display: block; margin-bottom: 8px; font-size: 13px;">
+                  Para crianças de (idade):
+                  <input type="text" style="width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 6px;" placeholder="Ex: 8 a 10 anos" required>
+                </label>
+                <label style="display: block; margin-bottom: 8px; font-size: 13px;">
+                  Proposta de turmas (horas/semana e dias):
+                  <input type="text" style="width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 6px;" placeholder="Ex: 1 hora por semana, 1 dia por semana" required>
+                </label>
+                <label style="display: block; margin-bottom: 12px; font-size: 13px;">
+                  Vou indicar um professor (nome / contato):
+                  <input type="text" style="width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 6px;" placeholder="Nome e telefone/email do professor indicado">
+                </label>
+                <button class="cta ghost" type="submit" style="width: 100%;">Enviar Sugestão de Matéria</button>
+              </form>
+            </div>
           </div>
       </div>
     </section>
