@@ -83,7 +83,9 @@ for i, t in enumerate(turmas_info):
         "materialId": "infantil" if (idMax and idMax <= 10) else "material-teens"
     })
 
-data['turmas'] = turmas_data
+# Update or merge ingles turmas preserving other subjects
+existing_other_turmas = [t for t in data.get('turmas', []) if t.get('ofertaId') != 'ingles' and not t.get('id', '').startswith('ING_')]
+data['turmas'] = existing_other_turmas + turmas_data
 
 with open(json_path, 'w', encoding='utf-8') as f:
     json.dump(data, f, indent=2, ensure_ascii=False)

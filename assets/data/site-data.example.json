@@ -214,6 +214,17 @@
         "Sou cristã vocacionada ao ensino, seguindo as trilhas do Senhor. Moro em São José do Rio Preto/SP. Sou casada e mãe de um casal de filhos."
       ],
       "ativo": true
+    },
+    {
+      "id": "a-definir",
+      "nome": "A definir",
+      "tratamento": "Professor(a)",
+      "fotoUrl": null,
+      "rota": null,
+      "biografia": [
+        "Professor(a) em processo de definição para esta turma."
+      ],
+      "ativo": true
     }
   ],
   "depoimentos": [
@@ -689,10 +700,12 @@
       "id": "matematica",
       "nome": "Matemática",
       "cargaSemanalMinutos": 240,
-      "precoCentavos": null,
-      "rotuloPreco": "Valor sob consulta",
-      "rota": "materia.html?materia=matematica",
-      "ofertaIds": []
+      "precoCentavos": 20400,
+      "rotuloPreco": "R$ 204,00",
+      "rota": "materias/materia-matematica.html",
+      "ofertaIds": [
+        "matematica"
+      ]
     },
     {
       "id": "tutoria",
@@ -741,6 +754,50 @@
       "rota": "turmas/turmas-hebraico.html",
       "ofertaIds": [
         "hebraico"
+      ]
+    },
+    {
+      "id": "portugues",
+      "nome": "Português",
+      "cargaSemanalMinutos": 240,
+      "precoCentavos": 20400,
+      "rotuloPreco": "R$ 204,00",
+      "rota": "materias/materia-portugues.html",
+      "ofertaIds": [
+        "portugues"
+      ]
+    },
+    {
+      "id": "ciencias",
+      "nome": "Ciências",
+      "cargaSemanalMinutos": 60,
+      "precoCentavos": 10200,
+      "rotuloPreco": "R$ 102,00",
+      "rota": "materias/materia-ciencias.html",
+      "ofertaIds": [
+        "ciencias"
+      ]
+    },
+    {
+      "id": "geografia",
+      "nome": "Geografia",
+      "cargaSemanalMinutos": 60,
+      "precoCentavos": 10200,
+      "rotuloPreco": "R$ 102,00",
+      "rota": "materias/materia-geografia.html",
+      "ofertaIds": [
+        "geografia"
+      ]
+    },
+    {
+      "id": "historia",
+      "nome": "História",
+      "cargaSemanalMinutos": 60,
+      "precoCentavos": 10200,
+      "rotuloPreco": "R$ 102,00",
+      "rota": "materias/materia-historia.html",
+      "ofertaIds": [
+        "historia"
       ]
     }
   ],
@@ -792,6 +849,41 @@
       "nome": "Tutoria",
       "materiaId": "tutoria",
       "rota": "turmas/turmas-tutoria.html",
+      "ativo": true
+    },
+    {
+      "id": "portugues",
+      "nome": "Português",
+      "materiaId": "portugues",
+      "rota": "turmas/turmas-portugues.html",
+      "ativo": true
+    },
+    {
+      "id": "matematica",
+      "nome": "Matemática",
+      "materiaId": "matematica",
+      "rota": "turmas/turmas-matematica.html",
+      "ativo": true
+    },
+    {
+      "id": "ciencias",
+      "nome": "Ciências",
+      "materiaId": "ciencias",
+      "rota": "turmas/turmas-ciencias.html",
+      "ativo": true
+    },
+    {
+      "id": "geografia",
+      "nome": "Geografia",
+      "materiaId": "geografia",
+      "rota": "turmas/turmas-geografia.html",
+      "ativo": true
+    },
+    {
+      "id": "historia",
+      "nome": "História",
+      "materiaId": "historia",
+      "rota": "turmas/turmas-historia.html",
       "ativo": true
     }
   ],
@@ -1538,6 +1630,377 @@
       "ativo": true,
       "ordem": 400,
       "audioEpecificoUrl": "assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg"
+    },
+    {
+      "id": "POR_GRA_TER_QUI_LUI",
+      "ofertaId": "portugues",
+      "publico": {
+        "nivel": "1º ano",
+        "idadeMin": 5,
+        "idadeMax": 7,
+        "rotulo": "Crianças de 5 a 7 anos – 1º ano"
+      },
+      "horaInicio": "Gravação",
+      "dias": [
+        2,
+        4
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "luisa-dresch",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 410
+    },
+    {
+      "id": "POR_13_30_TER_QUI_LUI",
+      "ofertaId": "portugues",
+      "publico": {
+        "nivel": "3º ano",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – 3º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        2,
+        4
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "luisa-dresch",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 420
+    },
+    {
+      "id": "POR_13_30_TER_QUI_LUZ",
+      "ofertaId": "portugues",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        2,
+        4
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "luzimara-monte-alto",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 430
+    },
+    {
+      "id": "POR_8_30_TER_QUI_XXX",
+      "ofertaId": "portugues",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        2,
+        4
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "a-definir",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 440
+    },
+    {
+      "id": "POR_8_30_SEG_QUA_XXX",
+      "ofertaId": "portugues",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        1,
+        3
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "a-definir",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 450
+    },
+    {
+      "id": "MAT_GRA_SEG_QUA_LUI",
+      "ofertaId": "matematica",
+      "publico": {
+        "nivel": "1º ano",
+        "idadeMin": 5,
+        "idadeMax": 7,
+        "rotulo": "Crianças de 5 a 7 anos – 1º ano"
+      },
+      "horaInicio": "Gravação",
+      "dias": [
+        1,
+        3
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "luisa-dresch",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 460
+    },
+    {
+      "id": "MAT_13_30_SEG_QUA_LUI",
+      "ofertaId": "matematica",
+      "publico": {
+        "nivel": "3º ano",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – 3º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        1,
+        3
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "luisa-dresch",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 470
+    },
+    {
+      "id": "MAT_13_30_SEG_QUA_FIL",
+      "ofertaId": "matematica",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        1,
+        3
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "filipe-carota",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 480
+    },
+    {
+      "id": "MAT_8_30_SEG_QUA_XXX",
+      "ofertaId": "matematica",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        1,
+        3
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "a-definir",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 490
+    },
+    {
+      "id": "MAT_8_30_TER_QUI_XXX",
+      "ofertaId": "matematica",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        2,
+        4
+      ],
+      "duracaoMinutos": 120,
+      "professorId": "a-definir",
+      "precoCentavos": 20400,
+      "ativo": true,
+      "ordem": 500
+    },
+    {
+      "id": "CIE_8_30_QUA_TIC",
+      "ofertaId": "ciencias",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "ticiano-castoldi",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 510
+    },
+    {
+      "id": "CIE_13_30_QUA_TIC",
+      "ofertaId": "ciencias",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        3
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "ticiano-castoldi",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 520
+    },
+    {
+      "id": "CIE_13_30_TER_EDI",
+      "ofertaId": "ciencias",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        2
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "edilaine-santichi",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 530
+    },
+    {
+      "id": "GEO_8_30_TER_TIC",
+      "ofertaId": "geografia",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        2
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "ticiano-castoldi",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 540
+    },
+    {
+      "id": "GEO_13_30_TER_TIC",
+      "ofertaId": "geografia",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        2
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "ticiano-castoldi",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 550
+    },
+    {
+      "id": "GEO_13_30_QUI_FIL",
+      "ofertaId": "geografia",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "filipe-carota",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 560
+    },
+    {
+      "id": "HIS_8_30_SEG_TIC",
+      "ofertaId": "historia",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "08:30",
+      "dias": [
+        1
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "ticiano-castoldi",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 570
+    },
+    {
+      "id": "HIS_13_30_SEG_TIC",
+      "ofertaId": "historia",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        1
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "ticiano-castoldi",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 580
+    },
+    {
+      "id": "HIS_13_30_QUI_FIL",
+      "ofertaId": "historia",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "13:30",
+      "dias": [
+        4
+      ],
+      "duracaoMinutos": 60,
+      "professorId": "filipe-carota",
+      "precoCentavos": 10200,
+      "ativo": true,
+      "ordem": 590
     }
   ],
   "series": [

@@ -1,7 +1,7 @@
 const splashBody = document.querySelector("[data-splash]");
 if (splashBody) {
   document.addEventListener("click", () => {
-    window.location.href = "inicio.html";
+    window.location.href = "menu.html";
   });
 }
 

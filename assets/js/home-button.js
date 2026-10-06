@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const isMenuPage = /(?:^|\/)menu(?:\.html)?$/i.test(window.location.pathname);
+  if (isMenuPage) return;
+
   const homeButton = document.createElement("a");
   homeButton.className = "home-button";
-  homeButton.href = "inicio.html";
+  homeButton.href = "menu.html";
   homeButton.setAttribute("aria-label", "Voltar para Início");
   homeButton.innerHTML = '<span aria-hidden="true">⌂</span> Início';
 

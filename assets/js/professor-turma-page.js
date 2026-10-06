@@ -61,7 +61,10 @@
       kicker.alt = "";
       
       const title = document.createElement("h1");
-      title.innerHTML = `${subjectName} <br><span class="subject-name" style="font-size: 0.6em; line-height: 1.2;">${professor.tratamento} ${professor.nome}</span>`;
+      const tratamento = (turma.ofertaId !== "ingles" && professor.tratamento === "Teacher")
+        ? "Professora"
+        : professor.tratamento;
+      title.innerHTML = `${subjectName} <br><span class="subject-name" style="font-size: 0.6em; line-height: 1.2;">${tratamento} ${professor.nome}</span>`;
       
       const meta = document.createElement("p");
       meta.className = "subject-meta";
@@ -69,7 +72,7 @@
       const diasNomes = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
       const diasStr = turma.dias ? turma.dias.map(d => diasNomes[d]).join(", ") : "";
 
-      const precoCentavos = data.precoCentavos ?? turma.precoCentavos;
+      const precoCentavos = turma.precoCentavos ?? data.precoCentavos;
       const precoFormatado = precoCentavos != null
         ? (precoCentavos / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
         : null;
@@ -86,20 +89,24 @@
       nav.setAttribute("aria-label", "Opções da turma");
 
       // 1. Conheça o professor
-      nav.innerHTML += `
-        <a class="subject-action" href="professor?professor=${professor.id}">
-          <b class="subject-icon"><img src="assets/icons/teacher-1.png" alt="" /></b>
-          <span>Conheça o(a) <em>professor(a)</em></span>
-        </a>
-      `;
+      if (professor.id !== "a-definir") {
+        nav.innerHTML += `
+          <a class="subject-action" href="professor?professor=${professor.id}">
+            <b class="subject-icon"><img src="assets/icons/teacher-1.png" alt="" /></b>
+            <span>Conheça o(a) <em>professor(a)</em></span>
+          </a>
+        `;
+      }
 
       // 2. Depoimentos
-      nav.innerHTML += `
-        <a class="subject-action" href="depoimentos/depoimentos-ingles?professor=${professor.id}">
-          <b class="subject-icon"><img src="assets/icons/heart.png" alt="" /></b>
-          <span><em>Depoimentos</em> das famílias</span>
-        </a>
-      `;
+      if (professor.id !== "a-definir") {
+        nav.innerHTML += `
+          <a class="subject-action" href="depoimentos/depoimentos-ingles?professor=${professor.id}">
+            <b class="subject-icon"><img src="assets/icons/heart.png" alt="" /></b>
+            <span><em>Depoimentos</em> das famílias</span>
+          </a>
+        `;
+      }
 
       // 3. Ouça a mensagem
       if (turma.audioEpecificoUrl) {
