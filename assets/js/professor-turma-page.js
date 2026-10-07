@@ -127,14 +127,13 @@
       `;
 
       // 5. Material Utilizado
-      if (turma.materialId) {
-        nav.innerHTML += `
-          <a class="subject-action" href="material-em-fase-escolha.html?turma=${turma.id}">
-            <b class="subject-icon"><img src="assets/icons/book.png" alt="" /></b>
-            <span>Confira o <em>material</em> utilizado</span>
-          </a>
-        `;
-      }
+      const materialHref = `material-em-fase-escolha.html?turma=${encodeURIComponent(turma.id)}`;
+      nav.innerHTML += `
+        <a class="subject-action" href="${materialHref}">
+          <b class="subject-icon"><img src="assets/icons/book.png" alt="" /></b>
+          <span>Confira o <em>material</em> utilizado</span>
+        </a>
+      `;
 
       // 6. Matrícula das aulas online
       nav.innerHTML += `
