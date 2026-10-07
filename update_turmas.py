@@ -43,21 +43,21 @@ turmas_data = []
 
 # Hardcoded for now based on the image/table logic
 turmas_info = [
-    (labels[0], 4, 6, "iniciante", "11:00", [1,2,3,4], 30, "mariana-lacerda", 10000),
-    (labels[1], 4, 6, "iniciante", "16:00", [1,2,3,4], 30, "karine-guillem", 10000),
-    (labels[2], 6, 8, "iniciante", "10:30", [1,2,3,4], 30, "mariana-lacerda", 10000),
-    (labels[3], 8, 10, "iniciante", "13:30", [1,2,3,4], 30, "tania-guillem", 10000),
-    (labels[4], 8, 10, "iniciante", "14:00", [1,2,3,4], 30, "tania-guillem", 10000),
-    (labels[5], 8, 10, "iniciante", "14:30", [1,2,3,4], 30, "tania-guillem", 10000),
-    (labels[6], 8, 12, "básico", "08:00", [1,2,3,4], 30, "mariana-lacerda", 10000),
-    (labels[7], 10, 14, "básico com gramática", "15:30", [1,2,3,4], 30, "karine-guillem", 10000),
-    (labels[8], 10, 14, "básico com gramática", "16:30", [1,2,3,4], 30, "karine-guillem", 10000),
-    (labels[9], 7, 10, "iniciante", "17:00", [1,2,3,4], 30, "karine-guillem", 10000),
-    (labels[10], None, None, "médio com gramática", "07:30", [1,2,3,4], 30, "mariana-lacerda", 10000),
-    (labels[11], None, None, "iniciante", "20:00", [4], 90, "rogerio-muniz", 5000),
-    (labels[12], None, None, "iniciante", "20:30", [3], 90, "rogerio-muniz", 5000),
-    (labels[13], None, None, "quase conversação", "16:00", [1], 60, "luisa-dresch", 5000),
-    (labels[14], None, None, "conversação avançada", "20:00", [2], 60, "luisa-dresch", 5000)
+    (labels[0], 4, 6, "iniciante", "11:00", [1,2,3,4], 30, "mariana-lacerda", 10200),
+    (labels[1], 4, 6, "iniciante", "16:00", [1,2,3,4], 30, "karine-guillem", 10200),
+    (labels[2], 6, 8, "iniciante", "10:30", [1,2,3,4], 30, "mariana-lacerda", 10200),
+    (labels[3], 8, 10, "iniciante", "13:30", [1,2,3,4], 30, "tania-guillem", 10200),
+    (labels[4], 8, 10, "iniciante", "14:00", [1,2,3,4], 30, "tania-guillem", 10200),
+    (labels[5], 8, 10, "iniciante", "14:30", [1,2,3,4], 30, "tania-guillem", 10200),
+    (labels[6], 8, 12, "básico", "08:00", [1,2,3,4], 30, "mariana-lacerda", 10200),
+    (labels[7], 10, 14, "básico com gramática", "15:30", [1,2,3,4], 30, "karine-guillem", 10200),
+    (labels[8], 10, 14, "básico com gramática", "16:30", [1,2,3,4], 30, "karine-guillem", 10200),
+    (labels[9], 7, 10, "iniciante", "17:00", [1,2,3,4], 30, "karine-guillem", 10200),
+    (labels[10], None, None, "médio com gramática", "07:30", [1,2,3,4], 30, "mariana-lacerda", 10200),
+    (labels[11], None, None, "iniciante", "20:00", [4], 90, "rogerio-muniz", 5400),
+    (labels[12], None, None, "iniciante", "20:30", [3], 90, "rogerio-muniz", 5400),
+    (labels[13], None, None, "quase conversação", "16:00", [1], 60, "luisa-dresch", 5400),
+    (labels[14], None, None, "conversação avançada", "20:00", [2], 60, "luisa-dresch", 5400)
 ]
 
 for i, t in enumerate(turmas_info):

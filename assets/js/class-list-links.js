@@ -10,6 +10,17 @@ document.querySelectorAll(".english-list tbody tr[data-href]").forEach((row) => 
     `Ver matrícula para a turma ${className}${time ? `, às ${time}` : ""}`
   );
 
+  const isBasicSubject = /(portugues|matematica|historia|geografia|ciencias)/i.test(window.location.pathname);
+  if (isBasicSubject) {
+    const audienceCell = row.querySelector(".audience");
+    if (audienceCell && !audienceCell.dataset.grade) {
+      const match = audienceCell.textContent.match(/([13579])º\s*ano/i);
+      if (match) {
+        audienceCell.dataset.grade = `${match[1]}º`;
+      }
+    }
+  }
+
   const open = () => {
     let target = destination;
     const hasHtmlExt = window.location.pathname.endsWith(".html");

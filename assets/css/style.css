@@ -328,11 +328,15 @@ button.cta {
 
 .grade-panel { text-align: center; }
 .online-mark {
-  color: var(--gold);
-  font-size: 38px;
-  font-weight: 900;
-  line-height: .65;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 8px 0 16px;
+}
+.online-mark img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 .grade-list {
   display: grid;
@@ -365,7 +369,8 @@ button.cta {
   text-align: center;
 }
 .schedule-card .online-mark { margin: 7px 0 14px; }
-.schedule-card .kicker { margin: 0 10px 9px; font-size: 11px; }
+.schedule-card .online-mark img { width: 52px; height: 52px; }
+.schedule-card .kicker { margin: 0 10px 9px; font-size: 12px; }
 .schedule-card h1 {
   margin-bottom: 17px;
   color: #b9823b;
@@ -388,7 +393,7 @@ button.cta {
   border-radius: 8px;
   background: #f1e2cd;
   color: #4c453a;
-  font-size: 9px;
+  font-size: 11px;
   text-transform: uppercase;
 }
 .schedule-table thead th:first-child {
@@ -410,8 +415,8 @@ button.cta {
 .schedule-table td strong,
 .schedule-table td span,
 .schedule-table td b { display: block; }
-.schedule-table td strong { font-size: 10px; line-height: 1.05; }
-.schedule-table td span { margin-top: 4px; font-size: 9px; }
+.schedule-table td strong { font-size: 11px; line-height: 1.1; }
+.schedule-table td span { margin-top: 4px; font-size: 10px; }
 .schedule-table td b {
   width: max-content;
   max-width: 100%;
@@ -420,12 +425,27 @@ button.cta {
   border-radius: 4px;
   background: #29502a;
   color: white;
-  font-size: 7px;
+  font-size: 8px;
   text-transform: uppercase;
 }
 .schedule-table .class-english { background: #c6d99b; }
 .schedule-table .class-tutoring { background: #f6c875; }
 .schedule-table .class-extra { background: #dcd4c7; }
+.schedule-table .class-extra-1 { background: #e0bbd3; }
+.schedule-table .class-extra-2 { background: #ffd3b6; }
+.schedule-table .class-extra-3 { background: #b5ead7; }
+.schedule-table .class-extra-4 { background: #c7ceea; }
+.schedule-table .class-extra-5 { background: #fed8b1; }
+.schedule-table .class-extra-6 { background: #e2f0cb; }
+.schedule-table .class-extra-7 { background: #ffdac1; }
+.schedule-table .class-extra-8 { background: #d7c0e8; }
+.schedule-table [class*="class-extra-"] a {
+  display: block;
+  margin: -7px -3px;
+  padding: 7px 3px;
+  color: inherit;
+  text-decoration: none;
+}
 .schedule-table .class-history { background: #ffb362; }
 .schedule-table .class-geography { background: #b9d9ec; }
 .schedule-table .class-science { background: #c6d99b; }
@@ -454,36 +474,42 @@ button.cta {
 .english-screen { padding: 16px 10px 24px; }
 .english-screen .topbar { margin: 0 12px 14px; }
 .english-hero {
-  border-radius: 26px 26px 0 0;
-  overflow: hidden;
-  line-height: 0;
+  display: none !important;
 }
-.english-hero img { display: block; width: 100%; height: auto; }
 .english-list-card {
-  padding: 16px 12px 20px;
-  border-radius: 0 0 26px 26px;
+  padding: 18px 12px 22px;
+  border-radius: 26px;
   background: rgba(255,250,242,.96);
   box-shadow: 0 16px 36px rgba(75,52,31,.16);
 }
 .english-list-card h1 {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #77502b;
   font-family: Georgia, serif;
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.05;
   text-align: center;
   text-transform: uppercase;
 }
 .english-list { width: 100%; border-collapse: collapse; table-layout: fixed; }
-.english-list th { padding: 7px 3px; border-bottom: 1px solid #dfcdbb; color: #76523a; font-size: 8px; text-align: left; text-transform: uppercase; }
-.english-list td { padding: 6px 3px; border-bottom: 1px solid #eadccc; color: #45392f; font-size: 8px; line-height: 1.1; vertical-align: middle; }
+.english-list th { padding: 8px 4px; border-bottom: 1px solid #dfcdbb; color: #76523a; font-size: 10px; text-align: left; text-transform: uppercase; }
+.english-list td { padding: 8px 4px; border-bottom: 1px solid #eadccc; color: #45392f; font-size: 11px; line-height: 1.25; vertical-align: middle; }
 .english-list tbody tr[data-href] { cursor: pointer; transition: background-color .18s ease; }
 .english-list tbody tr[data-href]:hover { background: rgba(184, 122, 66, .10); }
 .english-list tbody tr[data-href]:focus-visible { outline: 2px solid #b87a42; outline-offset: -2px; }
 .english-list th:nth-child(1) { width: 29%; }.english-list th:nth-child(2) { width: 12%; }.english-list th:nth-child(3) { width: 19%; }.english-list th:nth-child(4) { width: 12%; }.english-list th:nth-child(5) { width: 14%; }.english-list th:nth-child(6) { width: 14%; }
 .english-list .time { color: #76523a; font-size: 14px; font-weight: 800; text-align: center; }
-.english-list .audience { padding-left: 24px; position: relative; }
-.english-list .audience::before { content: "◉"; position: absolute; left: 5px; top: 50%; transform: translateY(-50%); color: #b87a42; font-size: 13px; }
+.english-list .audience { padding-left: 28px; position: relative; }
+.english-list .audience::before { content: "◉"; position: absolute; left: 6px; top: 50%; transform: translateY(-50%); color: #b87a42; font-size: 13px; }
+.english-list .audience[data-grade]::before {
+  content: attr(data-grade);
+  left: 3px;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: Georgia, serif;
+  color: #76523a;
+  letter-spacing: -1px;
+}
 .schedule-cta {
   display: inline-flex;
   justify-content: center;
@@ -646,15 +672,56 @@ textarea { min-height: 92px; resize: vertical; }
 
 /* Páginas individuais dos professores. */
 .teacher-frame { background-position: center top; }
-.teacher-screen { min-height: inherit; padding: 18px; justify-content: flex-end; background: linear-gradient(180deg, rgba(31,19,10,.08) 22%, rgba(31,19,10,.62)); }
-.teacher-screen .topbar { position: absolute; top: 18px; left: 18px; right: 18px; }
-.teacher-bio { align-self: flex-end; width: min(58%, 260px); max-height: min(64vh,590px); overflow-y: auto; padding: 16px; border-radius: 22px; background: rgba(255,250,242,.92); border: 1px solid rgba(255,255,255,.84); box-shadow: 0 18px 42px rgba(35,20,10,.28); backdrop-filter: blur(10px); }
+.teacher-screen {
+  position: relative;
+  min-height: inherit;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(180deg, rgba(31,19,10,.08) 22%, rgba(31,19,10,.62));
+}
+.teacher-screen .topbar {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  right: auto;
+  z-index: 10;
+}
+.teacher-bio {
+  align-self: flex-end;
+  width: min(60%, 270px);
+  max-height: calc(100% - 32px);
+  overflow-y: visible;
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(255,250,242,.92);
+  border: 1px solid rgba(255,255,255,.84);
+  box-shadow: 0 18px 42px rgba(35,20,10,.28);
+  backdrop-filter: blur(10px);
+}
 .teacher-bio h1 { margin-bottom: 9px; font-size: 23px; }
 .teacher-bio .kicker { margin-bottom: 6px; font-size: 10px; }
 .teacher-bio p { margin-bottom: 9px; color: #594331; font-size: 13px; line-height: 1.38; }
 .teacher-bio p:last-child { margin-bottom: 0; }
 .teacher-verse { font-weight: 800; color: var(--accent) !important; }
-.teacher-notice { width: 100%; margin-top: 12px; padding: 10px 14px; border-radius: 14px; background: rgba(255,250,242,.78); border: 1px solid rgba(255,255,255,.6); backdrop-filter: blur(8px); color: rgba(89,67,49,.8); font-size: 11px; line-height: 1.4; text-align: center; }
+.teacher-notice {
+  position: absolute;
+  bottom: 16px;
+  left: 14px;
+  width: min(35%, 150px);
+  margin-top: 0;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255,250,242,.85);
+  border: 1px solid rgba(255,255,255,.6);
+  backdrop-filter: blur(8px);
+  color: rgba(89,67,49,.85);
+  font-size: 10px;
+  line-height: 1.3;
+  text-align: left;
+  z-index: 5;
+}
 
 /* Apresentações em áudio dos professores. */
 .teacher-audio-link { min-height: 40px; margin-top: 4px; border-radius: 13px; font-size: 13px; box-shadow: 0 8px 18px rgba(143,95,53,.2); }

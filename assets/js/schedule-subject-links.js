@@ -4,6 +4,7 @@ const scheduleLinks = {
   Tutoria: "turmas/turmas-tutoria.html",
   Extra: "turmas/turmas-extra.html",
   Extras: "turmas/turmas-extra.html",
+  "Opções de Aulas Extras": "turmas/turmas-extra.html",
   História: "turmas/turmas-historia.html",
   Geografia: "turmas/turmas-geografia.html",
   Ciências: "turmas/turmas-ciencias.html",
