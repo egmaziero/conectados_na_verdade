@@ -60,17 +60,18 @@
         heading.textContent = "Para a Turma";
         content.append(kicker, heading);
 
-        if (turma.audioEpecificoUrl) {
+        const audioSrc = turma.audioEpecificoUrl || (professor && professor.audio && professor.audio.url);
+        if (audioSrc) {
           const audio = document.createElement("audio");
           audio.controls = true;
           audio.preload = "metadata";
-          audio.src = turma.audioEpecificoUrl;
+          audio.src = audioSrc;
           audio.style.marginTop = "20px";
           audio.style.width = "100%";
           content.append(audio);
         } else {
           const p = document.createElement("p");
-          p.textContent = "Nenhuma mensagem disponível no momento.";
+          p.textContent = "Nenhum áudio disponível no momento.";
           content.append(p);
         }
       }

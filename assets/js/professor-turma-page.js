@@ -100,40 +100,64 @@
 
       // 2. Depoimentos
       if (professor.id !== "a-definir") {
+        const depoHref = turma.ofertaId === "tutoria"
+          ? "depoimentos/depoimentos-tutoria.html"
+          : `depoimentos/depoimentos-ingles?professor=${encodeURIComponent(professor.id)}&materia=${encodeURIComponent(turma.ofertaId)}`;
         nav.innerHTML += `
-          <a class="subject-action" href="depoimentos/depoimentos-ingles?professor=${professor.id}">
+          <a class="subject-action" href="${depoHref}">
             <b class="subject-icon"><img src="assets/icons/heart.png" alt="" /></b>
             <span><em>Depoimentos</em> das famílias</span>
           </a>
         `;
       }
 
-      // 3. Ouça a mensagem
-      if (turma.audioEpecificoUrl) {
+      // 3. Escute um áudio deste professor (sempre visível)
+      nav.innerHTML += `
+        <a class="subject-action" href="turma-mensagem.html?turma=${encodeURIComponent(turma.id)}">
+          <b class="subject-icon"><img src="assets/icons/tutoring.png" alt="" /></b>
+          <span>Escute um <em>áudio</em> deste professor</span>
+        </a>
+      `;
+
+      // 4. Aulas online (Vídeos desabilitados temporariamente - Moodle em breve)
+      nav.innerHTML += `
+        <a class="subject-action is-disabled" href="javascript:void(0)" style="opacity: 0.55; cursor: default; pointer-events: none;">
+          <b class="subject-icon"><img src="assets/icons/video.png" alt="" /></b>
+          <span>Veja um trecho das <em>aulas online</em> <em style="font-weight: normal; opacity: 0.85;">(em breve)</em></span>
+        </a>
+      `;
+
+      // 5. Grade de Horários (para matérias básicas) ou Material Utilizado (demais matérias)
+      const basicSubjects = ["ciencias", "historia", "geografia", "matematica", "portugues"];
+      const scheduleByLevel = {
+        "1º ano": "horarios-1-ano.html",
+        "3º ano": "horarios-3-ano.html",
+        "5º ano": "horarios-5-ano.html",
+        "7º ano": "horarios-7-ano.html",
+        "9º ano": "horarios-9-ano.html"
+      };
+
+      if (basicSubjects.includes(turma.ofertaId)) {
+        const nivel = turma.publico?.nivel || "";
+        const scheduleHref = scheduleByLevel[nivel];
+        if (scheduleHref) {
+          nav.innerHTML += `
+            <a class="subject-action" href="${scheduleHref}">
+              <b class="subject-icon"><img src="assets/icons/calendar.png" alt="" /></b>
+              <span>Grade de <em>horários</em> (${nivel})</span>
+            </a>
+          `;
+        }
+      } else {
+        const hasMaterial = Boolean(turma.materialUrl);
+        const materialHref = turma.materialUrl || `material-em-fase-escolha.html?turma=${encodeURIComponent(turma.id)}`;
         nav.innerHTML += `
-          <a class="subject-action" href="turma-mensagem?turma=${turma.id}">
-            <b class="subject-icon"><img src="assets/icons/tutoring.png" alt="" /></b>
-            <span>Ouça uma <em>mensagem</em> para a turma</span>
+          <a class="subject-action" href="${materialHref}" ${hasMaterial ? 'target="_blank" rel="noopener"' : ''}>
+            <b class="subject-icon"><img src="assets/icons/book.png" alt="" /></b>
+            <span>Confira o <em>material</em> utilizado</span>
           </a>
         `;
       }
-
-      // 4. Aulas online (Vídeos gerais)
-      nav.innerHTML += `
-        <a class="subject-action" href="videos.html">
-          <b class="subject-icon"><img src="assets/icons/video.png" alt="" /></b>
-          <span>Veja um trecho das <em>aulas online</em></span>
-        </a>
-      `;
-
-      // 5. Material Utilizado
-      const materialHref = `material-em-fase-escolha.html?turma=${encodeURIComponent(turma.id)}`;
-      nav.innerHTML += `
-        <a class="subject-action" href="${materialHref}">
-          <b class="subject-icon"><img src="assets/icons/book.png" alt="" /></b>
-          <span>Confira o <em>material</em> utilizado</span>
-        </a>
-      `;
 
       // 6. Matrícula das aulas online
       nav.innerHTML += `

@@ -8,13 +8,17 @@ const iconSources = {
   "👶": "assets/icons/child-infant.png",
   "🧒": "assets/icons/child-fundamental-1.png",
   "👦": "assets/icons/child-fundamental-2.png",
-  "📚": "assets/icons/book.png",
+  "📚": "assets/icons/books-menu.png",
+  "📘": "assets/icons/book.png",
   "📖": "assets/icons/book.png",
   "📦": "assets/icons/book.png",
+  "🎯": "assets/icons/teacher-1.png",
+  "👤": "assets/icons/teacher-1.png",
   "🎧": "assets/icons/tutoring.png",
   "🎓": "assets/icons/course.png",
   "🖥️": "assets/icons/online-book.png",
-  "🏅": "assets/icons/badge.png"
+  "🏅": "assets/icons/badge.png",
+  "📅": "assets/icons/calendar.png"
 };
 
 document.querySelectorAll(".icon").forEach((icon) => {

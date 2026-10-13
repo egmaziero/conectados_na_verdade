@@ -513,15 +513,21 @@ button.cta {
 .schedule-cta {
   display: inline-flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.35;
   min-width: 205px;
-  margin-top: 10px;
-  padding: 10px 18px;
+  max-width: 100%;
+  margin-top: 12px;
+  padding: 12px 18px;
   border: 2px solid #d2ab61;
   border-radius: 999px;
   background: #21471f;
   color: #fffaf2;
   font-family: Georgia, serif;
-  font-size: 17px;
+  font-size: 15px;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 /* Páginas de apresentação das matérias */

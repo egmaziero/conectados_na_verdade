@@ -2,8 +2,11 @@
   const DATA_URL = "../assets/data/site-data.example.json";
 
   const professorId = new URLSearchParams(window.location.search).get("professor");
+  const materiaParam = new URLSearchParams(window.location.search).get("materia");
   const list = document.querySelector("[data-testimonials-list]");
   const title = document.querySelector("[data-testimonials-title]");
+
+  const normalizeStr = (s) => (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   const renderCard = (dep, professorNome) => {
     const card = document.createElement("article");
@@ -16,7 +19,8 @@
 
     const label = document.createElement("p");
     label.className = "testimonial-label";
-    label.innerHTML = `Depoimento de <b>${dep.materia}</b> com <b>${professorNome}</b>`;
+    const materiaNome = dep.materia ? (dep.materia.charAt(0).toUpperCase() + dep.materia.slice(1)) : "Aulas";
+    label.innerHTML = `Depoimento de <b>${materiaNome}</b> com <b>${professorNome}</b>`;
 
     const quote = document.createElement("blockquote");
 
@@ -26,7 +30,7 @@
       audio.preload = "metadata";
       const source = document.createElement("source");
       source.src = `../${dep.audioUrl}`;
-      source.type = dep.audioTipo;
+      source.type = dep.audioTipo || "audio/ogg";
       audio.append(source, "Seu navegador não suporta a reprodução de áudio.");
       const p = document.createElement("p");
       p.append(audio);
@@ -58,14 +62,23 @@
     })
     .then((data) => {
       const depoimentos = data.depoimentos ?? [];
-      const visíveis = professorId
-        ? depoimentos.filter((d) => d.professorId === professorId)
-        : depoimentos;
+      const visíveis = depoimentos.filter((d) => {
+        if (professorId && d.professorId !== professorId) return false;
+        if (materiaParam && d.materia && d.materia !== "geral") {
+          if (normalizeStr(d.materia) !== normalizeStr(materiaParam)) return false;
+        }
+        return true;
+      });
 
       if (professorId && visíveis.length) {
         const professor = data.professores.find((p) => p.id === professorId);
         const nomeProf = professor ? `${professor.tratamento} ${professor.nome}` : professorId;
-        title.textContent = `O que as famílias testemunham sobre as aulas de ${nomeProf}`;
+        if (materiaParam) {
+          const matLabel = materiaParam.charAt(0).toUpperCase() + materiaParam.slice(1);
+          title.textContent = `O que as famílias testemunham sobre as aulas de ${matLabel} com ${nomeProf}`;
+        } else {
+          title.textContent = `O que as famílias testemunham sobre as aulas de ${nomeProf}`;
+        }
       }
 
       if (!visíveis.length) {

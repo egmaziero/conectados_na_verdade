@@ -58,6 +58,33 @@
         verse.textContent = professor.versiculo;
         content.append(verse);
       }
+
+      if (professor.audio && professor.audio.url) {
+        const audioBox = document.createElement("div");
+        audioBox.className = "teacher-audio-box";
+        audioBox.style.marginTop = "16px";
+        audioBox.style.padding = "10px 14px";
+        audioBox.style.background = "rgba(255, 255, 255, 0.75)";
+        audioBox.style.borderRadius = "12px";
+        audioBox.style.border = "1px solid rgba(223, 207, 188, 0.6)";
+
+        const audioTitle = document.createElement("p");
+        audioTitle.style.fontWeight = "bold";
+        audioTitle.style.fontSize = "14px";
+        audioTitle.style.marginBottom = "8px";
+        audioTitle.style.color = "#4a3424";
+        audioTitle.textContent = "🎙️ Ouça a apresentação:";
+
+        const audioEl = document.createElement("audio");
+        audioEl.controls = true;
+        audioEl.preload = "metadata";
+        audioEl.src = professor.audio.url;
+        audioEl.style.width = "100%";
+        audioEl.style.display = "block";
+
+        audioBox.append(audioTitle, audioEl);
+        content.append(audioBox);
+      }
     })
     .catch(() => {
       const message = window.location.protocol === "file:"

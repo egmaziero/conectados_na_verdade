@@ -106,7 +106,7 @@
       "id": "ticiano-castoldi",
       "nome": "Ticiano Castoldi",
       "tratamento": "Professor",
-      "fotoUrl": null,
+      "fotoUrl": "assets/img/ticiano-castoldi.png",
       "rota": "professor.html?professor=ticiano-castoldi",
       "versiculo": "Porque dele, por meio dele e para ele são todas as coisas. A Ele, pois, a glória eternamente. Amém. Romanos 11:36",
       "biografia": [
@@ -114,13 +114,17 @@
         "Sou cristão e busco ensinar considerando a centralidade de Cristo e os valores bíblicos. Sou professor, palestrante e ministro cursos livres nas áreas de ciência e fé, história e teologia.",
         "Tenho formação em teologia (Seminário Teológico de Gamado), graduação em história (UNIVATES) e pós-graduação em geografia (Centro Universitário Barão de Mauá)."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/turmas/ciencias/ticiano-castoldi/cie_audio_ticiano.mp3",
+        "descricao": "Conheça o Professor Ticiano em sua própria voz."
+      }
     },
     {
       "id": "edilaine-santichi",
       "nome": "Edilaine Santichi Soares",
       "tratamento": "Professora",
-      "fotoUrl": null,
+      "fotoUrl": "assets/img/edilaine-santichi.png",
       "rota": "professor.html?professor=edilaine-santichi",
       "versiculo": "Salmos 104:24",
       "biografia": [
@@ -129,20 +133,28 @@
         "Formada em Biomedicina, após 10 anos atuando na área clínica me apaixonei pelo ensino de ciências.",
         "Atuo como professora de Ciências do projeto Conectados e busco ensinar através daquilo que Deus criou, pois, 'cheia está a terra das suas riquezas'."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Edilaine%20Santichi.ogg",
+        "descricao": "Conheça a Professora Edilaine em sua própria voz."
+      }
     },
     {
       "id": "luzimara-monte-alto",
       "nome": "Luzimara Monte Alto",
       "tratamento": "Professora",
-      "fotoUrl": null,
+      "fotoUrl": "assets/img/luzimara-monte-alto.png",
       "rota": "professor.html?professor=luzimara-monte-alto",
       "versiculo": "Marcos 16:15",
       "biografia": [
         "Sou cristã e tenho como propósito ensinar a língua Portuguesa para anunciar o amor de Jesus.",
         "Sou professora licenciada em Língua Portuguesa, inglesa e literatura desde 2010, pós graduada em metodologia de ensino de língua estrangeira e Portuguesa e tenho cursos de formação na área. Trabalho com aulas online desde 2020."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Luzimara%20Monte%20Alto.ogg",
+        "descricao": "Conheça a Professora Luzimara em sua própria voz."
+      }
     },
     {
       "id": "carolina-doege",
@@ -223,6 +235,18 @@
       "rota": null,
       "biografia": [
         "Professor(a) em processo de definição para esta turma."
+      ],
+      "ativo": true
+    },
+    {
+      "id": "andre-lima",
+      "nome": "André Lima",
+      "tratamento": "Mestre",
+      "fotoUrl": null,
+      "rota": "professor.html?professor=andre-lima",
+      "biografia": [
+        "Educador e formador de pais no curso Renovando a Mente do Educador.",
+        "Graduado e pós-graduado com ampla experiência na capacitação de famílias e educadores cristãos pela AECEP."
       ],
       "ativo": true
     }
@@ -691,6 +715,120 @@
       "estado": "MG",
       "audioUrl": "assets/audio/turmas/musica/danni-dallagnol/MUS_DEP_Tiago_MG.ogg",
       "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "ciências",
+      "tipo": "audio",
+      "autor": "Davi",
+      "estado": "BA",
+      "autorDesc": "aluno do 7º ano",
+      "audioUrl": "assets/audio/turmas/ciencias/depoimentos/cie_7ano_dep_aluno_davi_BA.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "ciências",
+      "tipo": "audio",
+      "autor": "Sara",
+      "estado": "SP",
+      "autorDesc": "aluna do 7º ano",
+      "audioUrl": "assets/audio/turmas/ciencias/depoimentos/cie_7ano_dep_sara_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "ciências",
+      "tipo": "audio",
+      "autor": "Sofia",
+      "estado": "RS",
+      "autorDesc": "aluna do 7º ano",
+      "audioUrl": "assets/audio/turmas/ciencias/depoimentos/cie_7ano_dep_sofia_RS.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "ciências",
+      "tipo": "audio",
+      "autor": "Pietro",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/ciencias/depoimentos/cie_dep_pietro_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "ciências",
+      "tipo": "audio",
+      "autor": "Eloá",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/ciencias/depoimentos/cie_dep_eloa_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "história",
+      "tipo": "audio",
+      "autor": "Davi",
+      "estado": "BA",
+      "autorDesc": "aluno do 7º ano",
+      "audioUrl": "assets/audio/turmas/historia/depoimentos/his_7ano_dep_aluno_davi_BA.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "história",
+      "tipo": "audio",
+      "autor": "Pietro",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/historia/depoimentos/his_dep_pietro_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "história",
+      "tipo": "audio",
+      "autor": "Eloá",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/historia/depoimentos/his_dep_eloa_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "geografia",
+      "tipo": "audio",
+      "autor": "Davi",
+      "estado": "BA",
+      "autorDesc": "aluno do 7º ano",
+      "audioUrl": "assets/audio/turmas/geografia/depoimentos/geo_7ano_dep_aluno_davi_BA.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "geografia",
+      "tipo": "audio",
+      "autor": "Sofia",
+      "estado": "RS",
+      "autorDesc": "aluna do 7º ano",
+      "audioUrl": "assets/audio/turmas/geografia/depoimentos/geo_7ano_dep_sofia_RS.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "geografia",
+      "tipo": "audio",
+      "autor": "Pietro",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/geografia/depoimentos/geo_dep_pietro_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "professorId": "ticiano-castoldi",
+      "materia": "geografia",
+      "tipo": "audio",
+      "autor": "Eloá",
+      "estado": "SP",
+      "audioUrl": "assets/audio/turmas/geografia/depoimentos/geo_dep_eloa_SP.ogg",
+      "audioTipo": "audio/ogg; codecs=opus"
     }
   ],
   "materias": [
@@ -892,6 +1030,27 @@
       "nome": "História",
       "materiaId": "historia",
       "rota": "turmas/turmas-historia.html",
+      "ativo": true
+    },
+    {
+      "id": "clube-leitura",
+      "nome": "Clube da Leitura",
+      "materiaId": "clube-leitura",
+      "rota": "turmas/turmas-clube-leitura.html",
+      "ativo": true
+    },
+    {
+      "id": "clube-adao",
+      "nome": "Clube de Adão",
+      "materiaId": "clube-adao",
+      "rota": "turmas/turmas-clube-adao.html",
+      "ativo": true
+    },
+    {
+      "id": "clube-eva",
+      "nome": "Clube de Eva",
+      "materiaId": "clube-eva",
+      "rota": "turmas/turmas-clube-eva.html",
       "ativo": true
     }
   ],
@@ -1302,10 +1461,11 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "fulvia-cortez",
-      "precoCentavos": 5000,
+      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 230,
-      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg",
+      "materialUrl": "assets/audio/turmas/espanhol/fulvia-cortez/material_espanhol.pdf"
     },
     {
       "id": "ESP_16_QUI_FUL",
@@ -1322,10 +1482,11 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "fulvia-cortez",
-      "precoCentavos": 5000,
+      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 240,
-      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg",
+      "materialUrl": "assets/audio/turmas/espanhol/fulvia-cortez/material_espanhol.pdf"
     },
     {
       "id": "ESP_8_SEX_FUL",
@@ -1342,10 +1503,11 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "fulvia-cortez",
-      "precoCentavos": 5000,
+      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 250,
-      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg",
+      "materialUrl": "assets/audio/turmas/espanhol/fulvia-cortez/material_espanhol.pdf"
     },
     {
       "id": "APA_17_TER_CAR",
@@ -1362,7 +1524,7 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "carolina-doege",
-      "precoCentavos": 5000,
+      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 260,
       "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg"
@@ -1382,7 +1544,7 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "carolina-doege",
-      "precoCentavos": 5000,
+      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 270,
       "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg"
@@ -1697,7 +1859,8 @@
       "professorId": "luzimara-monte-alto",
       "precoCentavos": 20400,
       "ativo": true,
-      "ordem": 430
+      "ordem": 430,
+      "materialUrl": "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#10"
     },
     {
       "id": "POR_8_30_TER_QUI_XXX",
@@ -1856,7 +2019,8 @@
       "professorId": "ticiano-castoldi",
       "precoCentavos": 10200,
       "ativo": true,
-      "ordem": 510
+      "ordem": 510,
+      "audioEpecificoUrl": "assets/audio/turmas/ciencias/ticiano-castoldi/cie_audio_ticiano.mp3"
     },
     {
       "id": "CIE_13_30_QUA_TIC",
@@ -1875,7 +2039,8 @@
       "professorId": "ticiano-castoldi",
       "precoCentavos": 10200,
       "ativo": true,
-      "ordem": 520
+      "ordem": 520,
+      "audioEpecificoUrl": "assets/audio/turmas/ciencias/ticiano-castoldi/cie_audio_ticiano.mp3"
     },
     {
       "id": "CIE_13_30_TER_EDI",
@@ -1894,7 +2059,8 @@
       "professorId": "edilaine-santichi",
       "precoCentavos": 10200,
       "ativo": true,
-      "ordem": 530
+      "ordem": 530,
+      "audioEpecificoUrl": "assets/audio/Edilaine%20Santichi.ogg"
     },
     {
       "id": "GEO_8_30_TER_TIC",
@@ -1913,7 +2079,8 @@
       "professorId": "ticiano-castoldi",
       "precoCentavos": 10200,
       "ativo": true,
-      "ordem": 540
+      "ordem": 540,
+      "audioEpecificoUrl": "assets/audio/turmas/geografia/ticiano-castoldi/geo_audio_ticiano.mp3"
     },
     {
       "id": "GEO_13_30_TER_TIC",
@@ -1932,7 +2099,8 @@
       "professorId": "ticiano-castoldi",
       "precoCentavos": 10200,
       "ativo": true,
-      "ordem": 550
+      "ordem": 550,
+      "audioEpecificoUrl": "assets/audio/turmas/geografia/ticiano-castoldi/geo_audio_ticiano.mp3"
     },
     {
       "id": "GEO_13_30_QUI_FIL",
@@ -1970,7 +2138,8 @@
       "professorId": "ticiano-castoldi",
       "precoCentavos": 10200,
       "ativo": true,
-      "ordem": 570
+      "ordem": 570,
+      "audioEpecificoUrl": "assets/audio/turmas/historia/ticiano-castoldi/his_audio_ticiano.mp3"
     },
     {
       "id": "HIS_13_30_SEG_TIC",
@@ -1989,7 +2158,8 @@
       "professorId": "ticiano-castoldi",
       "precoCentavos": 10200,
       "ativo": true,
-      "ordem": 580
+      "ordem": 580,
+      "audioEpecificoUrl": "assets/audio/turmas/historia/ticiano-castoldi/his_audio_ticiano.mp3"
     },
     {
       "id": "HIS_13_30_QUI_FIL",
@@ -2009,6 +2179,198 @@
       "precoCentavos": 10200,
       "ativo": true,
       "ordem": 590
+    },
+    {
+      "id": "CLE_17_AAA_xxx",
+      "ofertaId": "clube-leitura",
+      "publico": {
+        "nivel": "3º ano",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – 3º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CLE_16_AAA_xxx",
+      "ofertaId": "clube-leitura",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CLE_17_BBB_xxx",
+      "ofertaId": "clube-leitura",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CLE_16_BBB_xxx",
+      "ofertaId": "clube-leitura",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CLA_17_AAA_xxx",
+      "ofertaId": "clube-adao",
+      "publico": {
+        "nivel": "3º ano",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – 3º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CLA_16_AAA_xxx",
+      "ofertaId": "clube-adao",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CLA_17_BBB_xxx",
+      "ofertaId": "clube-adao",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CLA_16_BBB_xxx",
+      "ofertaId": "clube-adao",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CEV_17_AAA_xxx",
+      "ofertaId": "clube-eva",
+      "publico": {
+        "nivel": "3º ano",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – 3º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CEV_16_AAA_xxx",
+      "ofertaId": "clube-eva",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CEV_17_BBB_xxx",
+      "ofertaId": "clube-eva",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "CEV_16_BBB_xxx",
+      "ofertaId": "clube-eva",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
     }
   ],
   "series": [
