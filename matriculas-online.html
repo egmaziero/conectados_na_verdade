@@ -33,6 +33,22 @@
             </center>
           </div>
           <nav class="grid-menu">
+            <a class="menu-card" href="javascript:void(0)" id="btn-audio-matricula" style="background: linear-gradient(135deg, #fffcf7, #fbf2e5); border: 1.5px solid #d8b78f;">
+              <span class="icon">🎧</span>
+              <span>
+                <strong>Escute a explicação a respeito da matrícula</strong>
+                <span>Ouça as orientações em áudio</span>
+              </span>
+            </a>
+
+            <a class="menu-card" href="javascript:void(0)" id="btn-lives-projeto" style="background: linear-gradient(135deg, #fffcf7, #fbf2e5); border: 1.5px solid #d8b78f;">
+              <span class="icon">📅</span>
+              <span>
+                <strong>Agende-se para as lives de apresentação do projeto</strong>
+                <span>Janeiro: dias 06, 13, 20 e 27 • Google Meet</span>
+              </span>
+            </a>
+
             <a class="menu-card" href="formulario.html?modalidade=unica">
               <span class="icon"><img src="assets/icons/book.png" alt="" aria-hidden="true" /></span>
               <span>
@@ -76,5 +92,146 @@
         </div>
       </section>
     </main>
+
+    <!-- Modal Lives -->
+    <div id="modal-lives" class="custom-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-lives-title">
+      <div class="modal-backdrop"></div>
+      <div class="modal-card">
+        <button class="modal-close" aria-label="Fechar">&times;</button>
+        <div class="panel" style="margin-bottom: 12px; padding: 0; background: transparent; border: none; box-shadow: none;">
+          <p class="kicker">Apresentação do Projeto</p>
+          <h3 id="modal-lives-title" style="margin: 4px 0 10px; color: var(--ink);">Lives de Apresentação</h3>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--ink); text-align: left;">
+            <strong>JANEIRO</strong> teremos 4 datas para apresentação do projeto: dias <strong>06, 13, 20 e 27</strong>. Todos repetirão as mesmas apresentações das turmas de: tutoria, ensino infantil, fundamental I e fundamental II, nos horários abaixo:
+          </p>
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 12px 0; text-align: left; font-size: 13.5px; color: #4a3424;">
+          <li style="padding: 8px 12px; margin-bottom: 6px; background: rgba(143,95,53,0.08); border-radius: 10px; border-left: 3px solid #8f5f35;">
+            <strong>9 hrs</strong> – tutoria e material sem aulas online
+          </li>
+          <li style="padding: 8px 12px; margin-bottom: 6px; background: rgba(143,95,53,0.08); border-radius: 10px; border-left: 3px solid #8f5f35;">
+            <strong>10 hrs</strong> – ensino infantil e material com ou sem aulas online
+          </li>
+          <li style="padding: 8px 12px; margin-bottom: 6px; background: rgba(143,95,53,0.08); border-radius: 10px; border-left: 3px solid #8f5f35;">
+            <strong>13 hrs</strong> – fundamental I e material com aulas online
+          </li>
+          <li style="padding: 8px 12px; margin-bottom: 6px; background: rgba(143,95,53,0.08); border-radius: 10px; border-left: 3px solid #8f5f35;">
+            <strong>14 hrs</strong> – fundamental II e material com aulas online
+          </li>
+        </ul>
+        <a class="cta" href="https://meet.google.com/hbw-gsaw-bri" target="_blank" rel="noopener noreferrer" style="margin-top: 14px; text-decoration: none; text-align: center; display: block;">
+          🔗 Acessar link do Google Meet
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal Áudio Explicação Matrícula -->
+    <div id="modal-audio" class="custom-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-audio-title">
+      <div class="modal-backdrop"></div>
+      <div class="modal-card">
+        <button class="modal-close" aria-label="Fechar">&times;</button>
+        <div class="panel" style="margin-bottom: 12px; padding: 0; background: transparent; border: none; box-shadow: none;">
+          <p class="kicker">Orientações</p>
+          <h3 id="modal-audio-title" style="margin: 4px 0 10px; color: var(--ink);">Explicação a Respeito da Matrícula</h3>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--ink); text-align: left;">
+            Ouça a explicação da equipe sobre como funciona a matrícula, mensalidade e custos do projeto:
+          </p>
+        </div>
+        <div style="margin: 16px 0;">
+          <audio controls style="width: 100%;">
+            <source src="assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg" type="audio/ogg">
+            Seu navegador não suporta a reprodução de áudio.
+          </audio>
+        </div>
+        <p class="mini" style="font-size: 12px; color: #765f4c; text-align: center;">
+          Dúvidas adicionais poderão ser esclarecidas também nas lives de apresentação.
+        </p>
+      </div>
+    </div>
+
+    <style>
+      .custom-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+      }
+      .modal-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(40, 25, 12, 0.6);
+        backdrop-filter: blur(4px);
+      }
+      .modal-card {
+        position: relative;
+        z-index: 10;
+        background: #fffaf2;
+        border-radius: 24px;
+        padding: 24px 20px;
+        max-width: 400px;
+        width: 100%;
+        border: 1px solid rgba(143, 95, 53, 0.25);
+        box-shadow: 0 20px 50px rgba(50, 28, 12, 0.35);
+        animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      @keyframes modalPop {
+        from { opacity: 0; transform: scale(0.92); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .modal-close {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(143, 95, 53, 0.12);
+        color: #4a3424;
+        font-size: 20px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .modal-close:hover {
+        background: rgba(143, 95, 53, 0.22);
+      }
+    </style>
+
+    <script>
+      const btnLives = document.getElementById("btn-lives-projeto");
+      const modalLives = document.getElementById("modal-lives");
+      const btnAudio = document.getElementById("btn-audio-matricula");
+      const modalAudio = document.getElementById("modal-audio");
+
+      if (btnLives && modalLives) {
+        btnLives.addEventListener("click", () => { modalLives.style.display = "flex"; });
+        modalLives.querySelectorAll(".modal-close, .modal-backdrop").forEach(el => {
+          el.addEventListener("click", () => { modalLives.style.display = "none"; });
+        });
+      }
+      if (btnAudio && modalAudio) {
+        btnAudio.addEventListener("click", () => { modalAudio.style.display = "flex"; });
+        modalAudio.querySelectorAll(".modal-close, .modal-backdrop").forEach(el => {
+          el.addEventListener("click", () => {
+            const audio = modalAudio.querySelector("audio");
+            if (audio) audio.pause();
+            modalAudio.style.display = "none";
+          });
+        });
+      }
+    </script>
   </body>
 </html>

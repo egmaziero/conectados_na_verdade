@@ -6,7 +6,13 @@
   const list = document.querySelector("[data-testimonials-list]");
   const title = document.querySelector("[data-testimonials-title]");
 
-  const normalizeStr = (s) => (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const normalizeStr = (s) =>
+    (s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\b(e|a|de|da|do)\b/g, "")
+      .replace(/[^a-z0-9]/g, "");
 
   const renderCard = (dep, professorNome) => {
     const card = document.createElement("article");
@@ -74,7 +80,20 @@
         const professor = data.professores.find((p) => p.id === professorId);
         const nomeProf = professor ? `${professor.tratamento} ${professor.nome}` : professorId;
         if (materiaParam) {
-          const matLabel = materiaParam.charAt(0).toUpperCase() + materiaParam.slice(1);
+          const labels = {
+            "quimica-fisica": "Introdução à Química e Física",
+            "aprendendo-palavra": "Aprendendo a Palavra",
+            "hebraico": "Hebraico",
+            "espanhol": "Espanhol",
+            "musica": "Música",
+            "ingles": "Inglês",
+            "matematica": "Matemática",
+            "portugues": "Português",
+            "ciencias": "Ciências",
+            "historia": "História",
+            "geografia": "Geografia"
+          };
+          const matLabel = labels[materiaParam] || (materiaParam.charAt(0).toUpperCase() + materiaParam.slice(1));
           title.textContent = `O que as famílias testemunham sobre as aulas de ${matLabel} com ${nomeProf}`;
         } else {
           title.textContent = `O que as famílias testemunham sobre as aulas de ${nomeProf}`;

@@ -507,7 +507,7 @@
       "tipo": "texto",
       "autor": "Débora",
       "estado": "PI",
-      "texto": "Meu filho de 10 anos tem laudo de autismo e TDAH e faz aulas com a profª Luciana de introdução à física e química. Nunca pensei que ele teria tanto prazer em passar 2 horas em uma aula online. A prof é muito dedicada e criativa."
+      "texto": "Meu filho de 10 anos e tem laudo de autismo, TDAH, TPAC faz aulas com a prof Luciana de introdução à física e química. Nunca pensei que ele teria tanto prazer em passar 2 horas em uma aula online. A prof é muito dedicada e criativa."
     },
     {
       "professorId": "luciana-guimaraes",
@@ -515,7 +515,55 @@
       "tipo": "texto",
       "autor": "Viviane",
       "estado": "SP",
-      "texto": "Tem sido muito prazeroso acompanhar as descobertas da minha filha de 14 anos com a matéria de Introdução à Química e Física. Os vários experimentos tornam o aprendizado concreto e despertam a curiosidade científica com base bíblica."
+      "texto": "Quero compartilhar um pouco da experiência da minha filha de 14 anos, com a matéria de Introdução à Química e Física.\n\nTem sido muito prazeroso acompanhar as descobertas dela ao longo das aulas, principalmente porque os conteúdos não ficam apenas na teoria. Os vários experimentos tornam o aprendizado muito mais concreto e despertam nela aquela curiosidade de querer entender como e por que as coisas acontecem.\n\nTambém tem sido muito especial vê-la participando do projeto das Olimpíadas de Ciências. Percebo que isso tem ampliado ainda mais o interesse dela pela área e despertado um olhar mais investigativo, de fazer perguntas, buscar respostas e se encantar com a ciência.\n\nPara mim, uma das coisas mais bonitas é perceber que o conhecimento está sendo apresentado de uma forma que desperta nela o desejo de aprender. E isso tem sido muito significativo para nós."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Gesana",
+      "estado": "SP",
+      "texto": "As aulas de Física e Química são um show a parte: ciências e Deus caminhando juntas e mais o maravilhamento do meu filho de 8 anos. A prof Lu, sempre atenciosa e pronta a ouvir seus alunos."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Thamires",
+      "estado": "Rondônia",
+      "texto": "O Conectados com a Verdade foi um presente de Deus para a nossa família! Conhecemos o projeto em junho deste ano e ficamos encantados com a excelência, a dedicação e o carinho dos professores. Meu filho de 9 anos faz Matemática do 4º ano, Química e Italiano, e meu filho de 13 anos faz Química e Italiano. Somos muito gratos por todo o aprendizado e pela forma tão especial como têm contribuído para o crescimento dos nossos filhos!"
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Malu",
+      "estado": "PA",
+      "texto": "A professora Luciana é uma excelente profissional. Ela consegue transmitir conteúdos profundos e, ao mesmo tempo, torná-los extremamente interessantes e acessíveis às crianças. As aulas são dinâmicas e fazem conexões com situações do dia a dia, utilizando experiências, conversas e exemplos práticos que despertam a curiosidade e o interesse pelo aprendizado.\n\nNosso filho sai de cada encontro empolgado, cheio de novas descobertas e querendo aprender ainda mais. Ficamos muito satisfeitos com as aulas e recomendamos muito o trabalho da professora Luciana!"
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Lilian",
+      "estado": "PR",
+      "texto": "Gosto muito da aula de quimica e física, por mais que eu não entenda tudo completamente. O que mais gosto é de ver Deus na criação e como Ele fez as coisas perfeitamente."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Renata",
+      "estado": "SP",
+      "texto": "Muito satisfatório fazer parte deste projeto Conectados na Verdade. Benção de Deus.\n\nMeu filho hoje faz introdução química e física, e já se interessa bastante pelas matérias.\n\nFaz também música e está melhorando a cada dia.\n\nGlória a Deus por estas vidas tão capacitadas e dedicadas."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Aline",
+      "estado": "SP",
+      "texto": "Depoimento sobre as aulas: Nossa filha, 13 anos, cursa Hebraico e Química/Física com o Projeto Conectados com a Verdade e tem sido uma verdadeira benção! Sou grata a Deus por esse projeto, pois ele chegou como um presente do Senhor para a nossa família. As professoras são pessoas maravilhosas, dedicadas ao ensino e consagradas a Deus. O Ensino é 100% baseado nos valores e princípios cristãos. Peço a Deus que abençoe esse projeto para que ele só cresça e possa chegar a outras famílias. Nossa filha ama as aulas e tem aprendido muito. Os valores são acessíveis, o que faz com que mais famílias possam ser abençoadas. Que Deus guarde, proteja e guie os idealizadores do Conectados e aos mestres que tanto se dedicam. Nós com certeza recomendamos o projeto."
     },
     {
       "professorId": "luciana-guimaraes",
@@ -523,7 +571,15 @@
       "tipo": "texto",
       "autor": "Cathy",
       "estado": "Portugal",
-      "texto": "Minha filha entrou na turma de Química e Física e que surpresa foram estas aulas! Ela se interessou de tal maneira que passa o tempo inteiro falando sobre Química. A professora Luciana é uma bênção: as aulas são participativas, com paciência e preparo excelente."
+      "texto": "Coloquei minha filha logo no início do Projeto Conectados e não me arrependi. Minha menina tem 11 anos e há um ano faz Hebraico. Que aulas maravilhosas! A professora Margarete tem uma excelente experiência com crianças, tem o seu método de aprendizagem e as crianças aprendem de forma lúdica através de exercícios de repetição, do material e músicas. Minha filha absorveu muito bem o idioma. Este ano de 2026 ela entrou na turma de Química e Física e que surpresa foram estas aulas! Ela se interessou de tal maneira que passa o tempo inteiro falando sobre Química. A professora Luciana é uma benção também. Algo que eu gosto muito é que as professoras não fogem das perguntas e permitem a interação dos alunos. Elas têm muita paciência e preparo para dar aula para crianças. A mensalidade também é uma benção e me permitiu colocar minha filha nos cursos, eu não teria condições, no momento, de pagar aulas particulares. Enfim, estou muito satisfeita e pretendo continuar neste projeto que nasceu no coração de Deus. ❤️"
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
+      "autor": "Edilaine",
+      "estado": "SP",
+      "texto": "Matricular nosso filho no Projeto Conectados na Verdade foi uma das melhores decisões que já tomamos! Já estamos no nosso segundo ano por aqui e em 2026 ele está matriculado nas disciplinas de Geografia, História, Ciências e já descobrindo a Química e a Física de um jeito muito divertido, despertando sua curiosidade.\n\nO que também nos encanta é ver como os mestres são dedicados. Eles ensinam com um amor genuíno e olham de verdade para a individualidade dele. Saber que nosso filho está aprendendo tudo isso com os mesmos valores que cultivamos em casa, com um material cristocêntrico de verdade, nos trás uma paz imensa.\n\nVer nosso filho crescendo em conhecimento e também em comunhão e respeito, mostra que estamos no lugar certo. Pra quem busca uma instituição de valores e ensino de qualidade para os filhos, recomendamos de coração!"
     },
     {
       "professorId": "margaret-muniz",
@@ -571,7 +627,7 @@
       "tipo": "texto",
       "autor": "Edson",
       "estado": "RS",
-      "texto": "As aulas são um acompanhamento semanal que molda caráter e ensina a Palavra de Deus. A experiência de trocar ideias em grupo e aprofundar a fé com a professora Carolina tem sido fundamental para o crescimento da minha filha."
+      "texto": "As aulas são um acompanhamento semanal que molda caráter, permite que o Espírito Santo se apresente na Sua Palavra. Já fiz este conteúdo de forma individual com minha filha, mas percebo que nesta fase ela precisa de boas referências para se espelhar além da nossa casa. A experiência de trocar ideia sobre a sua religião de forma intencional com um grupo aumenta a sua fé e cria mais vontade de ter intimidade com Ele."
     },
     {
       "professorId": "fulvia-cortez",
@@ -1052,6 +1108,27 @@
       "materiaId": "clube-eva",
       "rota": "turmas/turmas-clube-eva.html",
       "ativo": true
+    },
+    {
+      "id": "latim",
+      "nome": "Latim",
+      "materiaId": "latim",
+      "rota": "turmas/turmas-latim.html",
+      "ativo": true
+    },
+    {
+      "id": "robotica",
+      "nome": "Robótica",
+      "materiaId": "robotica",
+      "rota": "turmas/turmas-robotica.html",
+      "ativo": true
+    },
+    {
+      "id": "xadrez",
+      "nome": "Xadrez",
+      "materiaId": "xadrez",
+      "rota": "turmas/turmas-xadrez.html",
+      "ativo": true
     }
   ],
   "turmas": [
@@ -1398,11 +1475,12 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luciana-guimaraes",
-      "precoCentavos": 10000,
+      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 200,
       "materialId": "infantil",
-      "audioEpecificoUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/int_qui_fis_audio_luciana.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/int_qui_fis_audio_luciana.ogg",
+      "materialUrl": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/material_fisica_quimica.pdf"
     },
     {
       "id": "IFQ_13_30_QUI_LUC",
@@ -1527,7 +1605,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 260,
-      "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg",
+      "materialUrl": "http://editoracrista.org/Alicerces/ap/4/Aluno/"
     },
     {
       "id": "APA_16_TER_CAR",
@@ -1547,7 +1626,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 270,
-      "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg",
+      "materialUrl": "http://editoracrista.org/Alicerces/ap/5/Aluno/"
     },
     {
       "id": "MUS_8_30_TER_DAN",
@@ -1567,7 +1647,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 280,
-      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4"
+      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4",
+      "materialUrl": "https://editoracrista.org/PrincipiosEmPauta/2unidades/2Aluno/"
     },
     {
       "id": "MUS_16_30_SEX_DAN",
@@ -1587,7 +1668,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 290,
-      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4"
+      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4",
+      "materialUrl": "https://editoracrista.org/PrincipiosEmPauta/2unidades/2Aluno/"
     },
     {
       "id": "MUS_17_QUA_DAN",
@@ -1607,7 +1689,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 300,
-      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4"
+      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4",
+      "materialUrl": "https://editoracrista.org/PrincipiosEmPauta/2unidades/1Aluno/"
     },
     {
       "id": "MUS_16_QUA_DAN",
@@ -1627,7 +1710,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 310,
-      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4"
+      "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4",
+      "materialUrl": "https://editoracrista.org/PrincipiosEmPauta/2unidades/1Aluno/"
     },
     {
       "id": "HEB_16_QUI_MAR",
@@ -1647,7 +1731,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 320,
-      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg",
+      "materialUrl": "https://drive.google.com/drive/folders/1n0gMwvfHVnL1XzzWk_dy9V3Cz3O3PL7N"
     },
     {
       "id": "HEB_17_QUI_MAR",
@@ -1667,7 +1752,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 330,
-      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg",
+      "materialUrl": "https://drive.google.com/drive/folders/1n0gMwvfHVnL1XzzWk_dy9V3Cz3O3PL7N"
     },
     {
       "id": "HEB_9_30_SEX_MAR",
@@ -1687,7 +1773,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 340,
-      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg",
+      "materialUrl": "https://drive.google.com/drive/folders/1ISYhRy9ZHd0AVE5UgOTTO5BG7IprNcDb"
     },
     {
       "id": "HEB_20_30_SEG_MAR",
@@ -1705,7 +1792,8 @@
       "precoCentavos": 5400,
       "ativo": true,
       "ordem": 350,
-      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg",
+      "materialUrl": "https://drive.google.com/drive/folders/1ISYhRy9ZHd0AVE5UgOTTO5BG7IprNcDb"
     },
     {
       "id": "HEB_8_30_SEX_MAR",
@@ -2359,6 +2447,198 @@
     {
       "id": "CEV_16_BBB_xxx",
       "ofertaId": "clube-eva",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "LAT_17_AAA_xxx",
+      "ofertaId": "latim",
+      "publico": {
+        "nivel": "3º ano",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – 3º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "LAT_16_AAA_xxx",
+      "ofertaId": "latim",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "LAT_17_BBB_xxx",
+      "ofertaId": "latim",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "LAT_16_BBB_xxx",
+      "ofertaId": "latim",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "ROB_17_AAA_xxx",
+      "ofertaId": "robotica",
+      "publico": {
+        "nivel": "3º ano",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – 3º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "ROB_16_AAA_xxx",
+      "ofertaId": "robotica",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "ROB_17_BBB_xxx",
+      "ofertaId": "robotica",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "ROB_16_BBB_xxx",
+      "ofertaId": "robotica",
+      "publico": {
+        "nivel": "9º ano",
+        "idadeMin": 13,
+        "idadeMax": 15,
+        "rotulo": "Crianças de 13 a 15 anos – 9º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "XAD_17_AAA_xxx",
+      "ofertaId": "xadrez",
+      "publico": {
+        "nivel": "3º ano",
+        "idadeMin": 7,
+        "idadeMax": 9,
+        "rotulo": "Crianças de 7 a 9 anos – 3º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "XAD_16_AAA_xxx",
+      "ofertaId": "xadrez",
+      "publico": {
+        "nivel": "5º ano",
+        "idadeMin": 9,
+        "idadeMax": 11,
+        "rotulo": "Crianças de 9 a 11 anos – 5º ano"
+      },
+      "horaInicio": "16:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "XAD_17_BBB_xxx",
+      "ofertaId": "xadrez",
+      "publico": {
+        "nivel": "7º ano",
+        "idadeMin": 11,
+        "idadeMax": 13,
+        "rotulo": "Crianças de 11 a 13 anos – 7º ano"
+      },
+      "horaInicio": "17:00",
+      "dias": [],
+      "duracaoMinutos": 60,
+      "professorId": "a-definir",
+      "precoCentavos": 5400,
+      "ativo": true
+    },
+    {
+      "id": "XAD_16_BBB_xxx",
+      "ofertaId": "xadrez",
       "publico": {
         "nivel": "9º ano",
         "idadeMin": 13,

@@ -10,8 +10,23 @@
     <script src="assets/js/home-button.js" defer></script>
     <script>
       const params = new URLSearchParams(window.location.search);
-      if (params.get("turma") === "POR_13_30_TER_QUI_LUZ") {
-        window.location.replace("https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#10");
+      const turma = params.get("turma");
+      const turmaMaterials = {
+        "POR_13_30_TER_QUI_LUZ": "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#10",
+        "HEB_16_QUI_MAR": "https://drive.google.com/drive/folders/1n0gMwvfHVnL1XzzWk_dy9V3Cz3O3PL7N",
+        "HEB_17_QUI_MAR": "https://drive.google.com/drive/folders/1n0gMwvfHVnL1XzzWk_dy9V3Cz3O3PL7N",
+        "HEB_9_30_SEX_MAR": "https://drive.google.com/drive/folders/1ISYhRy9ZHd0AVE5UgOTTO5BG7IprNcDb",
+        "HEB_20_30_SEG_MAR": "https://drive.google.com/drive/folders/1ISYhRy9ZHd0AVE5UgOTTO5BG7IprNcDb",
+        "MUS_8_30_TER_DAN": "https://editoracrista.org/PrincipiosEmPauta/2unidades/2Aluno/",
+        "MUS_16_30_SEX_DAN": "https://editoracrista.org/PrincipiosEmPauta/2unidades/2Aluno/",
+        "MUS_17_QUA_DAN": "https://editoracrista.org/PrincipiosEmPauta/2unidades/1Aluno/",
+        "MUS_16_QUA_DAN": "https://editoracrista.org/PrincipiosEmPauta/2unidades/1Aluno/",
+        "APA_17_TER_CAR": "http://editoracrista.org/Alicerces/ap/4/Aluno/",
+        "APA_16_TER_CAR": "http://editoracrista.org/Alicerces/ap/5/Aluno/",
+        "IFQ_8_30_QUI_LUC": "assets/audio/turmas/fisica-quimica/luciana-guimaraes/material_fisica_quimica.pdf"
+      };
+      if (turma && turmaMaterials[turma]) {
+        window.location.replace(turmaMaterials[turma]);
       }
     </script>
   </head>
