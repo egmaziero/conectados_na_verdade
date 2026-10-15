@@ -885,6 +885,67 @@
       "estado": "SP",
       "audioUrl": "assets/audio/turmas/geografia/depoimentos/geo_dep_eloa_SP.ogg",
       "audioTipo": "audio/ogg; codecs=opus"
+    },
+    {
+      "materia": "geral",
+      "tipo": "audio",
+      "autor": "Mãe Educadora",
+      "autorDesc": "3 filhos",
+      "estado": "Família Conectados na Verdade",
+      "audioUrl": "assets/audio/depoimentos/depoimento-01.ogg",
+      "audioTipo": "audio/ogg; codecs=opus",
+      "texto": "Como o Senhor nos guiou desde o início do homeschooling na pandemia até a resposta de oração ao vermos a família crescer: um ensino cristocêntrico de excelência, com rotina, autonomia para as crianças e professores consagrados a Deus."
+    },
+    {
+      "materia": "matemática e ciências",
+      "tipo": "audio",
+      "autor": "Mãe Educadora",
+      "autorDesc": "2 filhos",
+      "estado": "Ensino Domiciliar",
+      "audioUrl": "assets/audio/depoimentos/depoimento-02.ogg",
+      "audioTipo": "audio/ogg; codecs=opus",
+      "texto": "Para nós foi um grande refrigério. Com as crianças avançando nos estudos, encontramos no Conectados na Verdade o suporte ideal em Matemática, Inglês, Física, Química e tantas disciplinas à luz da vontade do Senhor."
+    },
+    {
+      "materia": "geral",
+      "tipo": "audio",
+      "autor": "Mãe Educadora",
+      "autorDesc": "3º ano no projeto",
+      "estado": "Educação por Princípios",
+      "audioUrl": "assets/audio/depoimentos/depoimento-03.ogg",
+      "audioTipo": "audio/ogg; codecs=opus",
+      "texto": "A sobrecarga de preparar aulas do Ensino Fundamental e adaptar materiais sem cosmovisão bíblica era exaustiva. O Conectados na Verdade trouxe materiais estruturados, mestres capacitados e paz para o nosso lar. Já estamos no 3º ano no projeto!"
+    },
+    {
+      "materia": "geral",
+      "tipo": "audio",
+      "autor": "Mãe Educadora",
+      "autorDesc": "Homeschooler há 7 anos",
+      "estado": "Comunidade Cristã",
+      "audioUrl": "assets/audio/depoimentos/depoimento-04.ogg",
+      "audioTipo": "audio/ogg; codecs=opus",
+      "texto": "Após anos buscando um método equilibrado e a chegada do segundo filho, o projeto abriu portas: minha filha de 11 anos ama as aulas, estuda com autonomia e interage com colegas de mesmos princípios por todo o Brasil."
+    },
+    {
+      "materia": "geral",
+      "tipo": "audio",
+      "autor": "Mãe Educadora e Professora",
+      "autorDesc": "2 filhos",
+      "estado": "Ensino Domiciliar",
+      "audioUrl": "assets/audio/depoimentos/depoimento-05.ogg",
+      "audioTipo": "audio/ogg; codecs=opus",
+      "texto": "Sendo professora e mãe educadora desde 2021, a rotina era árdua e faltava tempo devocional e descanso. No Conectados encontrei mestres que priorizam o caráter de Cristo, avaliações pedagógicas completas e segurança espiritual para meus filhos."
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "audio",
+      "autor": "Débora",
+      "autorDesc": "Família com 4 filhos",
+      "estado": "PI",
+      "audioUrl": "assets/audio/depoimentos/depoimento-06.ogg",
+      "audioTipo": "audio/ogg; codecs=opus",
+      "texto": "Com 4 filhos em casa, meu receio era como meu filho de 9 anos (com laudo de TEA, TDAH e TPAC) acompanharia as aulas online. Ele se apaixonou pela professora e pela matéria de Introdução à Física e Química, focado e aprendendo tudo à luz da Palavra!"
     }
   ],
   "materias": [
