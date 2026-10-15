@@ -31,38 +31,173 @@
             </center>
           </div>
           <nav class="grid-menu">
-            <a class="menu-card" href="matricula-individual.html"
-              ><span class="icon">🛒</span
-              ><span
-                ><strong>Matrícula individual</strong
-                ><span><span class="linkish">R$150,00</span></span></span
-              ></a
-            >
-            <a class="menu-card" href="matricula-familia.html"
-              ><span class="icon">👨‍👩‍👧‍👦</span
-              ><span
-                ><strong>Matrícula para toda a família</strong
-                ><span><span class="linkish">R$300,00</span></span></span
-              ></a
-            >
-            <a class="menu-card" href="depoimentos.html"
-              ><span class="icon">💛</span
-              ><span
-                ><strong>Depoimentos</strong
-                ><span>Conheça experiências de outras famílias</span></span
-              ></a
-            >
-            <a class="menu-card" href="depoimentos.html"
-              ><span
-                ><strong
-                  >Obs.: Caso tenha dúvidas, clique em uma opção ou avance para
-                  o formulário de matrícula.</strong
-                ></span
-              ></a
-            >
+            <a class="menu-card" href="javascript:void(0)" id="btn-audio-matricula" style="background: linear-gradient(135deg, #fffcf7, #fbf2e5); border: 1.5px solid #d8b78f;">
+              <span class="icon"><img src="assets/icons/audio.png" alt="" aria-hidden="true" /></span>
+              <span>
+                <strong>Escute a explicação a respeito da matrícula</strong>
+                <span>Ouça as orientações em áudio</span>
+              </span>
+            </a>
+
+            <a class="menu-card" href="javascript:void(0)" id="btn-lives-projeto" style="background: linear-gradient(135deg, #fffcf7, #fbf2e5); border: 1.5px solid #d8b78f;">
+              <span class="icon"><img src="assets/icons/calendar.png" alt="" aria-hidden="true" /></span>
+              <span>
+                <strong>Agende-se o Plantão de dúvidas</strong>
+                <span>Novembro: dias 18 e 25 • Google Meet</span>
+              </span>
+            </a>
+
+            <a class="menu-card" href="javascript:void(0)" id="btn-planos-valores" style="background: linear-gradient(135deg, #fffcf7, #fbf2e5); border: 1.5px solid #d8b78f;">
+              <span class="icon"><img src="assets/icons/badge.png" alt="" aria-hidden="true" /></span>
+              <span>
+                <strong>Conheça os planos de valores</strong>
+                <span>Tabela de matérias, valores e descontos</span>
+              </span>
+            </a>
+
+            <a class="menu-card" href="matricula-individual.html">
+              <span class="icon"><img src="assets/icons/matricula.png" alt="" aria-hidden="true" /></span>
+              <span>
+                <strong>Matrícula individual</strong>
+                <span><span class="linkish">R$150,00</span></span>
+              </span>
+            </a>
+
+            <a class="menu-card" href="matricula-familia.html">
+              <span class="icon"><img src="assets/icons/family.png" alt="" aria-hidden="true" /></span>
+              <span>
+                <strong>Matrícula para toda a família</strong>
+                <span><span class="linkish">R$300,00</span></span>
+              </span>
+            </a>
+
+            <a class="menu-card" href="depoimentos.html">
+              <span class="icon"><img src="assets/icons/heart.png" alt="" aria-hidden="true" /></span>
+              <span>
+                <strong>Depoimentos</strong>
+                <span>Conheça experiências de outras famílias</span>
+              </span>
+            </a>
+
+            <a class="menu-card" href="formulario.html">
+              <span>
+                <strong>Obs.: Caso tenha dúvidas, clique em uma opção ou avance para o formulário de matrícula.</strong>
+              </span>
+            </a>
           </nav>
+
+          <footer style="margin-top: auto; padding-top: 24px; text-align: center;">
+            <p class="mini" style="font-size: 11.5px; line-height: 1.45; color: var(--muted); margin: 0; padding: 0 10px;">
+              As informações matrículas deste site estarão oficialmente prontos a partir do dia 01 de dezembro de 2026
+            </p>
+          </footer>
         </div>
       </section>
     </main>
+
+    <!-- Modal Plantão de Dúvidas (Lives) -->
+    <div id="modal-lives" class="custom-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-lives-title">
+      <div class="modal-backdrop"></div>
+      <div class="modal-card">
+        <button class="modal-close" aria-label="Fechar">&times;</button>
+        <div class="panel" style="margin-bottom: 12px; padding: 0; background: transparent; border: none; box-shadow: none;">
+          <p class="kicker">Apresentação do Projeto</p>
+          <h3 id="modal-lives-title" style="margin: 4px 0 10px; color: var(--ink);">Plantão de Dúvidas</h3>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--ink); text-align: left;">
+            <strong>NOVEMBRO</strong> teremos 2 datas para apresentação do projeto, dias <strong>18 e 25</strong> nos horários abaixo:
+          </p>
+        </div>
+        <ul style="list-style: none; padding: 0; margin: 12px 0; text-align: left; font-size: 13.5px; color: #4a3424;">
+          <li style="padding: 10px 14px; margin-bottom: 8px; background: rgba(143,95,53,0.08); border-radius: 10px; border-left: 3px solid #8f5f35;">
+            <strong>10:30 hrs</strong> – tutoria e material sem aulas online
+          </li>
+          <li style="padding: 10px 14px; margin-bottom: 8px; background: rgba(143,95,53,0.08); border-radius: 10px; border-left: 3px solid #8f5f35;">
+            <strong>13:30 hrs</strong> – material com as aulas online
+          </li>
+        </ul>
+        <a class="cta" href="https://meet.google.com/hbw-gsaw-bri" target="_blank" rel="noopener noreferrer" style="margin-top: 14px; text-decoration: none; text-align: center; display: block;">
+          🔗 Acessar link do Google Meet
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal Planos de Valores -->
+    <div id="modal-planos" class="custom-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-planos-title">
+      <div class="modal-backdrop"></div>
+      <div class="modal-card" style="max-width: 440px; padding: 20px 16px; max-height: 90vh; overflow-y: auto;">
+        <button class="modal-close" aria-label="Fechar">&times;</button>
+        <div class="panel" style="margin-bottom: 12px; padding: 0; background: transparent; border: none; box-shadow: none;">
+          <p class="kicker">Tabela de Investimento</p>
+          <h3 id="modal-planos-title" style="margin: 4px 0 10px; color: var(--ink);">Plano de Matérias e Valores</h3>
+          <p style="font-size: 13.5px; line-height: 1.45; color: var(--ink); text-align: left;">
+            Confira abaixo a relação de matérias, carga horária, valores e promoções:
+          </p>
+        </div>
+        <div style="margin: 12px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.12); border: 1px solid rgba(143,95,53,0.2);">
+          <a href="assets/img/plano-materias.png" target="_blank" rel="noopener noreferrer" title="Toque para ampliar">
+            <img src="assets/img/plano-materias.png" alt="Plano de Matérias - Conectados na Verdade" style="width: 100%; height: auto; display: block;" />
+          </a>
+        </div>
+        <a class="cta" href="assets/img/plano-materias.png" target="_blank" rel="noopener noreferrer" style="margin-top: 12px; text-decoration: none; text-align: center; display: block;">
+          🔍 Abrir tabela em tamanho real
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal Áudio Explicação Matrícula -->
+    <div id="modal-audio" class="custom-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-audio-title">
+      <div class="modal-backdrop"></div>
+      <div class="modal-card">
+        <button class="modal-close" aria-label="Fechar">&times;</button>
+        <div class="panel" style="margin-bottom: 12px; padding: 0; background: transparent; border: none; box-shadow: none;">
+          <p class="kicker">Orientações</p>
+          <h3 id="modal-audio-title" style="margin: 4px 0 10px; color: var(--ink);">Explicação a Respeito da Matrícula</h3>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--ink); text-align: left;">
+            Ouça a explicação da equipe sobre como funciona a matrícula, mensalidade e custos do projeto:
+          </p>
+        </div>
+        <div style="margin: 16px 0;">
+          <audio controls style="width: 100%;">
+            <source src="assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg" type="audio/ogg">
+            Seu navegador não suporta a reprodução de áudio.
+          </audio>
+        </div>
+        <p class="mini" style="font-size: 12px; color: #765f4c; text-align: center;">
+          Dúvidas adicionais poderão ser esclarecidas também nas lives de apresentação.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const btnLives = document.getElementById("btn-lives-projeto");
+      const modalLives = document.getElementById("modal-lives");
+      const btnAudio = document.getElementById("btn-audio-matricula");
+      const modalAudio = document.getElementById("modal-audio");
+      const btnPlanos = document.getElementById("btn-planos-valores");
+      const modalPlanos = document.getElementById("modal-planos");
+
+      if (btnLives && modalLives) {
+        btnLives.addEventListener("click", () => { modalLives.style.display = "flex"; });
+        modalLives.querySelectorAll(".modal-close, .modal-backdrop").forEach(el => {
+          el.addEventListener("click", () => { modalLives.style.display = "none"; });
+        });
+      }
+      if (btnAudio && modalAudio) {
+        btnAudio.addEventListener("click", () => { modalAudio.style.display = "flex"; });
+        modalAudio.querySelectorAll(".modal-close, .modal-backdrop").forEach(el => {
+          el.addEventListener("click", () => {
+            const audio = modalAudio.querySelector("audio");
+            if (audio) audio.pause();
+            modalAudio.style.display = "none";
+          });
+        });
+      }
+      if (btnPlanos && modalPlanos) {
+        btnPlanos.addEventListener("click", () => { modalPlanos.style.display = "flex"; });
+        modalPlanos.querySelectorAll(".modal-close, .modal-backdrop").forEach(el => {
+          el.addEventListener("click", () => { modalPlanos.style.display = "none"; });
+        });
+      }
+    </script>
   </body>
 </html>

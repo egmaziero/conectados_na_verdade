@@ -159,7 +159,15 @@
         `;
       }
 
-      // 6. Matrícula das aulas online
+      // 6. Conheça os planos de valores
+      nav.innerHTML += `
+        <a class="subject-action" href="javascript:void(0)" id="btn-planos-valores">
+          <b class="subject-icon"><img src="assets/icons/badge.png" alt="" /></b>
+          <span>Conheça os <em>planos de valores</em></span>
+        </a>
+      `;
+
+      // 7. Matrícula das aulas online
       nav.innerHTML += `
         <a class="subject-action subject-schedule" href="matriculas-online.html?turma=${encodeURIComponent(turma.id)}">
           <b class="subject-icon"><img src="assets/icons/cart-round.png" alt="" /></b>
@@ -169,6 +177,15 @@
 
       subjectCard.append(nav);
       content.append(subjectCard);
+
+      const btnPlanos = document.getElementById("btn-planos-valores");
+      const modalPlanos = document.getElementById("modal-planos");
+      if (btnPlanos && modalPlanos) {
+        btnPlanos.addEventListener("click", () => { modalPlanos.style.display = "flex"; });
+        modalPlanos.querySelectorAll(".modal-close, .modal-backdrop").forEach(el => {
+          el.addEventListener("click", () => { modalPlanos.style.display = "none"; });
+        });
+      }
     })
     .catch((err) => {
       console.error(err);
