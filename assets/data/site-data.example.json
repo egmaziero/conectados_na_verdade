@@ -45,7 +45,11 @@
         "Sou cristã desde que nasci, alfabetizada em inglês e graduanda em biomedicina. Tive a oportunidade de vivenciar a primeira infância na Inglaterra, aprendendo o inglês como primeira língua.",
         "Amo ensinar e estou animada para contribuir com o aprendizado da língua inglesa."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Teacher%20Karine%20Guillem.opus",
+        "descricao": "Conheça a Teacher Karine em sua própria voz."
+      }
     },
     {
       "id": "tania-guillem",
@@ -61,7 +65,11 @@
         "Por este tempo, obtive minha certificação de proficiência da Universidade de Cambridge em UK.",
         "Amo trabalhar com o ensino da Língua Inglesa com os pequenos e acredito no grande potencial que cada um deles tem para a aquisição de um novo idioma."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Teacher%20T%C3%A2nia%20Guillem.opus",
+        "descricao": "Conheça a Teacher Tânia em sua própria voz."
+      }
     },
     {
       "id": "rogerio-muniz",
@@ -74,7 +82,11 @@
         "Lecionando  desde 2013, para alunos de diferentes faixas etárias em diferentes estados.",
         "Marido da professora de hebraico Margaret, pai e avô. Missionário na JOCUM desde 1992 e servido (em tempo parcial) ao Movimento Global de Tradução da Bíblia."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Teacher%20Rog%C3%A9rio%20Gomes%20Muniz.opus",
+        "descricao": "Conheça o Teacher Rogério em sua própria voz."
+      }
     },
     {
       "id": "luisa-dresch",
@@ -169,7 +181,11 @@
         "Formada em Odontologia mas, como sempre quis ser professora, fiz mestrado e doutorado com o objetivo de aprender sobre a arte do ensino e sobre a pesquisa na área acadêmica.",
         "Sou professora de curso técnico e tutora em AVA na área da saúde. Trabalho com as crianças na igreja desde meus 12 anos, tendo hoje também ensino e liderança com os jovens da igreja."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Professora%20Carolina%20Doege.opus",
+        "descricao": "Conheça a Professora Carolina em sua própria voz."
+      }
     },
     {
       "id": "danni-dallagnol",
@@ -197,7 +213,11 @@
         "Margaret é voluntária da JOCUM há mais de 35 anos, dedicando-se com fervor tanto no Brasil quanto no exterior. Casada e mãe de família, tem um desejo ardente de ver a palavra de Deus acessível aos povos em sua língua materna.",
         "Margaret agora é Mestre em Linguística Aplicada à Tradução Bíblica pela University of the Nations. Ela concentra seus esforços no ministério da tradução oral da Bíblia para uma comunidade no Mato Grosso."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Professora%20Morah%20Margaret%20Muniz.opus",
+        "descricao": "Conheça a Professora Margaret em sua própria voz."
+      }
     },
     {
       "id": "luciana-guimaraes",
@@ -211,7 +231,11 @@
         "Sou serva do Altíssimo, esposa, mãe de 4 filhos. Há mais de 15 anos me dedico à vocação de ensinar, somando vivência no ensino regular e no ministério infantil. Atualmente, leciono Ciências, Química e Física online para alunos a partir de 8 anos utilizando recursos que promovem a iniciação científica através do deslumbramento.",
         "Praticante da AEP, junto a fé e rigor acadêmico através da minha formação em Pedagogia, Licenciatura em Química, Tecnologia de Alimentos e estudos Teológicos pela Escola Charles Spurgeon."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Luciana%20Guimar%C3%A3es.opus",
+        "descricao": "Conheça a Professora Luciana em sua própria voz."
+      }
     },
     {
       "id": "fulvia-cortez",
@@ -225,7 +249,11 @@
         "Pós-graduada em língua e literatura espanhola pela Universidade Complutense de Madrid e Licenciada em Letras – Português e Espanhol pela Unesp. Trabalho também com traduções e cursos preparatórios para exames de certificação e proficiência em Espanhol.",
         "Sou cristã vocacionada ao ensino, seguindo as trilhas do Senhor. Moro em São José do Rio Preto/SP. Sou casada e mãe de um casal de filhos."
       ],
-      "ativo": true
+      "ativo": true,
+      "audio": {
+        "url": "assets/audio/Fulvia%20Cortez.opus",
+        "descricao": "Conheça a Professora Fúlvia em sua própria voz."
+      }
     },
     {
       "id": "a-definir",

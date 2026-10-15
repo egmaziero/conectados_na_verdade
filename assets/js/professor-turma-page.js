@@ -15,7 +15,7 @@
   if (!turmaId) {
     const message = window.location.protocol === "file:"
       ? "A prévia por arquivo local não preserva o parâmetro. Abra por HTTP."
-      : "Use um link como professor-turma?turma=ING_11_SEG_A_QUI_MAR.";
+      : "Use um link como professor-turma.html?turma=ING_11_SEG_A_QUI_MAR.";
     showMessage("Turma não informada", message);
     return;
   }
@@ -91,7 +91,7 @@
       // 1. Conheça o professor
       if (professor.id !== "a-definir") {
         nav.innerHTML += `
-          <a class="subject-action" href="professor?professor=${professor.id}">
+          <a class="subject-action" href="professor.html?professor=${encodeURIComponent(professor.id)}">
             <b class="subject-icon"><img src="assets/icons/teacher-1.png" alt="" /></b>
             <span>Conheça o(a) <em>professor(a)</em></span>
           </a>
@@ -102,7 +102,7 @@
       if (professor.id !== "a-definir") {
         const depoHref = turma.ofertaId === "tutoria"
           ? "depoimentos/depoimentos-tutoria.html"
-          : `depoimentos/depoimentos-ingles?professor=${encodeURIComponent(professor.id)}&materia=${encodeURIComponent(turma.ofertaId)}`;
+          : `depoimentos/depoimentos-ingles.html?professor=${encodeURIComponent(professor.id)}&materia=${encodeURIComponent(turma.ofertaId)}`;
         nav.innerHTML += `
           <a class="subject-action" href="${depoHref}">
             <b class="subject-icon"><img src="assets/icons/heart.png" alt="" /></b>

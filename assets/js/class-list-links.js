@@ -23,12 +23,7 @@ document.querySelectorAll(".english-list tbody tr[data-href]").forEach((row) => 
 
   const open = () => {
     let target = destination;
-    const hasHtmlExt = window.location.pathname.endsWith(".html");
-    if (hasHtmlExt) {
-      target = target.replace(/^([^?]+)/, (p) => (p.endsWith(".html") ? p : `${p}.html`));
-    } else {
-      target = target.replace(/\.html(\?|$)/, "$1");
-    }
+    target = target.replace(/^([^?#]+)/, (p) => (p.endsWith(".html") ? p : `${p}.html`));
     window.location.href = target;
   };
 

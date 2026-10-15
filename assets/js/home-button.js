@@ -9,9 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const isMenuPage = /(?:^|\/)menu(?:\.html)?$/i.test(window.location.pathname);
   if (isMenuPage) return;
 
+  const isSubdir = window.location.pathname.includes("/depoimentos/") ||
+                   window.location.pathname.includes("/turmas/") ||
+                   window.location.pathname.includes("/materias/") ||
+                   window.location.pathname.includes("/institucional/");
+
   const homeButton = document.createElement("a");
   homeButton.className = "home-button";
-  homeButton.href = "menu.html";
+  homeButton.href = isSubdir ? "../menu.html" : "menu.html";
   homeButton.setAttribute("aria-label", "Voltar para Início");
   homeButton.innerHTML = '<span aria-hidden="true">⌂</span> Início';
 

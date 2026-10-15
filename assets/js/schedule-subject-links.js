@@ -21,9 +21,6 @@ document.querySelectorAll(".schedule-table td").forEach((cell) => {
   if (!destination) return;
 
   let target = destination;
-  if (!window.location.pathname.endsWith(".html")) {
-    target = target.replace(/\.html$/, "");
-  }
 
   const existingLink = cell.querySelector("a");
   if (existingLink) {
