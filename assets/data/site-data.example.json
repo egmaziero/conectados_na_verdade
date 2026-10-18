@@ -22,7 +22,7 @@
       "fotoUrl": "assets/img/mariana-lacerda.png",
       "rota": "professor.html?professor=mariana-lacerda",
       "audio": {
-        "url": "assets/audio/Teacher%20Mariana%20Lacerda.opus",
+        "url": "assets/audio/Teacher_Mariana_Lacerda.opus",
         "descricao": "Conheça a Teacher Mariana em sua própria voz."
       },
       "biografia": [
@@ -47,7 +47,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Teacher%20Karine%20Guillem.opus",
+        "url": "assets/audio/Teacher_Karine_Guillem.opus",
         "descricao": "Conheça a Teacher Karine em sua própria voz."
       }
     },
@@ -67,7 +67,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Teacher%20T%C3%A2nia%20Guillem.opus",
+        "url": "assets/audio/Teacher_Tania_Guillem.opus",
         "descricao": "Conheça a Teacher Tânia em sua própria voz."
       }
     },
@@ -84,7 +84,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Teacher%20Rog%C3%A9rio%20Gomes%20Muniz.opus",
+        "url": "assets/audio/Teacher_Rogerio_Gomes_Muniz.opus",
         "descricao": "Conheça o Teacher Rogério em sua própria voz."
       }
     },
@@ -126,7 +126,7 @@
         "Sou cristão e busco ensinar considerando a centralidade de Cristo e os valores bíblicos. Sou professor, palestrante e ministro cursos livres nas áreas de ciência e fé, história e teologia.",
         "Tenho formação em teologia (Seminário Teológico de Gamado), graduação em história (UNIVATES) e pós-graduação em geografia (Centro Universitário Barão de Mauá)."
       ],
-      "ativo": true,      
+      "ativo": true      
     },
     {
       "id": "edilaine-santichi",
@@ -143,7 +143,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Edilaine%20Santichi.ogg",
+        "url": "assets/audio/Professora_Edilaine_Santichi.ogg",
         "descricao": "Conheça a Professora Edilaine em sua própria voz."
       }
     },
@@ -160,7 +160,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Luzimara%20Monte%20Alto.ogg",
+        "url": "assets/audio/Professora_Luzimara_Monte_Alto.ogg",
         "descricao": "Conheça a Professora Luzimara em sua própria voz."
       }
     },
@@ -179,7 +179,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Professora%20Carolina%20Doege.opus",
+        "url": "assets/audio/Professora_Carolina_Doege.opus",
         "descricao": "Conheça a Professora Carolina em sua própria voz."
       }
     },
@@ -211,7 +211,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Professora%20Morah%20Margaret%20Muniz.opus",
+        "url": "assets/audio/Professora_Morah_Margaret_Muniz.opus",
         "descricao": "Conheça a Professora Margaret em sua própria voz."
       }
     },
@@ -229,7 +229,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Luciana%20Guimar%C3%A3es.opus",
+        "url": "assets/audio/Professora_Luciana_Guimaraes.opus",
         "descricao": "Conheça a Professora Luciana em sua própria voz."
       }
     },
@@ -247,7 +247,7 @@
       ],
       "ativo": true,
       "audio": {
-        "url": "assets/audio/Fulvia%20Cortez.opus",
+        "url": "assets/audio/Professora_Fulvia_Cortez.opus",
         "descricao": "Conheça a Professora Fúlvia em sua própria voz."
       }
     },
@@ -2234,7 +2234,7 @@
       "precoCentavos": 10200,
       "ativo": true,
       "ordem": 530,
-      "audioEpecificoUrl": "assets/audio/Edilaine%20Santichi.ogg"
+      "audioEpecificoUrl": "assets/audio/Professora_Edilaine_Santichi.ogg"
     },
     {
       "id": "GEO_8_30_TER_TIC",
