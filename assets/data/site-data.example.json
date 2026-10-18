@@ -2137,7 +2137,8 @@
       "professorId": "filipe-carota",
       "precoCentavos": 20400,
       "ativo": true,
-      "ordem": 480
+      "ordem": 480,
+	  "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/audio_prof_filipe.ogg"
     },
     {
       "id": "MAT_8_30_SEG_QUA_XXX",
