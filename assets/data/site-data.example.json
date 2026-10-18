@@ -126,11 +126,7 @@
         "Sou cristão e busco ensinar considerando a centralidade de Cristo e os valores bíblicos. Sou professor, palestrante e ministro cursos livres nas áreas de ciência e fé, história e teologia.",
         "Tenho formação em teologia (Seminário Teológico de Gamado), graduação em história (UNIVATES) e pós-graduação em geografia (Centro Universitário Barão de Mauá)."
       ],
-      "ativo": true,
-      "audio": {
-        "url": "assets/audio/turmas/ciencias/ticiano-castoldi/cie_audio_ticiano.mp3",
-        "descricao": "Conheça o Professor Ticiano em sua própria voz."
-      }
+      "ativo": true,      
     },
     {
       "id": "edilaine-santichi",
