@@ -2298,7 +2298,7 @@
       "precoCentavos": 10200,
       "ativo": true,
       "ordem": 560,
-	  "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_GEO_9_ANO_PROF_FILIPE_CAROTA.ogg"
+	  "audioEpecificoUrl": "assets/audio/turmas/geografia/filipe-carota/AUDIO_GEO_9_ANO_PROF_FILIPE_CAROTA.ogg"
     },
     {
       "id": "HIS_8_30_SEG_TIC",
@@ -2358,7 +2358,7 @@
       "precoCentavos": 10200,
       "ativo": true,
       "ordem": 590,
-	  "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_HIS_9_ANO_PROF_FILIPE_CAROTA.ogg"
+	  "audioEpecificoUrl": "assets/audio/turmas/historia/filipe-carota/AUDIO_HIS_9_ANO_PROF_FILIPE_CAROTA.ogg"
     },
     {
       "id": "CLE_17_AAA_xxx",
