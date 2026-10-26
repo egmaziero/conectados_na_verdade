@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel Administrativo | Conectados na Verdade</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="admin/admin.css" />
+  </head>
+  <body>
+    <!-- TELA DE BLOQUEIO POR SENHA -->
+    <div id="lock-screen" class="lock-screen">
+      <div class="lock-card">
+        <img src="assets/img/logo_conectados.png" alt="Logo" class="lock-logo" onerror="this.src='favicon-32x32.png';" />
+        <h2>Conectados na Verdade</h2>
+        <p>Painel Administrativo protegido por senha</p>
+
+        <form id="lock-form" onsubmit="event.preventDefault(); app.login();">
+          <div class="password-input-wrapper">
+            <input type="password" id="lock-password" placeholder="Digite a senha de acesso" autofocus required />
+            <button type="button" id="lock-toggle-pwd" class="password-toggle-btn" title="Mostrar/ocultar senha">👁️</button>
+          </div>
+          <div id="lock-error" class="lock-error">Senha incorreta. Tente novamente.</div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 15px;">
+            Entrar no Painel
+          </button>
+        </form>
+
+        <div class="lock-hint">
+          🔑 Senha inicial padrão: <code>conectados2026</code><br>
+          <span style="font-size: 11px; color: var(--text-dim);">(Você pode alterar a senha na aba Configurações).</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OVERLAY PARA ARRASTAR E SOLTAR ARQUIVO -->
+    <div id="drag-overlay" class="drag-overlay">
+      <span style="font-size: 48px; margin-bottom: 12px;">📥</span>
+      <span>Solte o arquivo <strong>site-data.example.json</strong> aqui para carregar!</span>
+    </div>
+
+    <!-- INPUT DE ARQUIVO INVISÍVEL -->
+    <input type="file" id="input-open-json" accept=".json" style="display: none;" />
+
+    <div class="admin-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <img src="assets/img/logo_conectados.png" alt="Logo" class="sidebar-logo" onerror="this.src='favicon-32x32.png';" />
+          <div class="sidebar-brand">
+            <h1>Conectados</h1>
+            <span>Painel de Dados</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="nav-item active" data-nav="dashboard">
+            <span class="nav-icon">📊</span>
+            <span>Visão Geral</span>
+          </a>
+          <a class="nav-item" data-nav="turmas">
+            <span class="nav-icon">🎓</span>
+            <span>Turmas</span>
+            <span class="badge-pill" id="badge-turmas">0</span>
+          </a>
+          <a class="nav-item" data-nav="professores">
+            <span class="nav-icon">👩‍🏫</span>
+            <span>Professores</span>
+            <span class="badge-pill" id="badge-professores">0</span>
+          </a>
+          <a class="nav-item" data-nav="materias">
+            <span class="nav-icon">📚</span>
+            <span>Matérias & Ofertas</span>
+            <span class="badge-pill" id="badge-materias">0</span>
+          </a>
+          <a class="nav-item" data-nav="depoimentos">
+            <span class="nav-icon">💬</span>
+            <span>Depoimentos</span>
+            <span class="badge-pill" id="badge-depoimentos">0</span>
+          </a>
+          <a class="nav-item" data-nav="materiais">
+            <span class="nav-icon">📦</span>
+            <span>Materiais Didáticos</span>
+            <span class="badge-pill" id="badge-materiais">0</span>
+          </a>
+          <a class="nav-item" data-nav="configuracao">
+            <span class="nav-icon">⚙️</span>
+            <span>Configurações & PIX</span>
+          </a>
+          <a class="nav-item" data-nav="backups">
+            <span class="nav-icon">💾</span>
+            <span>Histórico & Backups</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="index.html" target="_blank">
+            <span>🌐</span> Ver Site Oficial
+          </a>
+          <button type="button" class="btn btn-ghost btn-sm" onclick="app.logout()" style="width: 100%; justify-content: flex-start; margin-top: 6px; color: var(--danger);" title="Bloquear acesso e exigir senha novamente">
+            <span>🔒</span> Bloquear / Sair
+          </button>
+          <span style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">Protegido por Senha</span>
+        </div>
+      </aside>
+
+      <!-- CONTEÚDO PRINCIPAL -->
+      <div class="content-area">
+        <!-- BARRA SUPERIOR DE SINCRONIZAÇÃO DE ARQUIVO -->
+        <div class="file-sync-bar">
+          <div class="file-sync-status">
+            <span>📄</span>
+            <strong id="active-file-label">Aguardando arquivo...</strong>
+            <span id="active-file-badge" class="status-badge inactive">Aguardando</span>
+          </div>
+          <div class="file-sync-actions">
+            <button id="btn-pick-file" class="btn btn-secondary btn-sm" title="Abrir arquivo do site">
+              <span>📂</span> Abrir Arquivo JSON
+            </button>
+            <button id="btn-download-backup" class="btn btn-secondary btn-sm" title="Baixar cópia do JSON atualizado">
+              <span>📥</span> Baixar Cópia
+            </button>
+            <button id="btn-save-global" class="btn btn-success btn-sm" title="Gravar alterações">
+              <span>💾</span> Salvar Alterações
+            </button>
+          </div>
+        </div>
+
+        <!-- TOPBAR DE TÍTULO DA ABA -->
+        <header class="topbar">
+          <div class="topbar-title">
+            <h2 id="topbar-view-title">Visão Geral</h2>
+            <span class="topbar-subtitle" id="topbar-atualizado">Atualizado em: --/--/----</span>
+          </div>
+        </header>
+
+        <!-- BARRA DE ALTERAÇÕES PENDENTES -->
+        <div id="unsaved-bar" class="unsaved-bar">
+          <span>⚠️ <strong>Atenção:</strong> Você fez alterações que ainda não foram gravadas.</span>
+          <button id="btn-save-unsaved-bar" class="btn btn-success btn-sm">Salvar Agora</button>
+        </div>
+
+        <!-- CONTAINER DAS ABAS -->
+        <main class="page-container">
+          <!-- 1. ABA DASHBOARD -->
+          <section id="view-dashboard" class="view-section active">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">🎓</div>
+                <div class="stat-info">
+                  <h3>Turmas</h3>
+                  <p id="stat-total-turmas">0</p>
+                  <span id="stat-turmas-ativas" class="tag-badge">0 ativas</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">👩‍🏫</div>
+                <div class="stat-info">
+                  <h3>Professores</h3>
+                  <p id="stat-total-professores">0</p>
+                  <span id="stat-profs-ativos" class="tag-badge">0 ativos</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-info">
+                  <h3>Disciplinas</h3>
+                  <p id="stat-total-materias">0</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">💬</div>
+                <div class="stat-info">
+                  <h3>Depoimentos</h3>
+                  <p id="stat-total-depoimentos">0</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- GUIA RÁPIDO PARA NÃO TÉCNICOS -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">👋 Como usar este painel sem Python ou Terminal</h3>
+              </div>
+              <p style="margin-bottom: 16px; color: var(--text-muted);">
+                Este arquivo funciona <strong>diretamente no seu navegador</strong>. Ele manipula os dados do site através de formulários visuais simples.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 12px;">
+                <div style="background: var(--bg-sidebar); padding: 16px; border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
+                  <strong>1. Abra o Arquivo</strong>
+                  <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Clique em <strong>"📂 Abrir Arquivo JSON"</strong> acima (ou arraste o arquivo <code>assets/data/site-data.example.json</code> direto nesta janela).</p>
+                </div>
+                <div style="background: var(--bg-sidebar); padding: 16px; border-radius: var(--radius-md); border-left: 4px solid var(--accent);">
+                  <strong>2. Faça as Alterações</strong>
+                  <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Crie, edite ou duplique turmas, atualize professores, matérias, depoimentos e valores em Reais.</p>
+                </div>
+                <div style="background: var(--bg-sidebar); padding: 16px; border-radius: var(--radius-md); border-left: 4px solid var(--success);">
+                  <strong>3. Clique em Salvar</strong>
+                  <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">O navegador salva diretamente no arquivo do seu computador (no Chrome/Edge) ou disponibiliza o download imediato.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- RESUMO RÁPIDO -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Distribuição de Turmas por Professor</h3>
+              </div>
+              <div id="dashboard-summary-list"></div>
+            </div>
+          </section>
+
+          <!-- 2. ABA TURMAS -->
+          <section id="view-turmas" class="view-section">
+            <div class="toolbar">
+              <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-turmas" class="search-input" placeholder="Buscar por turma, professor ou nível..." />
+              </div>
+
+              <div class="filter-group">
+                <select id="filter-turma-oferta" class="select-filter">
+                  <option value="">Todas as ofertas</option>
+                </select>
+
+                <select id="filter-turma-professor" class="select-filter">
+                  <option value="">Todos os professores</option>
+                </select>
+
+                <select id="filter-turma-status" class="select-filter">
+                  <option value="">Todos os status</option>
+                  <option value="ativo">Apenas Ativas</option>
+                  <option value="inativo">Apenas Inativas</option>
+                </select>
+
+                <button id="btn-add-turma" class="btn btn-primary">
+                  <span>➕</span> Nova Turma
+                </button>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+              <span id="turmas-count-label" style="font-size: 13px; color: var(--text-dim); font-weight: 500;">Carregando...</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Oferta / Código</th>
+                    <th>Professor(a)</th>
+                    <th>Nível / Faixa Etária</th>
+                    <th>Horário & Dias</th>
+                    <th>Investimento</th>
+                    <th>Situação</th>
+                    <th style="width: 140px;">Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="turmas-table-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. ABA PROFESSORES -->
+          <section id="view-professores" class="view-section">
+            <div class="toolbar">
+              <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-professores" class="search-input" placeholder="Buscar por nome ou tratamento..." />
+              </div>
+
+              <div class="filter-group">
+                <select id="filter-prof-status" class="select-filter">
+                  <option value="">Todos os status</option>
+                  <option value="ativo">Apenas Ativos</option>
+                  <option value="inativo">Apenas Inativos</option>
+                </select>
+
+                <button id="btn-add-professor" class="btn btn-primary">
+                  <span>➕</span> Novo Professor
+                </button>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <span id="profs-count-label" style="font-size: 13px; color: var(--text-dim); font-weight: 500;">Carregando...</span>
+            </div>
+
+            <div id="professores-grid" class="teachers-grid"></div>
+          </section>
+
+          <!-- 4. ABA MATÉRIAS & OFERTAS -->
+          <section id="view-materias" class="view-section">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Disciplinas / Matérias</h3>
+                  <p style="font-size: 13px; color: var(--text-dim);">Disciplinas principais do currículo escolar.</p>
+                </div>
+                <button id="btn-add-materia" class="btn btn-primary btn-sm">➕ Nova Matéria</button>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Código (ID)</th>
+                      <th>Carga Semanal</th>
+                      <th>Preço Base</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="materias-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Ofertas de Turmas</h3>
+                  <p style="font-size: 13px; color: var(--text-dim);">Cursos e modalidades vinculadas às matérias.</p>
+                </div>
+                <button id="btn-add-oferta" class="btn btn-primary btn-sm">➕ Nova Oferta</button>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Nome da Oferta</th>
+                      <th>Código (ID)</th>
+                      <th>Matéria Vinculada</th>
+                      <th>Status</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ofertas-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. ABA DEPOIMENTOS -->
+          <section id="view-depoimentos" class="view-section">
+            <div class="toolbar">
+              <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-depoimentos" class="search-input" placeholder="Buscar por autor, texto ou estado..." />
+              </div>
+
+              <div class="filter-group">
+                <select id="filter-depo-professor" class="select-filter">
+                  <option value="">Todos os professores</option>
+                </select>
+
+                <select id="filter-depo-tipo" class="select-filter">
+                  <option value="">Todos os tipos</option>
+                  <option value="texto">Apenas Texto</option>
+                  <option value="audio">Apenas Áudio</option>
+                </select>
+
+                <button id="btn-add-depoimento" class="btn btn-primary">
+                  <span>➕</span> Novo Depoimento
+                </button>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+              <span id="depo-count-label" style="font-size: 13px; color: var(--text-dim); font-weight: 500;">Carregando...</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Autor / Origem</th>
+                    <th>Professor</th>
+                    <th>Matéria</th>
+                    <th>Formato</th>
+                    <th>Conteúdo / Prévia</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="depoimentos-table-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 6. ABA MATERIAIS DIDÁTICOS -->
+          <section id="view-materiais" class="view-section">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Kits e Materiais Didáticos</h3>
+                  <p style="font-size: 13px; color: var(--text-dim);">Livros, kits pedagógicos e condições de pagamento exibidos na página de materiais.</p>
+                </div>
+                <button id="btn-add-material" class="btn btn-primary btn-sm">➕ Novo Material</button>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Título / Kit</th>
+                      <th>Código (ID)</th>
+                      <th>Faixa Etária</th>
+                      <th>Valor (R$)</th>
+                      <th>Parcelamento</th>
+                      <th>Frete Grátis</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="materiais-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- 7. ABA CONFIGURAÇÕES & PIX -->
+          <section id="view-configuracao" class="view-section">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Configurações Gerais & Pagamento PIX</h3>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">Ano Letivo Vigente <span class="req">*</span></label>
+                  <input type="number" id="cfg-ano-letivo" class="form-input" value="2026" />
+                  <span class="form-hint">Ano apresentado em títulos e cabeçalhos.</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Valor Padrão da Mensalidade (R$) <span class="req">*</span></label>
+                  <input type="text" id="cfg-preco-global" class="form-input" value="100.00" />
+                  <span class="form-hint">Usado quando uma turma não tem preço próprio.</span>
+                </div>
+
+                <div class="form-group form-full">
+                  <label class="form-label">Chave PIX Oficial <span class="req">*</span></label>
+                  <input type="text" id="cfg-pix-chave" class="form-input" placeholder="ex: financeiro@conectadosnaverdade.com" />
+                  <span class="form-hint">Chave que os pais copiam no botão de pagamento.</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Prazo para Confirmação do Pagamento (Horas)</label>
+                  <input type="number" id="cfg-pix-prazo" class="form-input" value="24" />
+                </div>
+              </div>
+            </div>
+
+            <!-- PROGRAMAS ESPECIAIS -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Programas Especiais (Tutoria e Curso de Pais)</h3>
+              </div>
+              <h4 style="margin-bottom: 12px; color: var(--primary);">Tutoria com Famílias</h4>
+              <div class="form-grid" style="margin-bottom: 24px;">
+                <div class="form-group">
+                  <label class="form-label">Professor Responsável</label>
+                  <select id="cfg-tutoria-resp" class="form-select"></select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Valor da Tutoria (R$)</label>
+                  <input type="text" id="cfg-tutoria-preco" class="form-input" value="50.00" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Horário de Início</label>
+                  <input type="text" id="cfg-tutoria-hora-inicio" class="form-input" value="19:00" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Horário de Término</label>
+                  <input type="text" id="cfg-tutoria-hora-fim" class="form-input" value="20:00" />
+                </div>
+                <div class="form-group form-full">
+                  <label class="form-label">Plataforma das Reuniões</label>
+                  <input type="text" id="cfg-tutoria-plataforma" class="form-input" value="Google Meet" />
+                </div>
+              </div>
+
+              <h4 style="margin-bottom: 12px; color: var(--primary);">Curso Renovando a Mente do Educador</h4>
+              <div class="form-grid">
+                <div class="form-group form-full">
+                  <label class="form-label">Nome do Curso</label>
+                  <input type="text" id="cfg-curso-nome" class="form-input" value="Renovando a Mente do Educador" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Plataforma Parceira</label>
+                  <input type="text" id="cfg-curso-plataforma" class="form-input" value="AECEP" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Investimento Total (R$)</label>
+                  <input type="text" id="cfg-curso-preco" class="form-input" value="300.00" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Número Máximo de Parcelas</label>
+                  <input type="number" id="cfg-curso-parcelas" class="form-input" value="12" />
+                </div>
+              </div>
+
+              <div style="margin-top: 24px; text-align: right;">
+                <button id="btn-save-config" class="btn btn-primary">Salvar Configurações</button>
+              </div>
+            </div>
+
+            <!-- SEGURANÇA E SENHA -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">🔒 Segurança & Senha de Acesso</h3>
+              </div>
+              <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                Esta senha protege o painel administrativo contra acessos indevidos. A senha padrão inicial é <code>conectados2026</code>.
+              </p>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">Senha Atual</label>
+                  <input type="password" id="pwd-current" class="form-input" placeholder="Digite a senha atual" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Nova Senha</label>
+                  <input type="password" id="pwd-new" class="form-input" placeholder="Mínimo de 4 caracteres" />
+                </div>
+                <div class="form-group form-full">
+                  <label class="form-label">Confirmar Nova Senha</label>
+                  <input type="password" id="pwd-confirm" class="form-input" placeholder="Repita a nova senha" />
+                </div>
+              </div>
+              <div style="margin-top: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <button type="button" class="btn btn-ghost btn-sm" onclick="app.resetPassword()" style="color: var(--text-dim);">
+                  🔄 Redefinir para senha padrão (conectados2026)
+                </button>
+                <button type="button" class="btn btn-primary" onclick="app.changePassword()">
+                  Salvar Nova Senha
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 8. ABA HISTÓRICO & BACKUPS -->
+          <section id="view-backups" class="view-section">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Cópias de Segurança & Histórico</h3>
+                  <p style="font-size: 13px; color: var(--text-dim);">
+                    Sempre que você clica em "Salvar Alterações", uma cópia é guardada no histórico para você recuperar se precisar.
+                  </p>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                  <button id="btn-export-json" class="btn btn-secondary btn-sm">📥 Baixar JSON Atual</button>
+                  <label class="btn btn-secondary btn-sm" style="cursor: pointer;">
+                    📤 Importar JSON <input type="file" id="input-import-json" accept=".json" style="display: none;" />
+                  </label>
+                </div>
+              </div>
+              <div id="backups-list">
+                <p style="color: var(--text-dim); padding: 20px; text-align: center;">Carregando histórico de backups...</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAIS DE EDIÇÃO
+         ========================================================================= -->
+
+    <!-- MODAL TURMA -->
+    <div id="modal-turma" class="modal-backdrop">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="modal-turma-title">Editar Turma</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Oferta / Disciplina <span class="req">*</span></label>
+              <select id="turma-form-oferta" class="form-select"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Professor(a) Responsável <span class="req">*</span></label>
+              <select id="turma-form-professor" class="form-select"></select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Horário de Início (HH:MM) <span class="req">*</span></label>
+              <input type="text" id="turma-form-hora" class="form-input" placeholder="ex: 14:00" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Duração (Minutos) <span class="req">*</span></label>
+              <input type="number" id="turma-form-duracao" class="form-input" value="30" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Dias da Semana das Aulas</label>
+              <div id="turma-days-picker" class="days-picker"></div>
+              <span class="form-hint">Clique nos dias em que haverá aula.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Investimento Mensal (R$)</label>
+              <input type="text" id="turma-form-preco" class="form-input" placeholder="ex: 102.00" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nível da Turma</label>
+              <input type="text" id="turma-form-nivel" class="form-input" placeholder="ex: iniciante, básico, intermediário" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Idade Mínima (anos)</label>
+              <input type="number" id="turma-form-id-min" class="form-input" placeholder="ex: 4" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Idade Máxima (anos)</label>
+              <input type="number" id="turma-form-id-max" class="form-input" placeholder="ex: 6" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Rótulo Alternativo de Faixa Etária (opcional)</label>
+              <input type="text" id="turma-form-rotulo" class="form-input" placeholder="ex: Adolescentes e Adultos / Misto" />
+              <span class="form-hint">Preencha apenas caso a turma não seja definida por idades numéricas.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Material Didático Indicado</label>
+              <select id="turma-form-material" class="form-select"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Ordem de Exibição</label>
+              <input type="number" id="turma-form-ordem" class="form-input" value="10" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Áudio de Apresentação Específico da Turma (opcional)</label>
+              <input type="text" id="turma-form-audio" class="form-input" placeholder="assets/audio/turmas/..." />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Identificador Único (Código interno da turma)</label>
+              <input type="text" id="turma-form-id" class="form-input" placeholder="Deixe em branco para gerar automaticamente" />
+              <span class="form-hint">Ex: ING_11_SEG_A_QUI_MAR. Usado para criar o link direto da turma.</span>
+            </div>
+
+            <div class="form-group form-full">
+              <label class="toggle-switch">
+                <input type="checkbox" id="turma-form-ativo" class="toggle-input" checked />
+                <span class="toggle-slider"></span>
+                <strong>Turma Ativa (visível para matrículas no site)</strong>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-close">Cancelar</button>
+          <button id="btn-save-turma-modal" class="btn btn-primary">Gravar Turma</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL PROFESSOR -->
+    <div id="modal-professor" class="modal-backdrop">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="modal-prof-title">Editar Professor</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Tratamento <span class="req">*</span></label>
+              <input type="text" id="prof-form-tratamento" class="form-input" placeholder="ex: Teacher, Professora, Professor" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nome Completo <span class="req">*</span></label>
+              <input type="text" id="prof-form-nome" class="form-input" placeholder="ex: Mariana Lacerda" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Caminho da Foto do Professor</label>
+              <input type="text" id="prof-form-foto" class="form-input" placeholder="assets/img/mariana-lacerda.png" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Áudio de Apresentação (opcional)</label>
+              <input type="text" id="prof-form-audio-url" class="form-input" placeholder="assets/audio/Teacher_Nome.opus" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Frase de Apresentação do Áudio</label>
+              <input type="text" id="prof-form-audio-desc" class="form-input" placeholder="ex: Conheça a Teacher Mariana em sua própria voz." />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Biografia (Apresentação completa)</label>
+              <textarea id="prof-form-bio" class="form-textarea" rows="5" placeholder="Separe cada parágrafo com uma linha em branco..."></textarea>
+              <span class="form-hint">Dica: Deixe uma linha em branco entre os parágrafos para formatar a biografia perfeitamente.</span>
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Versículo Bíblico de Inspiração (opcional)</label>
+              <input type="text" id="prof-form-versiculo" class="form-input" placeholder="ex: Porque dele, por meio dele e para ele são todas as coisas. Romanos 11:36" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Instagram (opcional)</label>
+              <input type="text" id="prof-form-instagram" class="form-input" placeholder="ex: @mariana" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Código / Slug (ID)</label>
+              <input type="text" id="prof-form-id" class="form-input" placeholder="ex: mariana-lacerda" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="toggle-switch">
+                <input type="checkbox" id="prof-form-ativo" class="toggle-input" checked />
+                <span class="toggle-slider"></span>
+                <strong>Professor(a) Ativo no corpo docente</strong>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-close">Cancelar</button>
+          <button id="btn-save-prof-modal" class="btn btn-primary">Gravar Professor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL DEPOIMENTO -->
+    <div id="modal-depoimento" class="modal-backdrop">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="modal-depo-title">Editar Depoimento</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Professor Relacionado</label>
+              <select id="depo-form-professor" class="form-select"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Matéria Relacionada</label>
+              <input type="text" id="depo-form-materia" class="form-input" placeholder="ex: inglês, matemática, ciências" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Nome do Autor(a) <span class="req">*</span></label>
+              <input type="text" id="depo-form-autor" class="form-input" placeholder="ex: Simone ou Família da Sofia" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Estado (UF)</label>
+              <input type="text" id="depo-form-estado" class="form-input" placeholder="ex: SP, RS, MG, Portugal" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Descrição do Autor (opcional)</label>
+              <input type="text" id="depo-form-autordesc" class="form-input" placeholder="ex: mãe de aluno de 6 anos" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Tipo do Depoimento</label>
+              <select id="depo-form-tipo" class="form-select">
+                <option value="texto">Texto Escrito</option>
+                <option value="audio">Áudio Gravado</option>
+              </select>
+            </div>
+
+            <div id="depo-box-texto" class="form-group form-full">
+              <label class="form-label">Texto do Depoimento</label>
+              <textarea id="depo-form-texto" class="form-textarea" rows="4" placeholder="Escreva o depoimento da família..."></textarea>
+            </div>
+
+            <div id="depo-box-audio" class="form-group form-full" style="display: none;">
+              <label class="form-label">Caminho do Arquivo de Áudio do Depoimento</label>
+              <input type="text" id="depo-form-audiourl" class="form-input" placeholder="assets/audio/turmas/.../depoimento.ogg" />
+              <input type="hidden" id="depo-form-audiotipo" value="audio/ogg; codecs=opus" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-close">Cancelar</button>
+          <button id="btn-save-depo-modal" class="btn btn-primary">Gravar Depoimento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL MATERIAIS -->
+    <div id="modal-material" class="modal-backdrop">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="modal-mat-title">Editar Material Didático</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group form-full">
+              <label class="form-label">Nome do Material <span class="req">*</span></label>
+              <input type="text" id="mat-form-nome" class="form-input" placeholder="ex: Ensino Infantil ou 1º ao 5º Ano" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Idade Mínima</label>
+              <input type="number" id="mat-form-id-min" class="form-input" placeholder="ex: 1" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Idade Máxima</label>
+              <input type="number" id="mat-form-id-max" class="form-input" placeholder="ex: 5" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Valor do Kit (R$)</label>
+              <input type="text" id="mat-form-preco" class="form-input" placeholder="ex: 548.90" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Parcelamento Máximo</label>
+              <input type="number" id="mat-form-parcelas" class="form-input" value="12" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Código / ID</label>
+              <input type="text" id="mat-form-id" class="form-input" placeholder="ex: infantil" />
+            </div>
+
+            <div class="form-group form-full">
+              <label class="toggle-switch">
+                <input type="checkbox" id="mat-form-frete" class="toggle-input" checked />
+                <span class="toggle-slider"></span>
+                <strong>Frete Incluso / Disponível</strong>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-close">Cancelar</button>
+          <button id="btn-save-material-modal" class="btn btn-primary">Gravar Material</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL MATERIA -->
+    <div id="modal-materia" class="modal-backdrop">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="modal-materia-title">Editar Matéria</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group form-full">
+              <label class="form-label">Nome da Disciplina <span class="req">*</span></label>
+              <input type="text" id="materia-form-nome" class="form-input" placeholder="ex: Inglês, Matemática..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Carga Semanal (Minutos)</label>
+              <input type="number" id="materia-form-carga" class="form-input" value="120" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preço Base (R$)</label>
+              <input type="text" id="materia-form-preco" class="form-input" value="100.00" />
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label">Código / ID</label>
+              <input type="text" id="materia-form-id" class="form-input" placeholder="ex: ingles" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-close">Cancelar</button>
+          <button id="btn-save-materia-modal" class="btn btn-primary">Gravar Matéria</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL OFERTA -->
+    <div id="modal-oferta" class="modal-backdrop">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="modal-oferta-title">Editar Oferta</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group form-full">
+              <label class="form-label">Nome da Oferta <span class="req">*</span></label>
+              <input type="text" id="oferta-form-nome" class="form-input" placeholder="ex: Aprendendo a Palavra" />
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label">Matéria Relacionada <span class="req">*</span></label>
+              <select id="oferta-form-materia" class="form-select"></select>
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label">Código / ID</label>
+              <input type="text" id="oferta-form-id" class="form-input" placeholder="ex: aprendendo-palavra" />
+            </div>
+            <div class="form-group form-full">
+              <label class="toggle-switch">
+                <input type="checkbox" id="oferta-form-ativo" class="toggle-input" checked />
+                <span class="toggle-slider"></span>
+                <strong>Oferta Ativa no site</strong>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-close">Cancelar</button>
+          <button id="btn-save-oferta-modal" class="btn btn-primary">Gravar Oferta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTAINER DE NOTIFICAÇÕES (TOASTS) -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="admin/admin.js"></script>
+  </body>
+</html>
