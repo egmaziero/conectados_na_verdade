@@ -1,7 +1,6 @@
 {
   "schemaVersion": 1,
   "atualizadoEm": "2026-10-26",
-  "precoCentavos": 10000,
   "configuracao": {
     "moeda": "BRL",
     "idioma": "pt-BR",
@@ -2725,7 +2724,6 @@
     "cursoPais": {
       "nome": "Renovando a Mente do Educador",
       "plataforma": "AECEP",
-      "precoCentavos": 30000,
       "maxParcelas": 12,
       "obrigatorio": true
     }
