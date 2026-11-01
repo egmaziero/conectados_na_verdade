@@ -529,6 +529,14 @@
       "professorId": "luciana-guimaraes",
       "materia": "química e física",
       "tipo": "texto",
+      "autor": "Luana",
+      "estado": "",
+      "texto": "Gostaria de deixar meu agradecimento registrado à prof. Luciana de química e física que com muito amor e dedicação se empenha em dar essas aulas. Foi um bálsamo para mim poder contar com essa ajuda ao nosso ensino domiciliar. Além disso, tivemos a oportunidade de participar das olimpíadas de ciências e fé que acrescentou e ensinou muito aqui em casa!"
+    },
+    {
+      "professorId": "luciana-guimaraes",
+      "materia": "química e física",
+      "tipo": "texto",
       "autor": "Débora",
       "estado": "PI",
       "texto": "Meu filho de 10 anos e tem laudo de autismo, TDAH, TPAC faz aulas com a prof Luciana de introdução à física e química. Nunca pensei que ele teria tanto prazer em passar 2 horas em uma aula online. A prof é muito dedicada e criativa."
@@ -2134,7 +2142,8 @@
       "precoCentavos": 20400,
       "ativo": true,
       "ordem": 480,
-      "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_PROF_FILIPE_CAROTA.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_PROF_FILIPE_CAROTA.ogg",
+      "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_IA.ogg"
     },
     {
       "id": "MAT_8_30_SEG_QUA_XXX",

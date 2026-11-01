@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa do Site - Conectados na Verdade</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --hover-bg: #f1f5f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-box:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background-color: #cbd5e1;
+        }
+
+        /* Estilo da árvore */
+        ul {
+            list-style: none;
+            padding-left: 20px;
+            margin: 6px 0;
+        }
+
+        .tree-root > ul {
+            padding-left: 0;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        details {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: #fff;
+            padding: 6px 10px;
+        }
+
+        details[open] {
+            background: #fafafa;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 500;
+            padding: 4px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        summary:hover {
+            background-color: var(--hover-bg);
+            border-radius: 4px;
+        }
+
+        .leaf {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 6px 12px;
+            background: #fff;
+        }
+
+        .leaf:hover {
+            background-color: var(--hover-bg);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            font-size: 11px;
+            background: #e2e8f0;
+            color: var(--text-muted);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Mapa do Site Interativo</h1>
+    <p class="subtitle">Estrutura 100% Fiel ao Arquivo Excel (mapa_site.xlsx)</p>
+
+    <div class="controls">
+        <input type="text" id="searchInput" class="search-box" placeholder="Pesquisar página ou link...">
+        <button id="btnExpand" class="btn">Expandir Todos</button>
+        <button id="btnCollapse" class="btn btn-secondary">Recolher Todos</button>
+    </div>
+
+    <div class="tree-root" id="treeContainer"></div>
+</div>
+
+<script>
+    // Estrutura exata extraída estritamente das 146 linhas da planilha
+    const siteData = {
+        "https://conectadosnaverdade.com.br/": {
+            "https://conectadosnaverdade.com.br/menu.html": {
+                "https://conectadosnaverdade.com.br/aulas-online.html": {
+                    "https://conectadosnaverdade.com.br/depoimentos.html": {},
+                    "https://conectadosnaverdade.com.br/horarios-1-ano.html": {
+                        "https://conectadosnaverdade.com.br/turmas/turmas-extra.html": {
+                            "https://conectadosnaverdade.com.br/turmas/turmas-aprendendo-palavra.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-adao.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-eva.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-leitura.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-espanhol.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-fisica-quimica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-hebraico.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-latim.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-musica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-robotica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-xadrez.html": {}
+                        },
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-matematica.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-portugues.html": {},
+                        "https://editoracrista.org/Alicerces/Alicerces/trilhas/1/index.html": {},
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#6": {}
+                    },
+                    "https://conectadosnaverdade.com.br/horarios-3-ano.html": {
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ciencias.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-extra.html": {
+                            "https://conectadosnaverdade.com.br/turmas/turmas-aprendendo-palavra.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-adao.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-eva.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-leitura.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-espanhol.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-fisica-quimica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-hebraico.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-latim.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-musica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-robotica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-xadrez.html": {}
+                        },
+                        "https://conectadosnaverdade.com.br/turmas/turmas-geografia.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-historia.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-matematica.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-portugues.html": {},
+                        "https://editoracrista.org/Alicerces/Alicerces/trilhas/3/index.html": {},
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#8": {}
+                    },
+                    "https://conectadosnaverdade.com.br/horarios-5-ano.html": {
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ciencias.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-extra.html": {
+                            "https://conectadosnaverdade.com.br/turmas/turmas-aprendendo-palavra.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-adao.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-eva.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-leitura.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-espanhol.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-fisica-quimica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-hebraico.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-latim.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-musica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-robotica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-xadrez.html": {}
+                        },
+                        "https://conectadosnaverdade.com.br/turmas/turmas-fisica-quimica.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-geografia.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-historia.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-matematica.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-portugues.html": {},
+                        "https://editoracrista.org/Alicerces/Alicerces/trilhas/5/index.html": {},
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#10": {}
+                    },
+                    "https://conectadosnaverdade.com.br/horarios-7-ano.html": {
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ciencias.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-extra.html": {
+                            "https://conectadosnaverdade.com.br/turmas/turmas-aprendendo-palavra.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-adao.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-eva.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-leitura.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-espanhol.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-fisica-quimica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-hebraico.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-latim.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-musica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-robotica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-xadrez.html": {}
+                        },
+                        "https://conectadosnaverdade.com.br/turmas/turmas-fisica-quimica.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-geografia.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-historia.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-matematica.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-portugues.html": {},
+                        "https://editoracrista.org/Alicerces/Alicerces/trilhas/7/index.html": {},
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#15": {}
+                    },
+                    "https://conectadosnaverdade.com.br/horarios-9-ano.html": {
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ciencias.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-extra.html": {
+                            "https://conectadosnaverdade.com.br/turmas/turmas-aprendendo-palavra.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-adao.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-eva.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-clube-leitura.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-espanhol.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-fisica-quimica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-hebraico.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-latim.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-musica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-robotica.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-xadrez.html": {}
+                        },
+                        "https://conectadosnaverdade.com.br/turmas/turmas-fisica-quimica.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-geografia.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-historia.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-ingles.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-matematica.html": {},
+                        "https://conectadosnaverdade.com.br/turmas/turmas-portugues.html": {},
+                        "https://editoracrista.org/Alicerces/Alicerces/trilhas/9/index.html": {},
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#17": {}
+                    },
+                    "https://conectadosnaverdade.com.br/material-desatualizado.html": {
+                        "https://conectadosnaverdade.com.br/fundamental1-des.html": {},
+                        "https://conectadosnaverdade.com.br/fundamental2-des.html": {},
+                        "https://conectadosnaverdade.com.br/matriculas.html": {}
+                    }
+                },
+                "https://conectadosnaverdade.com.br/institucional/quem-somos.html": {
+                    "https://conectadosnaverdade.com.br/institucional/como-funcionamos.html": {},
+                    "https://conectadosnaverdade.com.br/institucional/confessionalidade.html": {},
+                    "https://conectadosnaverdade.com.br/institucional/conheca-os-missionarios-que-alcancamos.html": {
+                        "https://drive.google.com/drive/folders/14yvSW1e-GVUOIrVRVO5W7AbbvYUKIgWt": {},
+                        "https://drive.google.com/drive/folders/18C1mrTdg06CAPPSttWsj93YHLqIIS8KM": {},
+                        "https://familiamissionariaramos.com.br/": {},
+                        "https://nubank.com.br/cobrar/qaugq/6a9b4a1f-a2c4-4376-8133-6df6e1817184": {}
+                    },
+                    "https://conectadosnaverdade.com.br/institucional/quero-me-candidatar-a-professor.html": {
+                        "https://drive.google.com/file/d/1oGJTpg0QCuGawHJag_Wm4iBRZuuftjcv/view": {},
+                        "https://drive.google.com/file/d/1TZEIcmT3wjsq_s_vC9IVw_fTD-HXXBpX/view": {}
+                    },
+                    "https://www.youtube.com/watch?v=gSuM1sWu5-U": {}
+                },
+                "https://conectadosnaverdade.com.br/material.html": {
+                    "https://conectadosnaverdade.com.br/assets/img/plano-materias.png": {},
+                    "https://conectadosnaverdade.com.br/fundamental1.html": {
+                        "https://conectadosnaverdade.com.br/curso-pais.html": {
+                            "https://conectadosnaverdade.com.br/professor.html?professor=andre-lima": {}
+                        },
+                        "https://conectadosnaverdade.com.br/depoimentos.html": {},
+                        "https://conectadosnaverdade.com.br/matriculas.html": {},
+                        "https://conectadosnaverdade.com.br/tutoria.html": {
+                            "https://conectadosnaverdade.com.br/matriculas.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-tutoria.html": {}
+                        },
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#5": {},
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#6": {},
+                        "https://www.youtube.com/watch?v=IYDxv29AlWc": {}
+                    },
+                    "https://conectadosnaverdade.com.br/fundamental2.html": {
+                        "https://conectadosnaverdade.com.br/curso-pais.html": {
+                            "https://conectadosnaverdade.com.br/professor.html?professor=andre-lima": {}
+                        },
+                        "https://conectadosnaverdade.com.br/depoimentos.html": {},
+                        "https://conectadosnaverdade.com.br/matriculas.html": {},
+                        "https://conectadosnaverdade.com.br/tutoria.html": {
+                            "https://conectadosnaverdade.com.br/matriculas.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-tutoria.html": {}
+                        },
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#12": {},
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#14": {},
+                        "https://www.youtube.com/watch?v=ufRv4GumD1E": {}
+                    },
+                    "https://conectadosnaverdade.com.br/infantil.html": {
+                        "https://conectadosnaverdade.com.br/curso-pais.html": {
+                            "https://conectadosnaverdade.com.br/professor.html?professor=andre-lima": {}
+                        },
+                        "https://conectadosnaverdade.com.br/depoimentos.html": {},
+                        "https://conectadosnaverdade.com.br/matriculas.html": {},
+                        "https://conectadosnaverdade.com.br/tutoria.html": {
+                            "https://conectadosnaverdade.com.br/matriculas.html": {},
+                            "https://conectadosnaverdade.com.br/turmas/turmas-tutoria.html": {}
+                        },
+                        "https://editoracrista.org/Alicerces/2024/PlanoCurricular/index.html": {},
+                        "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#3": {},
+                        "https://www.youtube.com/watch?v=u6jHKgfq9gQ&t=44m": {}
+                    },
+                    "https://conectadosnaverdade.com.br/material-desatualizado.html": {
+                        "https://conectadosnaverdade.com.br/fundamental1-des.html": {},
+                        "https://conectadosnaverdade.com.br/fundamental2-des.html": {},
+                        "https://conectadosnaverdade.com.br/matriculas.html": {}
+                    }
+                }
+            }
+        }
+    };
+
+    function renderTree(node) {
+        let html = '<ul>';
+        for (let url in node) {
+            const children = node[url];
+            const hasChildren = Object.keys(children).length > 0;
+            
+            let label = url;
+            try {
+                if (url.startsWith('http')) {
+                    const u = new URL(url);
+                    label = u.pathname === '/' ? 'Início (Home)' : u.pathname + u.search + u.hash;
+                    if (label.startsWith('/')) label = label.substring(1);
+                    if (label === '') label = u.hostname;
+                }
+            } catch(e) {}
+
+            html += '<li>';
+            if (hasChildren) {
+                html += `<details>
+                            <summary>
+                                <a href="${url}" target="_blank">${label}</a>
+                                <span class="badge">${Object.keys(children).length} sub</span>
+                            </summary>
+                            ${renderTree(children)}
+                        </details>`;
+            } else {
+                html += `<div class="leaf">
+                            <a href="${url}" target="_blank">${label}</a>
+                        </div>`;
+            }
+            html += '</li>';
+        }
+        html += '</ul>';
+        return html;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const container = document.getElementById('treeContainer');
+        container.innerHTML = renderTree(siteData);
+
+        const btnExpand = document.getElementById('btnExpand');
+        const btnCollapse = document.getElementById('btnCollapse');
+        const searchInput = document.getElementById('searchInput');
+
+        btnExpand.addEventListener('click', function () {
+            document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+        });
+
+        btnCollapse.addEventListener('click', function () {
+            document.querySelectorAll('details').forEach(d => d.removeAttribute('open'));
+        });
+
+        searchInput.addEventListener('keyup', function () {
+            const query = searchInput.value.toLowerCase();
+            const items = container.querySelectorAll('li');
+
+            if (!query) {
+                items.forEach(item => item.style.display = 'block');
+                return;
+            }
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                    let parent = item.parentElement.closest('details');
+                    while (parent) {
+                        parent.setAttribute('open', '');
+                        parent = parent.parentElement.closest('details');
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
