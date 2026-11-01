@@ -985,7 +985,6 @@
       "id": "ingles",
       "nome": "Inglês",
       "cargaSemanalMinutos": 120,
-      "precoCentavos": 10000,
       "rota": "materia.html?materia=ingles",
       "ofertaIds": [
         "ingles"
@@ -995,8 +994,6 @@
       "id": "matematica",
       "nome": "Matemática",
       "cargaSemanalMinutos": 240,
-      "precoCentavos": 20400,
-      "rotuloPreco": "R$ 204,00",
       "rota": "materias/materia-matematica.html",
       "ofertaIds": [
         "matematica"
@@ -1006,7 +1003,6 @@
       "id": "tutoria",
       "nome": "Tutoria",
       "cargaSemanalMinutos": 120,
-      "precoCentavos": null,
       "rotuloPreco": "Valor sob consulta",
       "rota": "materia.html?materia=tutoria",
       "ofertaIds": []
@@ -1015,7 +1011,6 @@
       "id": "quimica-fisica",
       "nome": "Química e Física",
       "cargaSemanalMinutos": 120,
-      "precoCentavos": 10000,
       "rota": "materias/materia-quimica-fisica.html",
       "ofertaIds": [
         "quimica-fisica"
@@ -1025,7 +1020,6 @@
       "id": "espanhol",
       "nome": "Espanhol",
       "cargaSemanalMinutos": 60,
-      "precoCentavos": 5000,
       "rota": "turmas/turmas-espanhol.html",
       "ofertaIds": [
         "espanhol"
@@ -1035,7 +1029,6 @@
       "id": "musica",
       "nome": "Música",
       "cargaSemanalMinutos": 60,
-      "precoCentavos": 5000,
       "rota": "turmas/turmas-musica.html",
       "ofertaIds": [
         "musica"
@@ -1045,7 +1038,6 @@
       "id": "hebraico",
       "nome": "Hebraico",
       "cargaSemanalMinutos": 60,
-      "precoCentavos": 5400,
       "rota": "turmas/turmas-hebraico.html",
       "ofertaIds": [
         "hebraico"
@@ -1055,7 +1047,6 @@
       "id": "portugues",
       "nome": "Português",
       "cargaSemanalMinutos": 240,
-      "precoCentavos": 20400,
       "rotuloPreco": "R$ 204,00",
       "rota": "materias/materia-portugues.html",
       "ofertaIds": [
@@ -1066,7 +1057,6 @@
       "id": "ciencias",
       "nome": "Ciências",
       "cargaSemanalMinutos": 60,
-      "precoCentavos": 10200,
       "rotuloPreco": "R$ 102,00",
       "rota": "materias/materia-ciencias.html",
       "ofertaIds": [
@@ -1077,7 +1067,6 @@
       "id": "geografia",
       "nome": "Geografia",
       "cargaSemanalMinutos": 60,
-      "precoCentavos": 10200,
       "rotuloPreco": "R$ 102,00",
       "rota": "materias/materia-geografia.html",
       "ofertaIds": [
@@ -1088,7 +1077,6 @@
       "id": "historia",
       "nome": "História",
       "cargaSemanalMinutos": 60,
-      "precoCentavos": 10200,
       "rotuloPreco": "R$ 102,00",
       "rota": "materias/materia-historia.html",
       "ofertaIds": [
@@ -1242,7 +1230,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "mariana-lacerda",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 10,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_11_SEG_A_QUI_MAR.ogg",
@@ -1265,7 +1252,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "karine-guillem",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 20,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/karine-guillem/ka_audio.ogg",
@@ -1288,7 +1274,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "mariana-lacerda",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 30,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_10_30_SEG_A_QUI_MAR.ogg",
@@ -1311,7 +1296,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "tania-guillem",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 40,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/tania-guillem/tania_audio.ogg",
@@ -1334,7 +1318,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "tania-guillem",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 50,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/tania-guillem/tania_audio.ogg",
@@ -1357,7 +1340,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "tania-guillem",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 60,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/tania-guillem/tania_audio.ogg",
@@ -1380,7 +1362,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "mariana-lacerda",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 70,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_08_SEG_A_QUI_MAR.ogg",
@@ -1403,7 +1384,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "karine-guillem",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 80,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/karine-guillem/ka_audio.ogg",
@@ -1426,7 +1406,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "karine-guillem",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 90,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/karine-guillem/ka_audio.ogg",
@@ -1449,7 +1428,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "karine-guillem",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 100,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/karine-guillem/ka_audio.ogg",
@@ -1471,7 +1449,6 @@
       ],
       "duracaoMinutos": 30,
       "professorId": "mariana-lacerda",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 110,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/mariana-lacerda/ING_07_30_SEG_A_QUI_MAR.ogg",
@@ -1490,7 +1467,6 @@
       ],
       "duracaoMinutos": 90,
       "professorId": "rogerio-muniz",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 120,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/rogerio-muniz/rogerio_audio_ingles.ogg",
@@ -1509,7 +1485,6 @@
       ],
       "duracaoMinutos": 90,
       "professorId": "rogerio-muniz",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 130,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/rogerio-muniz/rogerio_audio_ingles.ogg",
@@ -1528,7 +1503,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "luisa-dresch",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 140,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/luisa-dresch/ING_16_SEG_LUI/ING_16_SEG_LUI_AUDIO.ogg",
@@ -1547,7 +1521,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "luisa-dresch",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 150,
       "audioEpecificoUrl": "assets/audio/turmas/ingles/luisa-dresch/ING_20_TER_LUI/ING_20_TER_LUI_AUDIO.ogg",
@@ -1568,7 +1541,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luciana-guimaraes",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 200,
       "materialId": "infantil",
@@ -1590,7 +1562,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luciana-guimaraes",
-      "precoCentavos": 10000,
       "ativo": true,
       "ordem": 210,
       "materialId": "material-teens",
@@ -1611,7 +1582,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luciana-guimaraes",
-      "precoCentavos": 10000,
       "ativo": true,
       "ordem": 220,
       "materialId": "material-teens",
@@ -1632,7 +1602,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "fulvia-cortez",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 230,
       "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg",
@@ -1653,7 +1622,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "fulvia-cortez",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 240,
       "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg",
@@ -1674,7 +1642,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "fulvia-cortez",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 250,
       "audioEpecificoUrl": "assets/audio/turmas/espanhol/fulvia-cortez/audio_espanhol_fulvia.ogg",
@@ -1695,7 +1662,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "carolina-doege",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 260,
       "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg",
@@ -1716,7 +1682,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "carolina-doege",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 270,
       "audioEpecificoUrl": "assets/audio/turmas/aprendendo-palavra/carolina-doege/aprend_palavra_audio_caro.ogg",
@@ -1737,7 +1702,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "danni-dallagnol",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 280,
       "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4",
@@ -1758,7 +1722,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "danni-dallagnol",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 290,
       "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4",
@@ -1779,7 +1742,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "danni-dallagnol",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 300,
       "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4",
@@ -1800,7 +1762,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "danni-dallagnol",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 310,
       "audioEpecificoUrl": "assets/audio/turmas/musica/danni-dallagnol/musica_audio_danni.mp4",
@@ -1821,7 +1782,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "margaret-muniz",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 320,
       "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg",
@@ -1842,7 +1802,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "margaret-muniz",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 330,
       "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg",
@@ -1863,7 +1822,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "margaret-muniz",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 340,
       "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg",
@@ -1882,7 +1840,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "margaret-muniz",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 350,
       "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg",
@@ -1903,7 +1860,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "margaret-muniz",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 360,
       "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
@@ -1923,7 +1879,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "margaret-muniz",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 370,
       "audioEpecificoUrl": "assets/audio/turmas/hebraico/margaret-muniz/hebraico_audio.ogg"
@@ -1941,7 +1896,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "filipe-carota",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 380,
       "audioEpecificoUrl": "assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg"
@@ -1959,7 +1913,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "filipe-carota",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 390,
       "audioEpecificoUrl": "assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg"
@@ -1977,7 +1930,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "filipe-carota",
-      "precoCentavos": 5400,
       "ativo": true,
       "ordem": 400,
       "audioEpecificoUrl": "assets/audio/turmas/tutoria/filipe-carota/tutoria_audio_filipe.ogg"
@@ -1998,7 +1950,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luisa-dresch",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 410
     },
@@ -2018,7 +1969,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luisa-dresch",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 420
     },
@@ -2038,7 +1988,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luzimara-monte-alto",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 430,
       "materialUrl": "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#10"
@@ -2059,7 +2008,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "a-definir",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 440
     },
@@ -2079,7 +2027,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "a-definir",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 450
     },
@@ -2099,7 +2046,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luisa-dresch",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 460
     },
@@ -2119,7 +2065,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "luisa-dresch",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 470
     },
@@ -2139,11 +2084,9 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "filipe-carota",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 480,
-      "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_PROF_FILIPE_CAROTA.ogg",
-      "audioIAUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_IA.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_PROF_FILIPE_CAROTA.ogg"
     },
     {
       "id": "MAT_8_30_SEG_QUA_XXX",
@@ -2161,7 +2104,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "a-definir",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 490
     },
@@ -2181,7 +2123,6 @@
       ],
       "duracaoMinutos": 120,
       "professorId": "a-definir",
-      "precoCentavos": 20400,
       "ativo": true,
       "ordem": 500
     },
@@ -2200,7 +2141,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "ticiano-castoldi",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 510,
       "audioEpecificoUrl": "assets/audio/turmas/ciencias/ticiano-castoldi/cie_audio_ticiano.mp3"
@@ -2220,7 +2160,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "ticiano-castoldi",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 520,
       "audioEpecificoUrl": "assets/audio/turmas/ciencias/ticiano-castoldi/cie_audio_ticiano.mp3"
@@ -2240,7 +2179,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "edilaine-santichi",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 530,
       "audioEpecificoUrl": "assets/audio/Professora_Edilaine_Santichi.ogg"
@@ -2260,7 +2198,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "ticiano-castoldi",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 540,
       "audioEpecificoUrl": "assets/audio/turmas/geografia/ticiano-castoldi/geo_audio_ticiano.mp3"
@@ -2280,7 +2217,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "ticiano-castoldi",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 550,
       "audioEpecificoUrl": "assets/audio/turmas/geografia/ticiano-castoldi/geo_audio_ticiano.mp3"
@@ -2300,7 +2236,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "filipe-carota",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 560,
       "audioEpecificoUrl": "assets/audio/turmas/geografia/filipe-carota/AUDIO_GEO_9_ANO_PROF_FILIPE_CAROTA.ogg"
@@ -2320,7 +2255,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "ticiano-castoldi",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 570,
       "audioEpecificoUrl": "assets/audio/turmas/historia/ticiano-castoldi/his_audio_ticiano.mp3"
@@ -2340,7 +2274,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "ticiano-castoldi",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 580,
       "audioEpecificoUrl": "assets/audio/turmas/historia/ticiano-castoldi/his_audio_ticiano.mp3"
@@ -2360,7 +2293,6 @@
       ],
       "duracaoMinutos": 60,
       "professorId": "filipe-carota",
-      "precoCentavos": 10200,
       "ativo": true,
       "ordem": 590,
       "audioEpecificoUrl": "assets/audio/turmas/historia/filipe-carota/AUDIO_HIS_9_ANO_PROF_FILIPE_CAROTA.ogg"
@@ -2378,7 +2310,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2394,7 +2325,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2410,7 +2340,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2426,7 +2355,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2442,7 +2370,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2458,7 +2385,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2474,7 +2400,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2490,7 +2415,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2506,7 +2430,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2522,7 +2445,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2538,7 +2460,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2554,7 +2475,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2570,7 +2490,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2586,7 +2505,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2602,7 +2520,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2618,7 +2535,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2634,7 +2550,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2650,7 +2565,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2666,7 +2580,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2682,7 +2595,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2698,7 +2610,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2714,7 +2625,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2730,7 +2640,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     },
     {
@@ -2746,7 +2655,6 @@
       "dias": [],
       "duracaoMinutos": 60,
       "professorId": "a-definir",
-      "precoCentavos": 5400,
       "ativo": true
     }
   ],
@@ -2786,7 +2694,6 @@
       "nome": "Ensino Infantil",
       "idadeMin": 1,
       "idadeMax": 5,
-      "precoCentavos": 54890,
       "maxParcelas": 12,
       "frete": true,
       "links": {
@@ -2800,7 +2707,6 @@
         2023,
         2024
       ],
-      "precoCentavos": 25000,
       "maxParcelas": 1,
       "frete": true
     }
@@ -2808,7 +2714,6 @@
   "programas": {
     "tutoria": {
       "responsavelId": "filipe-carota",
-      "precoCentavos": 5000,
       "ano": 2026,
       "dias": [
         3
