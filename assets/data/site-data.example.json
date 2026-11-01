@@ -2143,7 +2143,7 @@
       "ativo": true,
       "ordem": 480,
       "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_PROF_FILIPE_CAROTA.ogg",
-      "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_IA.ogg"
+      "audioIAUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_IA.ogg"
     },
     {
       "id": "MAT_8_30_SEG_QUA_XXX",
