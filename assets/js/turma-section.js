@@ -60,15 +60,101 @@
         heading.textContent = "Para a Turma";
         content.append(kicker, heading);
 
-        const audioSrc = turma.audioEpecificoUrl || (professor && professor.audio && professor.audio.url);
-        if (audioSrc) {
-          const audio = document.createElement("audio");
-          audio.controls = true;
-          audio.preload = "metadata";
-          audio.src = audioSrc;
-          audio.style.marginTop = "20px";
-          audio.style.width = "100%";
-          content.append(audio);
+        // Coleta todos os áudios disponíveis para a turma
+        const audios = [];
+
+        // 1. Array de áudios explícito no JSON (caso exista)
+        if (Array.isArray(turma.audios)) {
+          turma.audios.forEach((item) => {
+            if (typeof item === "string" && item.trim()) {
+              audios.push({ url: item.trim(), titulo: "Áudio" });
+            } else if (item && item.url) {
+              audios.push({
+                url: item.url.trim(),
+                titulo: item.titulo || item.descricao || "Áudio"
+              });
+            }
+          });
+        }
+
+        // 2. Áudio principal / específico da turma ou apresentação do professor
+        const audioPrincipalUrl = turma.audioEpecificoUrl || (professor && professor.audio && professor.audio.url);
+        if (audioPrincipalUrl && !audios.some(a => a.url === audioPrincipalUrl)) {
+          let tituloPrincipal = turma.audioEpecificoTitulo || turma.audioTitulo;
+          if (!tituloPrincipal) {
+            if (professor && professor.nome) {
+              const trat = professor.tratamento ? professor.tratamento + " " : "";
+              tituloPrincipal = `Áudio de Apresentação – ${trat}${professor.nome}`;
+            } else {
+              tituloPrincipal = "Áudio de Apresentação";
+            }
+          }
+          audios.push({
+            url: audioPrincipalUrl,
+            titulo: tituloPrincipal
+          });
+        }
+
+        // 3. Segundo áudio / Áudio extra / Trilha Curricular
+        const audioExtraUrl = turma.audioExtraUrl || turma.audioTrilhaCurricularUrl || turma.audioCurriculoUrl || turma.audioSegundoUrl || turma.audioIaUrl;
+        if (audioExtraUrl && !audios.some(a => a.url === audioExtraUrl)) {
+          const tituloExtra = turma.audioExtraTitulo || turma.audioTrilhaCurricularTitulo || turma.audioCurriculoTitulo || turma.audioSegundoTitulo || turma.audioIaTitulo || "Áudio Adicional";
+          audios.push({
+            url: audioExtraUrl,
+            titulo: tituloExtra
+          });
+        }
+
+        if (audios.length > 0) {
+          const container = document.createElement("div");
+          container.className = "turma-audios-container";
+          container.style.display = "flex";
+          container.style.flexDirection = "column";
+          container.style.gap = "14px";
+          container.style.marginTop = "18px";
+          container.style.width = "100%";
+
+          audios.forEach((audioItem) => {
+            const box = document.createElement("div");
+            box.className = "turma-audio-box";
+            box.style.background = "rgba(255, 255, 255, 0.78)";
+            box.style.border = "1px solid rgba(223, 207, 188, 0.7)";
+            box.style.borderRadius = "14px";
+            box.style.padding = "12px 14px";
+            box.style.boxShadow = "0 3px 10px rgba(35, 20, 10, 0.05)";
+
+            if (audioItem.titulo) {
+              const titleEl = document.createElement("p");
+              titleEl.style.fontWeight = "bold";
+              titleEl.style.fontSize = "13.5px";
+              titleEl.style.color = "#4a3424";
+              titleEl.style.marginBottom = "8px";
+              titleEl.style.lineHeight = "1.35";
+              titleEl.textContent = `🎙️ ${audioItem.titulo}`;
+              box.append(titleEl);
+            }
+
+            const audioEl = document.createElement("audio");
+            audioEl.controls = true;
+            audioEl.preload = "metadata";
+            audioEl.src = audioItem.url;
+            audioEl.style.width = "100%";
+            audioEl.style.display = "block";
+
+            // Pausa os outros reprodutores quando este iniciar
+            audioEl.addEventListener("play", () => {
+              container.querySelectorAll("audio").forEach((other) => {
+                if (other !== audioEl && !other.paused) {
+                  other.pause();
+                }
+              });
+            });
+
+            box.append(audioEl);
+            container.append(box);
+          });
+
+          content.append(container);
         } else {
           const p = document.createElement("p");
           p.textContent = "Nenhum áudio disponível no momento.";

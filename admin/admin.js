@@ -730,10 +730,18 @@
         publicoStr += ` (${t.publico.rotulo})`;
       }
 
+      let audioBadges = '';
+      if (t.audioEpecificoUrl) {
+        audioBadges += ' <span title="Áudio de apresentação configurado">🎙️</span>';
+      }
+      if (t.audioExtraUrl || t.audioTrilhaCurricularUrl || t.audioCurriculoUrl) {
+        audioBadges += ' <span title="Áudio extra / trilha curricular configurado">🎧</span>';
+      }
+
       return `
         <tr>
           <td>
-            <strong>${ofName}</strong><br>
+            <strong>${ofName}</strong>${audioBadges}<br>
             <span style="font-size: 11px; color: var(--text-dim); font-family: monospace;">${t.id}</span>
           </td>
           <td>${profName}</td>
@@ -1240,6 +1248,9 @@
       document.getElementById('turma-form-id-max').value = turma.publico?.idadeMax || '';
       document.getElementById('turma-form-rotulo').value = turma.publico?.rotulo || '';
       document.getElementById('turma-form-audio').value = turma.audioEpecificoUrl || '';
+      document.getElementById('turma-form-audio-titulo').value = turma.audioEpecificoTitulo || turma.audioTitulo || '';
+      document.getElementById('turma-form-audio-extra').value = turma.audioExtraUrl || turma.audioTrilhaCurricularUrl || turma.audioCurriculoUrl || '';
+      document.getElementById('turma-form-audio-extra-titulo').value = turma.audioExtraTitulo || turma.audioTrilhaCurricularTitulo || turma.audioCurriculoTitulo || '';
       selMat.value = turma.materialId || '';
       document.getElementById('turma-form-ordem').value = turma.ordem || 10;
       document.getElementById('turma-form-ativo').checked = turma.ativo !== false;
@@ -1256,6 +1267,9 @@
       document.getElementById('turma-form-id-max').value = '8';
       document.getElementById('turma-form-rotulo').value = '';
       document.getElementById('turma-form-audio').value = '';
+      document.getElementById('turma-form-audio-titulo').value = '';
+      document.getElementById('turma-form-audio-extra').value = '';
+      document.getElementById('turma-form-audio-extra-titulo').value = '';
       selMat.value = '';
       document.getElementById('turma-form-ordem').value = ((state.data.turmas || []).length + 1) * 10;
       document.getElementById('turma-form-ativo').checked = true;
@@ -1277,6 +1291,9 @@
     const idadeMax = document.getElementById('turma-form-id-max').value ? parseInt(document.getElementById('turma-form-id-max').value) : null;
     const rotulo = document.getElementById('turma-form-rotulo').value.trim();
     const audioUrl = document.getElementById('turma-form-audio').value.trim();
+    const audioTitulo = document.getElementById('turma-form-audio-titulo').value.trim();
+    const audioExtraUrl = document.getElementById('turma-form-audio-extra').value.trim();
+    const audioExtraTitulo = document.getElementById('turma-form-audio-extra-titulo').value.trim();
     const materialId = document.getElementById('turma-form-material').value;
     const ordem = parseInt(document.getElementById('turma-form-ordem').value) || 10;
     const ativo = document.getElementById('turma-form-ativo').checked;
@@ -1298,7 +1315,9 @@
     if (idadeMax !== null) publico.idadeMax = idadeMax;
     if (rotulo) publico.rotulo = rotulo;
 
+    const oldTurma = (state.editingTurmaIndex !== null && state.data.turmas) ? (state.data.turmas[state.editingTurmaIndex] || {}) : {};
     const turmaObj = {
+      ...oldTurma,
       id,
       ofertaId,
       publico,
@@ -1311,8 +1330,36 @@
       ordem
     };
 
-    if (audioUrl) turmaObj.audioEpecificoUrl = audioUrl;
+    if (audioUrl) {
+      turmaObj.audioEpecificoUrl = audioUrl;
+    } else {
+      delete turmaObj.audioEpecificoUrl;
+    }
+
+    if (audioTitulo) {
+      turmaObj.audioEpecificoTitulo = audioTitulo;
+    } else {
+      delete turmaObj.audioEpecificoTitulo;
+    }
+
+    if (audioExtraUrl) {
+      turmaObj.audioExtraUrl = audioExtraUrl;
+    } else {
+      delete turmaObj.audioExtraUrl;
+      delete turmaObj.audioTrilhaCurricularUrl;
+      delete turmaObj.audioCurriculoUrl;
+    }
+
+    if (audioExtraTitulo) {
+      turmaObj.audioExtraTitulo = audioExtraTitulo;
+    } else {
+      delete turmaObj.audioExtraTitulo;
+      delete turmaObj.audioTrilhaCurricularTitulo;
+      delete turmaObj.audioCurriculoTitulo;
+    }
+
     if (materialId) turmaObj.materialId = materialId;
+    else delete turmaObj.materialId;
 
     if (!state.data.turmas) state.data.turmas = [];
 

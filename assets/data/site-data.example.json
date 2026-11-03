@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "atualizadoEm": "2026-10-26",
+  "atualizadoEm": "2026-11-03",
   "configuracao": {
     "moeda": "BRL",
     "idioma": "pt-BR",
@@ -1989,7 +1989,10 @@
       "professorId": "luzimara-monte-alto",
       "ativo": true,
       "ordem": 430,
-      "materialUrl": "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#10"
+      "materialUrl": "https://www.canva.com/design/DAGmIx3CclY/yB0jqZdogY0ltN6B5nk-ow/view#10",
+      "audioEpecificoUrl": "assets/audio/Professora_Luzimara_Monte_Alto.ogg",
+      "audioExtraUrl": "assets/audio/turmas/portugues/PORTUGUES_5_ANO.ogg",
+      "audioExtraTitulo": "Áudio produzido por IA narrando a trilha curricular de português para a turma do 5 ano"
     },
     {
       "id": "POR_8_30_TER_QUI_XXX",
@@ -2085,7 +2088,9 @@
       "professorId": "filipe-carota",
       "ativo": true,
       "ordem": 480,
-      "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_PROF_FILIPE_CAROTA.ogg"
+      "audioEpecificoUrl": "assets/audio/turmas/matematica/filipe-carota/AUDIO_MAT_5_ANO_PROF_FILIPE_CAROTA.ogg",
+      "audioExtraUrl": "assets/audio/turmas/matematica/MATEMATICA_5_ANO.ogg",
+      "audioExtraTitulo": "Áudio produzido por IA narrando a trilha curricular de matemática para a turma do 5 ano"
     },
     {
       "id": "MAT_8_30_SEG_QUA_XXX",
@@ -2142,7 +2147,9 @@
       "professorId": "ticiano-castoldi",
       "ativo": true,
       "ordem": 510,
-      "audioEpecificoUrl": "assets/audio/turmas/ciencias/ticiano-castoldi/cie_audio_ticiano.mp3"
+      "audioEpecificoUrl": "assets/audio/turmas/ciencias/ticiano-castoldi/cie_audio_ticiano.mp3",
+      "audioExtraUrl": "assets/audio/turmas/ciencias/CIENCIAS_E_FE_5_ANO.ogg",
+      "audioExtraTitulo": "Áudio produzido por IA narrando a trilha curricular de ciências para a turma do 5 ano"
     },
     {
       "id": "CIE_13_30_QUA_TIC",
@@ -2199,7 +2206,9 @@
       "professorId": "ticiano-castoldi",
       "ativo": true,
       "ordem": 540,
-      "audioEpecificoUrl": "assets/audio/turmas/geografia/ticiano-castoldi/geo_audio_ticiano.mp3"
+      "audioEpecificoUrl": "assets/audio/turmas/geografia/ticiano-castoldi/geo_audio_ticiano.mp3",
+      "audioExtraUrl": "assets/audio/turmas/geografia/GEOGRAFIA_5_ANO.ogg",
+      "audioExtraTitulo": "Áudio produzido por IA narrando a trilha curricular de geografia para a turma do 5 ano"
     },
     {
       "id": "GEO_13_30_TER_TIC",
@@ -2256,7 +2265,9 @@
       "professorId": "ticiano-castoldi",
       "ativo": true,
       "ordem": 570,
-      "audioEpecificoUrl": "assets/audio/turmas/historia/ticiano-castoldi/his_audio_ticiano.mp3"
+      "audioEpecificoUrl": "assets/audio/turmas/historia/ticiano-castoldi/his_audio_ticiano.mp3",
+      "audioExtraUrl": "assets/audio/turmas/historia/HISTORIA_5_ANO.ogg",
+      "audioExtraTitulo": "Áudio produzido por IA narrando a trilha curricular de história para a turma do 5 ano"
     },
     {
       "id": "HIS_13_30_SEG_TIC",
