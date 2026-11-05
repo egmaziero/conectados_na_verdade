@@ -976,6 +976,7 @@
       "id": "ingles",
       "nome": "Inglês",
       "cargaSemanalMinutos": 120,
+      "rotuloPreco": "R$ 102,00",
       "rota": "materia.html?materia=ingles",
       "ofertaIds": [
         "ingles"
@@ -985,7 +986,7 @@
       "id": "matematica",
       "nome": "Matemática",
       "cargaSemanalMinutos": 240,
-      "rotuloPreco": "R$ 204,00",
+      "rotuloPreco": "R$ 203,00",
       "rota": "materias/materia-matematica.html",
       "ofertaIds": [
         "matematica"
@@ -1003,6 +1004,7 @@
       "id": "quimica-fisica",
       "nome": "Química e Física",
       "cargaSemanalMinutos": 120,
+      "rotuloPreco": "R$ 102,00",
       "rota": "materias/materia-quimica-fisica.html",
       "ofertaIds": [
         "quimica-fisica"
@@ -1039,7 +1041,7 @@
       "id": "portugues",
       "nome": "Português",
       "cargaSemanalMinutos": 240,
-      "rotuloPreco": "R$ 204,00",
+      "rotuloPreco": "R$ 203,00",
       "rota": "materias/materia-portugues.html",
       "ofertaIds": [
         "portugues"
