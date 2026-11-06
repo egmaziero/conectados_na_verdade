@@ -19,7 +19,8 @@
     editingDepoimentoIndex: null,
     editingMateriaIndex: null,
     editingOfertaIndex: null,
-    editingMaterialIndex: null
+    editingMaterialIndex: null,
+    editingPlanoItemIndex: null
   };
 
   // Nomes dos dias da semana (ISO: 1=Segunda, 7/0=Domingo)
@@ -66,6 +67,16 @@
         .replace(/[\u0300-\u036f]/g, '')
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/(^-|-$)+/g, '');
+    },
+
+    escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
     },
 
     showToast(message, type = 'success') {
@@ -579,6 +590,9 @@
       case 'materiais':
         renderMateriais();
         break;
+      case 'plano-valores':
+        renderPlanoValores();
+        break;
       case 'configuracao':
         renderConfiguracao();
         break;
@@ -596,6 +610,8 @@
     document.getElementById('badge-materias').textContent = (data.materias || []).length;
     document.getElementById('badge-depoimentos').textContent = (data.depoimentos || []).length;
     document.getElementById('badge-materiais').textContent = (data.materiais || []).length;
+    const badgePlano = document.getElementById('badge-plano-valores');
+    if (badgePlano) badgePlano.textContent = (data.planoValores?.itens || []).length;
     
     const atualizadoEl = document.getElementById('topbar-atualizado');
     if (atualizadoEl && data.atualizadoEm) {
@@ -632,6 +648,7 @@
       materias: 'Matérias & Ofertas',
       depoimentos: 'Depoimentos de Famílias e Alunos',
       materiais: 'Materiais Didáticos',
+      'plano-valores': 'Plano de Valores & Promoção',
       configuracao: 'Configurações do Site & PIX',
       backups: 'Histórico & Cópias de Segurança'
     };
@@ -1001,6 +1018,93 @@
   }
 
   // =========================================================================
+  // ABA PLANO DE VALORES
+  // =========================================================================
+  function renderPlanoValores() {
+    const data = state.data;
+    if (!data) return;
+
+    if (!data.planoValores) {
+      data.planoValores = {
+        titulo: "Conheça o Plano de Valores",
+        subtitulo: "Confira abaixo a relação de matérias, carga horária, valores e promoções:",
+        itens: [],
+        promocao: {
+          titulo: "PROMOÇÃO COM ALIANÇA",
+          texto: "",
+          regras: []
+        }
+      };
+    }
+
+    const pv = data.planoValores;
+    const itens = pv.itens || [];
+
+    const labelCount = document.getElementById('plano-count-label');
+    if (labelCount) labelCount.textContent = `${itens.length} matéria${itens.length === 1 ? '' : 's'}`;
+
+    // Popula campos da Promoção e Textos se não estiverem com foco
+    const activeEl = document.activeElement;
+    const inpTituloModal = document.getElementById('plano-titulo-modal');
+    const inpSubtituloModal = document.getElementById('plano-subtitulo-modal');
+    const inpTituloPromo = document.getElementById('plano-promo-titulo');
+    const txtTextoPromo = document.getElementById('plano-promo-texto');
+    const inpRegra1 = document.getElementById('plano-promo-regra1');
+    const inpRegra2 = document.getElementById('plano-promo-regra2');
+
+    if (inpTituloModal && activeEl !== inpTituloModal) inpTituloModal.value = pv.titulo || '';
+    if (inpSubtituloModal && activeEl !== inpSubtituloModal) inpSubtituloModal.value = pv.subtitulo || '';
+    if (inpTituloPromo && activeEl !== inpTituloPromo) inpTituloPromo.value = pv.promocao?.titulo || '';
+    if (txtTextoPromo && activeEl !== txtTextoPromo) txtTextoPromo.value = pv.promocao?.texto || '';
+    if (inpRegra1 && activeEl !== inpRegra1) inpRegra1.value = (pv.promocao?.regras && pv.promocao.regras[0]) || '';
+    if (inpRegra2 && activeEl !== inpRegra2) inpRegra2.value = (pv.promocao?.regras && pv.promocao.regras[1]) || '';
+
+    // Renderiza itens na tabela
+    const tbody = document.getElementById('plano-valores-table-body');
+    if (!tbody) return;
+
+    const searchInput = document.getElementById('search-plano-valores');
+    const term = (searchInput ? searchInput.value : '').toLowerCase().trim();
+
+    if (!itens.length) {
+      tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-dim); padding: 24px;">Nenhuma matéria cadastrada no plano de valores.</td></tr>`;
+      return;
+    }
+
+    let rowsHtml = '';
+    itens.forEach((it, idx) => {
+      if (term && !it.materia.toLowerCase().includes(term) && !it.carga.toLowerCase().includes(term)) {
+        return;
+      }
+
+      const isFirst = idx === 0;
+      const isLast = idx === itens.length - 1;
+
+      rowsHtml += `
+        <tr>
+          <td style="color: var(--text-dim); font-size: 12px; font-weight: bold;">${idx + 1}</td>
+          <td><strong>${utils.escapeHtml(it.materia)}</strong></td>
+          <td style="color: var(--text-dim);">${utils.escapeHtml(it.carga)}</td>
+          <td>
+            <span style="display: inline-block; padding: 2px 8px; border-radius: 6px; background: rgba(39, 86, 32, 0.1); color: #275620; font-weight: 700; font-size: 13px;">
+              ${utils.escapeHtml(it.comAlianca)}
+            </span>
+          </td>
+          <td style="color: var(--text-dim);">${utils.escapeHtml(it.semAlianca)}</td>
+          <td class="actions-cell" style="text-align: right; white-space: nowrap;">
+            <button class="btn btn-sm btn-ghost" onclick="app.movePlanoItem(${idx}, -1)" title="Mover para cima" ${isFirst ? 'disabled style="opacity: 0.3;"' : ''}>▲</button>
+            <button class="btn btn-sm btn-ghost" onclick="app.movePlanoItem(${idx}, 1)" title="Mover para baixo" ${isLast ? 'disabled style="opacity: 0.3;"' : ''}>▼</button>
+            <button class="btn btn-sm btn-secondary" onclick="app.editPlanoItem(${idx})" title="Editar matéria">✏️</button>
+            <button class="btn btn-sm btn-ghost" style="color:var(--danger);" onclick="app.deletePlanoItem(${idx})" title="Excluir matéria">🗑️</button>
+          </td>
+        </tr>
+      `;
+    });
+
+    tbody.innerHTML = rowsHtml || `<tr><td colspan="6" style="text-align: center; color: var(--text-dim); padding: 20px;">Nenhum item encontrado para a busca "${utils.escapeHtml(term)}".</td></tr>`;
+  }
+
+  // =========================================================================
   // ABA 7: CONFIGURAÇÕES & PIX
   // =========================================================================
   function renderConfiguracao() {
@@ -1242,7 +1346,8 @@
       selProf.value = turma.professorId || (state.data.professores[0]?.id || '');
       document.getElementById('turma-form-hora').value = turma.horaInicio || '10:00';
       document.getElementById('turma-form-duracao').value = turma.duracaoMinutos || 30;
-      document.getElementById('turma-form-preco').value = (turma.precoCentavos ? turma.precoCentavos / 100 : (state.data.precoCentavos / 100)).toFixed(2);
+      const defaultPreco = state.data?.precoCentavos ? (state.data.precoCentavos / 100) : 102;
+      document.getElementById('turma-form-preco').value = (turma.precoCentavos ? turma.precoCentavos / 100 : defaultPreco).toFixed(2);
       document.getElementById('turma-form-nivel').value = turma.publico?.nivel || 'iniciante';
       document.getElementById('turma-form-id-min').value = turma.publico?.idadeMin || '';
       document.getElementById('turma-form-id-max').value = turma.publico?.idadeMax || '';
@@ -1261,7 +1366,8 @@
       selProf.selectedIndex = 0;
       document.getElementById('turma-form-hora').value = '10:00';
       document.getElementById('turma-form-duracao').value = 30;
-      document.getElementById('turma-form-preco').value = (state.data.precoCentavos / 100).toFixed(2);
+      const defaultPreco = state.data?.precoCentavos ? (state.data.precoCentavos / 100) : 102;
+      document.getElementById('turma-form-preco').value = defaultPreco.toFixed(2);
       document.getElementById('turma-form-nivel').value = 'iniciante';
       document.getElementById('turma-form-id-min').value = '6';
       document.getElementById('turma-form-id-max').value = '8';
@@ -1645,16 +1751,17 @@
     const m = !isNew ? state.data.materias[index] : null;
 
     document.getElementById('modal-materia-title').textContent = isNew ? 'Nova Matéria' : 'Editar Matéria';
+    const defaultPreco = state.data?.precoCentavos ? (state.data.precoCentavos / 100) : 102;
     if (m) {
       document.getElementById('materia-form-id').value = m.id || '';
       document.getElementById('materia-form-nome').value = m.nome || '';
       document.getElementById('materia-form-carga').value = m.cargaSemanalMinutos || 120;
-      document.getElementById('materia-form-preco').value = (m.precoCentavos ? m.precoCentavos / 100 : (state.data.precoCentavos / 100)).toFixed(2);
+      document.getElementById('materia-form-preco').value = (m.precoCentavos ? m.precoCentavos / 100 : defaultPreco).toFixed(2);
     } else {
       document.getElementById('materia-form-id').value = '';
       document.getElementById('materia-form-nome').value = '';
       document.getElementById('materia-form-carga').value = 120;
-      document.getElementById('materia-form-preco').value = (state.data.precoCentavos / 100).toFixed(2);
+      document.getElementById('materia-form-preco').value = defaultPreco.toFixed(2);
     }
     openModal('modal-materia');
   }
@@ -1668,13 +1775,15 @@
     if (!nome) { alert('Informe o nome da matéria.'); return; }
     if (!id) id = utils.slugify(nome);
 
+    const oldM = (state.editingMateriaIndex !== null && state.data.materias) ? (state.data.materias[state.editingMateriaIndex] || {}) : {};
     const mObj = {
+      ...oldM,
       id,
       nome,
       cargaSemanalMinutos,
       precoCentavos,
-      rota: `materia.html?materia=${encodeURIComponent(id)}`,
-      ofertaIds: [id]
+      rota: oldM.rota || `materia.html?materia=${encodeURIComponent(id)}`,
+      ofertaIds: oldM.ofertaIds || [id]
     };
 
     if (!state.data.materias) state.data.materias = [];
@@ -1744,6 +1853,108 @@
     renderAll();
   }
 
+  function openPlanoItemModal(index = null) {
+    if (!state.data) return;
+    if (!state.data.planoValores) {
+      state.data.planoValores = { itens: [] };
+    }
+    state.editingPlanoItemIndex = index;
+    const isNew = index === null;
+    const it = !isNew ? state.data.planoValores.itens[index] : null;
+
+    document.getElementById('modal-plano-item-title').textContent = isNew ? 'Novo Item na Tabela de Valores' : 'Editar Item da Tabela de Valores';
+
+    if (it) {
+      document.getElementById('plano-item-materia').value = it.materia || '';
+      document.getElementById('plano-item-carga').value = it.carga || '';
+      document.getElementById('plano-item-com-alianca').value = it.comAlianca || '';
+      document.getElementById('plano-item-sem-alianca').value = it.semAlianca || '';
+    } else {
+      document.getElementById('plano-item-materia').value = '';
+      document.getElementById('plano-item-carga').value = '4h aula + 1,3h';
+      document.getElementById('plano-item-com-alianca').value = 'R$ 53,00';
+      document.getElementById('plano-item-sem-alianca').value = 'R$ 59,00';
+    }
+
+    openModal('modal-plano-item');
+  }
+
+  function savePlanoItemModal() {
+    const materia = document.getElementById('plano-item-materia').value.trim();
+    const carga = document.getElementById('plano-item-carga').value.trim();
+    const comAlianca = document.getElementById('plano-item-com-alianca').value.trim();
+    const semAlianca = document.getElementById('plano-item-sem-alianca').value.trim();
+
+    if (!materia) {
+      alert('Por favor, informe o nome da matéria.');
+      return;
+    }
+    if (!carga) {
+      alert('Por favor, informe a carga horária semanal.');
+      return;
+    }
+    if (!comAlianca || !semAlianca) {
+      alert('Por favor, informe os valores com e sem aliança.');
+      return;
+    }
+
+    if (!state.data.planoValores) {
+      state.data.planoValores = { itens: [] };
+    }
+    if (!Array.isArray(state.data.planoValores.itens)) {
+      state.data.planoValores.itens = [];
+    }
+
+    const newItem = {
+      materia,
+      carga,
+      comAlianca,
+      semAlianca
+    };
+
+    if (state.editingPlanoItemIndex === null) {
+      state.data.planoValores.itens.push(newItem);
+      utils.showToast(`Matéria "${materia}" adicionada ao plano de valores!`);
+    } else {
+      state.data.planoValores.itens[state.editingPlanoItemIndex] = newItem;
+      utils.showToast(`Matéria "${materia}" atualizada com sucesso!`);
+    }
+
+    closeAllModals();
+    utils.markUnsaved();
+    renderAll();
+  }
+
+  function savePlanoPromocao() {
+    if (!state.data) return;
+    if (!state.data.planoValores) {
+      state.data.planoValores = { itens: [] };
+    }
+
+    const tituloModal = document.getElementById('plano-titulo-modal')?.value.trim() || 'Conheça o Plano de Valores';
+    const subtituloModal = document.getElementById('plano-subtitulo-modal')?.value.trim() || 'Confira abaixo a relação de matérias, carga horária, valores e promoções:';
+    const tituloPromo = document.getElementById('plano-promo-titulo')?.value.trim() || 'PROMOÇÃO COM ALIANÇA';
+    const textoPromo = document.getElementById('plano-promo-texto')?.value.trim() || '';
+    const regra1 = document.getElementById('plano-promo-regra1')?.value.trim();
+    const regra2 = document.getElementById('plano-promo-regra2')?.value.trim();
+
+    const regras = [];
+    if (regra1) regras.push(regra1);
+    if (regra2) regras.push(regra2);
+
+    state.data.planoValores.titulo = tituloModal;
+    state.data.planoValores.subtitulo = subtituloModal;
+    state.data.planoValores.promocao = {
+      titulo: tituloPromo,
+      texto: textoPromo,
+      regras: regras
+    };
+
+    utils.showToast('Textos e regras da promoção atualizados com sucesso!');
+    utils.markUnsaved();
+    renderAll();
+  }
+
   // --- CONFIGURAÇÃO DE AÇÕES GLOBAIS ---
   function setupGlobalActions() {
     document.getElementById('btn-save-global')?.addEventListener('click', saveAllData);
@@ -1777,6 +1988,7 @@
     document.getElementById('btn-add-materia')?.addEventListener('click', () => openMateriaModal());
     document.getElementById('btn-add-oferta')?.addEventListener('click', () => openOfertaModal());
     document.getElementById('btn-add-material')?.addEventListener('click', () => openMaterialModal());
+    document.getElementById('btn-add-plano-item')?.addEventListener('click', () => openPlanoItemModal());
 
     document.getElementById('btn-save-turma-modal')?.addEventListener('click', saveTurmaModal);
     document.getElementById('btn-save-prof-modal')?.addEventListener('click', saveProfessorModal);
@@ -1784,6 +1996,10 @@
     document.getElementById('btn-save-material-modal')?.addEventListener('click', saveMaterialModal);
     document.getElementById('btn-save-materia-modal')?.addEventListener('click', saveMateriaModal);
     document.getElementById('btn-save-oferta-modal')?.addEventListener('click', saveOfertaModal);
+    document.getElementById('btn-save-plano-item-modal')?.addEventListener('click', savePlanoItemModal);
+    document.getElementById('btn-save-plano-promo')?.addEventListener('click', savePlanoPromocao);
+
+    document.getElementById('search-plano-valores')?.addEventListener('input', () => renderPlanoValores());
 
     document.getElementById('btn-export-json')?.addEventListener('click', () => downloadJsonFile());
 
@@ -1878,6 +2094,28 @@
         utils.markUnsaved();
         renderAll();
       }
+    },
+    editPlanoItem: (idx) => openPlanoItemModal(idx),
+    deletePlanoItem: (idx) => {
+      const it = state.data.planoValores?.itens[idx];
+      if (!it) return;
+      if (confirm(`Excluir a matéria "${it.materia}" do plano de valores?`)) {
+        state.data.planoValores.itens.splice(idx, 1);
+        utils.markUnsaved();
+        utils.showToast('Item excluído da tabela!', 'warning');
+        renderAll();
+      }
+    },
+    movePlanoItem: (idx, direction) => {
+      const itens = state.data.planoValores?.itens;
+      if (!itens) return;
+      const targetIdx = idx + direction;
+      if (targetIdx < 0 || targetIdx >= itens.length) return;
+      const temp = itens[idx];
+      itens[idx] = itens[targetIdx];
+      itens[targetIdx] = temp;
+      utils.markUnsaved();
+      renderAll();
     },
     restoreServerBackup: async (fn) => {
       if (!confirm(`Restaurar o backup "${fn}" do disco?`)) return;

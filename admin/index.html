@@ -83,6 +83,11 @@
             <span>Materiais Didáticos</span>
             <span class="badge-pill" id="badge-materiais">0</span>
           </a>
+          <a class="nav-item" data-nav="plano-valores">
+            <span class="nav-icon">💰</span>
+            <span>Plano de Valores</span>
+            <span class="badge-pill" id="badge-plano-valores">0</span>
+          </a>
           <a class="nav-item" data-nav="configuracao">
             <span class="nav-icon">⚙️</span>
             <span>Configurações & PIX</span>
@@ -415,7 +420,91 @@
             </div>
           </section>
 
-          <!-- 7. ABA CONFIGURAÇÕES & PIX -->
+          <!-- 7. ABA PLANO DE VALORES -->
+          <section id="view-plano-valores" class="view-section">
+            <div class="toolbar">
+              <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-plano-valores" class="search-input" placeholder="Buscar matéria no plano de valores..." />
+              </div>
+              <div class="filter-group">
+                <button id="btn-add-plano-item" class="btn btn-primary">
+                  <span>➕</span> Novo Item na Tabela
+                </button>
+              </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 24px;">
+              <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <div>
+                  <h3 class="card-title">Tabela de Matérias, Cargas e Valores</h3>
+                  <p style="font-size: 13px; color: var(--text-dim); margin: 0;">
+                    Esta é a tabela dinâmica exibida ao clicar em "Conheça os planos de valores" em todas as páginas do site.
+                  </p>
+                </div>
+                <span id="plano-count-label" style="font-size: 13px; color: var(--text-dim); font-weight: 500;">0 itens</span>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 45px;">#</th>
+                      <th>Matéria</th>
+                      <th>Hora aula + Produção / sem.</th>
+                      <th>Valor com Aliança</th>
+                      <th>Valor mensal sem Aliança</th>
+                      <th style="text-align: right; width: 140px;">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="plano-valores-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- CARD PROMOÇÃO COM ALIANÇA -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Promoção com Aliança (Rodapé da Tabela)</h3>
+                <p style="font-size: 13px; color: var(--text-dim); margin: 0;">
+                  Texto explicativo e regras exibidas no cartão promocional abaixo da tabela.
+                </p>
+              </div>
+              <div class="form-grid">
+                <div class="form-group form-full">
+                  <label class="form-label">Título da Tabela no Modal</label>
+                  <input type="text" id="plano-titulo-modal" class="form-input" placeholder="ex: Conheça o Plano de Valores" />
+                </div>
+                <div class="form-group form-full">
+                  <label class="form-label">Subtítulo da Tabela no Modal</label>
+                  <input type="text" id="plano-subtitulo-modal" class="form-input" placeholder="ex: Confira abaixo a relação de matérias, carga horária, valores e promoções:" />
+                </div>
+                <div class="form-group form-full">
+                  <label class="form-label">Título do Bloco Promocional</label>
+                  <input type="text" id="plano-promo-titulo" class="form-input" placeholder="ex: PROMOÇÃO COM ALIANÇA" />
+                </div>
+                <div class="form-group form-full">
+                  <label class="form-label">Texto Explicativo da Promoção</label>
+                  <textarea id="plano-promo-texto" class="form-textarea" rows="3" placeholder="Texto explicando o propósito da promoção..."></textarea>
+                </div>
+                <div class="form-group form-full">
+                  <label class="form-label">Regra 1</label>
+                  <input type="text" id="plano-promo-regra1" class="form-input" placeholder="Regra 1..." />
+                </div>
+                <div class="form-group form-full">
+                  <label class="form-label">Regra 2</label>
+                  <input type="text" id="plano-promo-regra2" class="form-input" placeholder="Regra 2..." />
+                </div>
+              </div>
+              <div style="margin-top: 16px; text-align: right;">
+                <button type="button" id="btn-save-plano-promo" class="btn btn-secondary">
+                  Atualizar Textos da Promoção
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 8. ABA CONFIGURAÇÕES & PIX -->
           <section id="view-configuracao" class="view-section">
             <div class="card">
               <div class="card-header">
@@ -919,6 +1008,40 @@
         <div class="modal-footer">
           <button class="btn btn-secondary modal-close">Cancelar</button>
           <button id="btn-save-oferta-modal" class="btn btn-primary">Gravar Oferta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL PLANO ITEM -->
+    <div id="modal-plano-item" class="modal-backdrop">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 id="modal-plano-item-title">Editar Item da Tabela</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group form-full">
+              <label class="form-label">Nome da Matéria / Item <span class="req">*</span></label>
+              <input type="text" id="plano-item-materia" class="form-input" placeholder="ex: Português, Clube de Eva, Latim..." />
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label">Carga Horária Semanal <span class="req">*</span></label>
+              <input type="text" id="plano-item-carga" class="form-input" placeholder="ex: 16h aula + 4h ou 4h aula + 1,3h" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Valor com Aliança <span class="req">*</span></label>
+              <input type="text" id="plano-item-com-alianca" class="form-input" placeholder="ex: R$ 203,00" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Valor mensal sem Aliança <span class="req">*</span></label>
+              <input type="text" id="plano-item-sem-alianca" class="form-input" placeholder="ex: R$ 225,00" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary modal-close">Cancelar</button>
+          <button id="btn-save-plano-item-modal" class="btn btn-primary">Salvar Item</button>
         </div>
       </div>
     </div>

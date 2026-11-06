@@ -2741,5 +2741,145 @@
       "maxParcelas": 12,
       "obrigatorio": true
     }
+  },
+  "planoValores": {
+    "titulo": "Conheça o Plano de Valores",
+    "subtitulo": "Confira abaixo a relação de matérias, carga horária, valores e promoções:",
+    "itens": [
+      {
+        "materia": "Português",
+        "carga": "16h aula + 4h",
+        "comAlianca": "R$ 203,00",
+        "semAlianca": "R$ 225,00"
+      },
+      {
+        "materia": "Matemática",
+        "carga": "16h aula + 4h",
+        "comAlianca": "R$ 203,00",
+        "semAlianca": "R$ 225,00"
+      },
+      {
+        "materia": "Ciências",
+        "carga": "8h aula + 2h",
+        "comAlianca": "R$ 102,00",
+        "semAlianca": "R$ 114,00"
+      },
+      {
+        "materia": "Geografia",
+        "carga": "8h aula + 2h",
+        "comAlianca": "R$ 102,00",
+        "semAlianca": "R$ 114,00"
+      },
+      {
+        "materia": "História",
+        "carga": "8h aula + 2h",
+        "comAlianca": "R$ 102,00",
+        "semAlianca": "R$ 114,00"
+      },
+      {
+        "materia": "Int Química e Física",
+        "carga": "8h aula + 2h",
+        "comAlianca": "R$ 102,00",
+        "semAlianca": "R$ 114,00"
+      },
+      {
+        "materia": "Aprendendo a Palavra",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Inglês 4 dias",
+        "carga": "8h aula + 2h",
+        "comAlianca": "R$ 102,00",
+        "semAlianca": "R$ 114,00"
+      },
+      {
+        "materia": "Inglês 1 dia",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Hebraico",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Espanhol",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Latim",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Italiano",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Robótica",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Música",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Xadrez",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Artes",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Leitura",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "The maker",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 53,00",
+        "semAlianca": "R$ 59,00"
+      },
+      {
+        "materia": "Clube de Eva",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 0,00",
+        "semAlianca": "R$ 0,00"
+      },
+      {
+        "materia": "Clube de Adão",
+        "carga": "4h aula + 1,3h",
+        "comAlianca": "R$ 0,00",
+        "semAlianca": "R$ 0,00"
+      }
+    ],
+    "promocao": {
+      "titulo": "PROMOÇÃO COM ALIANÇA",
+      "texto": "Esperamos que as famílias entendam que cada família é um corpo e desempenha a sua função no nosso projeto, espalhar a semente e ajudar a outra família a nos conhecer é uma demanda de cada um de vocês. A recompensa é a promoção especificada no Valor mensal com aliança. Esta promoção visa obter desconto especial para as famílias que:",
+      "regras": [
+        "Trouxerem mais 2 famílias para se aliarem ao nosso projeto, apoiando estas famílias e efetuando suas matrículas.",
+        "Aliarem-se por 1 ano com o mestre da matéria escolhida, assim garantindo uma segurança para ambas as partes em contrato."
+      ]
+    }
   }
 }

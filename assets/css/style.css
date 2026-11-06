@@ -799,3 +799,154 @@ textarea { min-height: 92px; resize: vertical; }
   background: rgba(143, 95, 53, 0.22);
 }
 
+/* Tabela Dinâmica do Plano de Valores */
+.modal-card.modal-planos-card {
+  max-width: 640px;
+  padding: 22px 18px;
+}
+.plano-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.plano-header img.plano-logo {
+  height: 48px;
+  width: auto;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+.plano-header h3 {
+  color: #4a3424;
+  margin: 4px 0 6px;
+  font-size: 20px;
+}
+.plano-header p {
+  color: #6e5845;
+  font-size: 13.5px;
+  line-height: 1.4;
+  margin: 0;
+}
+.plano-tabela-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(143, 95, 53, 0.2);
+  box-shadow: 0 4px 16px rgba(40, 25, 12, 0.05);
+  margin-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+.plano-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+.plano-tabela thead th {
+  background: #fbf5ec;
+  color: #4a3424;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-bottom: 2px solid rgba(143, 95, 53, 0.2);
+  white-space: nowrap;
+}
+.plano-tabela thead th.th-alianca {
+  color: #8f5f35;
+}
+.plano-tabela tbody tr {
+  border-bottom: 1px solid rgba(143, 95, 53, 0.08);
+  transition: background 0.15s ease;
+}
+.plano-tabela tbody tr:last-child {
+  border-bottom: none;
+}
+.plano-tabela tbody tr:hover {
+  background: rgba(246, 237, 224, 0.4);
+}
+.plano-tabela tbody td {
+  padding: 8px 12px;
+  vertical-align: middle;
+}
+.plano-materia-nome {
+  font-weight: 600;
+  color: #4a3424;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.plano-carga {
+  color: #7a6350;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.plano-com-alianca {
+  font-weight: 700;
+  color: #275620;
+  white-space: nowrap;
+}
+.plano-com-alianca .badge-preco {
+  background: rgba(39, 86, 32, 0.09);
+  padding: 3px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(39, 86, 32, 0.18);
+  display: inline-block;
+}
+.plano-sem-alianca {
+  color: #7a6350;
+  white-space: nowrap;
+  font-size: 12.5px;
+}
+.plano-promocao-card {
+  background: linear-gradient(135deg, #fffcf7, #fdf6ec);
+  border: 1.5px solid #d8b78f;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(40, 25, 12, 0.04);
+}
+.plano-promocao-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: bold;
+  color: #8f5f35;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+.plano-promocao-desc {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #554030;
+  margin-bottom: 12px;
+}
+.plano-promocao-regras {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.plano-promocao-regras li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #4a3424;
+}
+.plano-promocao-regras .num-badge {
+  background: #8f5f35;
+  color: #ffffff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+

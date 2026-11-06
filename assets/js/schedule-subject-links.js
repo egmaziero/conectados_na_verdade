@@ -8,6 +8,7 @@ const scheduleLinks = {
   História: "turmas/turmas-historia.html",
   Geografia: "turmas/turmas-geografia.html",
   Ciências: "turmas/turmas-ciencias.html",
+  "Ciências e Fé": "turmas/turmas-ciencias.html",
   "Química/Física": "turmas/turmas-fisica-quimica.html",
   Matemática: "turmas/turmas-matematica.html",
   Português: "turmas/turmas-portugues.html",
