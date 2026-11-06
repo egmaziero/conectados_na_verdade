@@ -380,6 +380,17 @@ button.cta {
   letter-spacing: -.02em;
   text-transform: uppercase;
 }
+
+/* Nova classe de aviso do cronograma alinhada com a fonte e a cor verde-musgo do .schedule-cta */
+.schedule-notice {
+  font-family: Georgia, serif;
+  color: #21471f;
+  text-align: center;
+  font-size: 15px;
+  margin: 10px 0 16px 0;
+  line-height: 1.35;
+}
+
 .schedule-table-wrap { padding: 0 2px; }
 .schedule-table {
   width: 100%;
@@ -949,4 +960,3 @@ textarea { min-height: 92px; resize: vertical; }
   flex-shrink: 0;
   margin-top: 1px;
 }
-
