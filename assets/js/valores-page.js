@@ -110,7 +110,28 @@
     }
   }
 
+  function setupShareWhatsApp() {
+    const btn = document.getElementById("btn-share-whatsapp");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      const shareUrl = "https://conectadosnaverdade.com.br/valores.html";
+      const shareText = "Confira a relação de matérias, carga horária e Plano de Valores do projeto Conectados na Verdade:\n" + shareUrl;
+      if (navigator.share) {
+        navigator.share({
+          title: "Plano de Valores | Conectados na Verdade",
+          text: "Confira a relação de matérias, carga horária e Plano de Valores do projeto Conectados na Verdade:",
+          url: shareUrl
+        }).catch(function () {
+          window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(shareText), "_blank");
+        });
+      } else {
+        window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(shareText), "_blank");
+      }
+    });
+  }
+
   async function init() {
+    setupShareWhatsApp();
     try {
       const dataUrl = "assets/data/site-data.example.json?v=" + Date.now();
       const res = await fetch(dataUrl);

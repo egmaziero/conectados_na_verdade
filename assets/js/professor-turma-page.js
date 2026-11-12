@@ -119,7 +119,15 @@
         </a>
       `;
 
-      // 4. Aulas online (Vídeos desabilitados temporariamente - Moodle em breve)
+      // 4. Escute a trilha curricular desta matéria produzida com IA (sempre visível)
+      nav.innerHTML += `
+        <a class="subject-action" href="turma-mensagem.html?turma=${encodeURIComponent(turma.id)}#trilha-curricular">
+          <b class="subject-icon"><img src="assets/icons/audio.png" alt="" /></b>
+          <span>Escute a <em>trilha curricular</em> desta matéria produzida com IA</span>
+        </a>
+      `;
+
+      // 5. Aulas online (Vídeos desabilitados temporariamente - Moodle em breve)
       nav.innerHTML += `
         <a class="subject-action is-disabled" href="javascript:void(0)" style="opacity: 0.55; cursor: default; pointer-events: none;">
           <b class="subject-icon"><img src="assets/icons/video.png" alt="" /></b>

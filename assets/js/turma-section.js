@@ -91,19 +91,31 @@
           }
           audios.push({
             url: audioPrincipalUrl,
-            titulo: tituloPrincipal
+            titulo: tituloPrincipal,
+            icon: "🎙️",
+            tipo: "apresentacao"
+          });
+        } else if (!audioPrincipalUrl && audios.length === 0) {
+          const trat = (professor && professor.tratamento) ? professor.tratamento + " " : "";
+          const profNome = professor ? `${trat}${professor.nome}` : "";
+          audios.push({
+            url: null,
+            titulo: profNome ? `Áudio de Apresentação – ${profNome}` : "Áudio de Apresentação",
+            icon: "🎙️",
+            tipo: "apresentacao"
           });
         }
 
-        // 3. Segundo áudio / Áudio extra / Trilha Curricular
+        // 3. Trilha Curricular produzida com IA
         const audioExtraUrl = turma.audioExtraUrl || turma.audioTrilhaCurricularUrl || turma.audioCurriculoUrl || turma.audioSegundoUrl || turma.audioIaUrl;
-        if (audioExtraUrl && !audios.some(a => a.url === audioExtraUrl)) {
-          const tituloExtra = turma.audioExtraTitulo || turma.audioTrilhaCurricularTitulo || turma.audioCurriculoTitulo || turma.audioSegundoTitulo || turma.audioIaTitulo || "Áudio Adicional";
-          audios.push({
-            url: audioExtraUrl,
-            titulo: tituloExtra
-          });
-        }
+        const tituloTrilha = turma.audioExtraTitulo || turma.audioTrilhaCurricularTitulo || turma.audioCurriculoTitulo || turma.audioSegundoTitulo || turma.audioIaTitulo || "Escute a trilha curricular desta matéria produzida com IA";
+        audios.push({
+          url: audioExtraUrl || null,
+          titulo: tituloTrilha,
+          icon: "🎧",
+          isTrilha: true,
+          tipo: "trilha"
+        });
 
         if (audios.length > 0) {
           const container = document.createElement("div");
@@ -117,11 +129,15 @@
           audios.forEach((audioItem) => {
             const box = document.createElement("div");
             box.className = "turma-audio-box";
+            if (audioItem.isTrilha) {
+              box.id = "trilha-curricular";
+            }
             box.style.background = "rgba(255, 255, 255, 0.78)";
             box.style.border = "1px solid rgba(223, 207, 188, 0.7)";
             box.style.borderRadius = "14px";
             box.style.padding = "12px 14px";
             box.style.boxShadow = "0 3px 10px rgba(35, 20, 10, 0.05)";
+            box.style.transition = "box-shadow 0.3s ease, border-color 0.3s ease";
 
             if (audioItem.titulo) {
               const titleEl = document.createElement("p");
@@ -130,31 +146,73 @@
               titleEl.style.color = "#4a3424";
               titleEl.style.marginBottom = "8px";
               titleEl.style.lineHeight = "1.35";
-              titleEl.textContent = `🎙️ ${audioItem.titulo}`;
+              titleEl.textContent = `${audioItem.icon || "🎙️"} ${audioItem.titulo}`;
               box.append(titleEl);
             }
 
-            const audioEl = document.createElement("audio");
-            audioEl.controls = true;
-            audioEl.preload = "metadata";
-            audioEl.src = audioItem.url;
-            audioEl.style.width = "100%";
-            audioEl.style.display = "block";
+            if (audioItem.url) {
+              const audioEl = document.createElement("audio");
+              audioEl.controls = true;
+              audioEl.preload = "metadata";
+              audioEl.src = audioItem.url;
+              audioEl.style.width = "100%";
+              audioEl.style.display = "block";
 
-            // Pausa os outros reprodutores quando este iniciar
-            audioEl.addEventListener("play", () => {
-              container.querySelectorAll("audio").forEach((other) => {
-                if (other !== audioEl && !other.paused) {
-                  other.pause();
-                }
+              // Pausa os outros reprodutores quando este iniciar
+              audioEl.addEventListener("play", () => {
+                container.querySelectorAll("audio").forEach((other) => {
+                  if (other !== audioEl && !other.paused) {
+                    other.pause();
+                  }
+                });
               });
-            });
 
-            box.append(audioEl);
+              box.append(audioEl);
+            } else {
+              const pendingBox = document.createElement("div");
+              pendingBox.style.padding = "10px 12px";
+              pendingBox.style.background = "rgba(246, 237, 224, 0.6)";
+              pendingBox.style.border = "1px dashed rgba(143, 95, 53, 0.35)";
+              pendingBox.style.borderRadius = "10px";
+              pendingBox.style.fontSize = "12.5px";
+              pendingBox.style.color = "#7a583e";
+              pendingBox.style.lineHeight = "1.4";
+              pendingBox.style.display = "flex";
+              pendingBox.style.alignItems = "center";
+              pendingBox.style.gap = "8px";
+              const msg = audioItem.isTrilha
+                ? "Áudio da trilha curricular em produção com IA. Em breve disponível aqui!"
+                : "Áudio de apresentação em gravação. Em breve disponível aqui!";
+              pendingBox.innerHTML = `<span>⏳</span><span>${msg}</span>`;
+              box.append(pendingBox);
+            }
+
             container.append(box);
           });
 
           content.append(container);
+
+          // Botão para voltar para a página da turma
+          const backBtn = document.createElement("a");
+          backBtn.className = "cta";
+          backBtn.href = `professor-turma.html?turma=${encodeURIComponent(turma.id)}`;
+          backBtn.style.marginTop = "20px";
+          backBtn.style.textAlign = "center";
+          backBtn.style.display = "block";
+          backBtn.textContent = "Voltar para Opções da Turma";
+          content.append(backBtn);
+
+          // Efeito de rolagem suave e destaque se veio pelo hash #trilha ou #trilha-curricular
+          if (window.location.hash === "#trilha" || window.location.hash === "#trilha-curricular") {
+            setTimeout(() => {
+              const target = document.getElementById("trilha-curricular");
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "center" });
+                target.style.borderColor = "#b3541e";
+                target.style.boxShadow = "0 0 0 3px rgba(179, 84, 30, 0.25)";
+              }
+            }, 150);
+          }
         } else {
           const p = document.createElement("p");
           p.textContent = "Nenhum áudio disponível no momento.";
