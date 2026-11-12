@@ -16,14 +16,14 @@
       { materia: "Ciências", carga: "8h aula + 2h", comAlianca: "R$ 102,00", semAlianca: "R$ 114,00" },
       { materia: "Geografia", carga: "8h aula + 2h", comAlianca: "R$ 102,00", semAlianca: "R$ 114,00" },
       { materia: "História", carga: "8h aula + 2h", comAlianca: "R$ 102,00", semAlianca: "R$ 114,00" },
-      { materia: "Int Química e Física", carga: "8h aula + 2h", comAlianca: "R$ 102,00", semAlianca: "R$ 114,00" },
+      { materia: "Química e Física", carga: "8h aula + 2h", comAlianca: "R$ 102,00", semAlianca: "R$ 114,00" },
       { materia: "Aprendendo a Palavra", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
       { materia: "Inglês 4 dias", carga: "8h aula + 2h", comAlianca: "R$ 102,00", semAlianca: "R$ 114,00" },
       { materia: "Inglês 1 dia", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
       { materia: "Hebraico", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
       { materia: "Espanhol", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
+      { materia: "Astronomia e fé", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
       { materia: "Latim", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
-      { materia: "Italiano", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
       { materia: "Robótica", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
       { materia: "Música", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
       { materia: "Xadrez", carga: "4h aula + 1,3h", comAlianca: "R$ 53,00", semAlianca: "R$ 59,00" },
@@ -118,7 +118,7 @@
       </div>
 
       <div style="margin-top: 14px; text-align: center;">
-        <a href="assets/img/plano-materias.png?v=20261105" target="_blank" rel="noopener noreferrer" style="font-size: 12.5px; color: #8f5f35; text-decoration: none; font-weight: 500;">
+        <a href="assets/img/plano-materias.png?v=20261112" target="_blank" rel="noopener noreferrer" style="font-size: 12.5px; color: #8f5f35; text-decoration: none; font-weight: 500;">
           🖼️ Abrir tabela em formato imagem original
         </a>
       </div>
