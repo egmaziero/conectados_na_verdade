@@ -145,14 +145,14 @@
       });
     }
 
-    // Botões que abrem o modal
+    // Redireciona botões para a página dedicada de valores
     const openButtons = document.querySelectorAll(
       '#btn-planos-valores, [data-open-modal="modal-planos"], .btn-planos-valores'
     );
     openButtons.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
-        modal.style.display = "flex";
+        window.location.href = "valores.html";
       });
     });
 

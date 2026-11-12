@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plano de Valores | Conectados na Verdade</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script src="assets/js/home-button.js" defer></script>
+    <script src="assets/js/icons.js" defer></script>
+    <script src="assets/js/valores-page.js" defer></script>
+  </head>
+
+  <body>
+    <main class="page-shell">
+      <section class="phone-frame valores-frame">
+        <div class="screen valores-screen">
+          <div class="topbar">
+            <a class="back" href="javascript:history.back()">←</a>
+            <div class="topbar-title"><strong>Voltar</strong></div>
+          </div>
+
+          <div class="panel" style="margin-bottom: 16px;">
+            <center>
+              <p class="kicker">Tabela de Investimento</p>
+              <h2 id="valores-title">Conheça o Plano de Valores</h2>
+              <p id="valores-subtitle" style="font-size: 13.5px; line-height: 1.45; color: var(--muted); margin: 0;">
+                Confira abaixo a relação de matérias, carga horária, valores e promoções:
+              </p>
+            </center>
+          </div>
+
+          <!-- Tabela de Valores -->
+          <div class="plano-tabela-wrap">
+            <table class="plano-tabela">
+              <thead>
+                <tr>
+                  <th>Matéria</th>
+                  <th>🕒 Hora aula + Hora produção / sem.</th>
+                  <th class="th-alianca">💍 Com Aliança</th>
+                  <th>💍 Sem Aliança</th>
+                </tr>
+              </thead>
+              <tbody id="valores-table-body">
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Português</span></td>
+                  <td class="plano-carga">16h aula + 4h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 203,00</span></td>
+                  <td class="plano-sem-alianca">R$ 225,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Matemática</span></td>
+                  <td class="plano-carga">16h aula + 4h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 203,00</span></td>
+                  <td class="plano-sem-alianca">R$ 225,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Ciências</span></td>
+                  <td class="plano-carga">8h aula + 2h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 102,00</span></td>
+                  <td class="plano-sem-alianca">R$ 114,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Geografia</span></td>
+                  <td class="plano-carga">8h aula + 2h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 102,00</span></td>
+                  <td class="plano-sem-alianca">R$ 114,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 História</span></td>
+                  <td class="plano-carga">8h aula + 2h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 102,00</span></td>
+                  <td class="plano-sem-alianca">R$ 114,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Int Química e Física</span></td>
+                  <td class="plano-carga">8h aula + 2h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 102,00</span></td>
+                  <td class="plano-sem-alianca">R$ 114,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Aprendendo a Palavra</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Inglês 4 dias</span></td>
+                  <td class="plano-carga">8h aula + 2h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 102,00</span></td>
+                  <td class="plano-sem-alianca">R$ 114,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Inglês 1 dia</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Hebraico</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Espanhol</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Latim</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Italiano</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Robótica</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Música</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Xadrez</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Artes</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Leitura</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 The maker</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 53,00</span></td>
+                  <td class="plano-sem-alianca">R$ 59,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Clube de Eva</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 0,00</span></td>
+                  <td class="plano-sem-alianca">R$ 0,00</td>
+                </tr>
+                <tr>
+                  <td><span class="plano-materia-nome">🌾 Clube de Adão</span></td>
+                  <td class="plano-carga">4h aula + 1,3h</td>
+                  <td class="plano-com-alianca"><span class="badge-preco">R$ 0,00</span></td>
+                  <td class="plano-sem-alianca">R$ 0,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Card Promoção com Aliança -->
+          <div id="valores-promocao-card" class="plano-promocao-card">
+            <div class="plano-promocao-title">
+              <span>🌿</span>
+              <span>PROMOÇÃO COM ALIANÇA</span>
+              <span>🌿</span>
+            </div>
+            <p class="plano-promocao-desc">
+              Esperamos que as famílias entendam que cada família é um corpo e desempenha a sua função no nosso projeto, espalhar a semente e ajudar a outra família a nos conhecer é uma demanda de cada um de vocês. A recompensa é a promoção especificada no Valor mensal com aliança. Esta promoção visa obter desconto especial para as famílias que:
+            </p>
+            <ul class="plano-promocao-regras">
+              <li>
+                <span class="num-badge">1</span>
+                <span>Trouxerem mais 2 famílias para se aliarem ao nosso projeto, apoiando estas famílias e efetuando suas matrículas.</span>
+              </li>
+              <li>
+                <span class="num-badge">2</span>
+                <span>Aliarem-se por 1 ano com o mestre da matéria escolhida, assim garantindo uma segurança para ambas as partes em contrato.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 16px; text-align: center;">
+            <a href="assets/img/plano-materias.png?v=20261105" target="_blank" rel="noopener noreferrer" style="font-size: 13px; color: #8f5f35; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+              <span>🖼️</span> <span>Abrir tabela em formato imagem original</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <a class="cta" href="matriculas.html">Ir para Matrículas</a>
+          </div>
+
+          <footer style="margin-top: auto; padding-top: 24px; text-align: center;">
+            <p class="mini" style="font-size: 11.5px; line-height: 1.45; color: var(--muted); margin: 0; padding: 0 10px;">
+              As informações matrículas deste site estarão oficialmente prontos a partir do dia 01 de dezembro de 2026
+            </p>
+          </footer>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

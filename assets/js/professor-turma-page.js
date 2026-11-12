@@ -161,7 +161,7 @@
 
       // 6. Conheça os planos de valores
       nav.innerHTML += `
-        <a class="subject-action" href="javascript:void(0)" id="btn-planos-valores">
+        <a class="subject-action" href="valores.html">
           <b class="subject-icon"><img src="assets/icons/badge.png" alt="" /></b>
           <span>Conheça os <em>planos de valores</em></span>
         </a>
@@ -177,15 +177,6 @@
 
       subjectCard.append(nav);
       content.append(subjectCard);
-
-      const btnPlanos = document.getElementById("btn-planos-valores");
-      const modalPlanos = document.getElementById("modal-planos");
-      if (btnPlanos && modalPlanos) {
-        btnPlanos.addEventListener("click", () => { modalPlanos.style.display = "flex"; });
-        modalPlanos.querySelectorAll(".modal-close, .modal-backdrop").forEach(el => {
-          el.addEventListener("click", () => { modalPlanos.style.display = "none"; });
-        });
-      }
     })
     .catch((err) => {
       console.error(err);

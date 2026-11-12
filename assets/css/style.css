@@ -811,6 +811,9 @@ textarea { min-height: 92px; resize: vertical; }
 }
 
 /* Tabela Dinâmica do Plano de Valores */
+.valores-frame {
+  --phone: 640px;
+}
 .modal-card.modal-planos-card {
   max-width: 640px;
   padding: 22px 18px;
