@@ -2,6 +2,15 @@
   const content = document.querySelector("[data-teacher-content]");
   const turmaId = new URLSearchParams(window.location.search).get("turma");
 
+  const buildProfessorProfileUrl = (professor, turma) => {
+    const params = new URLSearchParams();
+    params.set("professor", professor.id);
+    if (turma && turma.ofertaId) {
+      params.set("materia", turma.ofertaId);
+    }
+    return `professor.html?${params.toString()}`;
+  };
+
   const showMessage = (title, message) => {
     document.title = `${title} | Conectados na Verdade`;
     content.replaceChildren();
@@ -90,8 +99,9 @@
 
       // 1. Conheça o professor
       if (professor.id !== "a-definir") {
+        const profHref = buildProfessorProfileUrl(professor, turma);
         nav.innerHTML += `
-          <a class="subject-action" href="professor.html?professor=${encodeURIComponent(professor.id)}">
+          <a class="subject-action" href="${profHref}">
             <b class="subject-icon"><img src="assets/icons/teacher-1.png" alt="" /></b>
             <span>Conheça o(a) <em>professor(a)</em></span>
           </a>

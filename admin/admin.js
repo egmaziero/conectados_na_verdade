@@ -828,7 +828,8 @@
     }
 
     container.innerHTML = filtered.map(p => {
-      const turmasCount = (data.turmas || []).filter(t => t.professorId === p.id).length;
+      const profTurmas = (data.turmas || []).filter(t => t.professorId === p.id);
+      const turmasCount = profTurmas.length;
       const avatarHtml = p.fotoUrl 
         ? `<img class="teacher-avatar" src="${p.fotoUrl}" alt="${p.nome}" onerror="this.onerror=null; this.src='assets/icons/teacher-1.png';">`
         : `<div class="teacher-avatar-placeholder">${p.nome.charAt(0)}</div>`;
@@ -840,6 +841,45 @@
       ` : '';
 
       const bioSnippet = (p.biografia && p.biografia.length) ? p.biografia[0] : 'Sem biografia cadastrada.';
+
+      // Matérias lecionadas + matérias com apresentação exclusiva
+      const materiaMap = new Map();
+      profTurmas.forEach(t => {
+        if (!t.ofertaId) return;
+        const of = (data.ofertas || []).find(o => o.id === t.ofertaId);
+        materiaMap.set(t.ofertaId, {
+          id: t.ofertaId,
+          nome: of ? of.nome : t.ofertaId,
+          exclusiva: Boolean(p.apresentacoesPorMateria && p.apresentacoesPorMateria[t.ofertaId])
+        });
+      });
+
+      if (p.apresentacoesPorMateria && typeof p.apresentacoesPorMateria === 'object') {
+        Object.keys(p.apresentacoesPorMateria).forEach(matKey => {
+          const of = (data.ofertas || []).find(o => o.id === matKey);
+          const mat = (data.materias || []).find(m => m.id === matKey);
+          const label = of ? of.nome : (mat ? mat.nome : matKey);
+          materiaMap.set(matKey, {
+            id: matKey,
+            nome: label,
+            exclusiva: true
+          });
+        });
+      }
+
+      const materiasLinksHtml = materiaMap.size > 0 ? `
+        <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;">
+          ${Array.from(materiaMap.values()).map(m => `
+            <a href="professor.html?professor=${encodeURIComponent(p.id)}&materia=${encodeURIComponent(m.id)}"
+               target="_blank"
+               class="tag-badge"
+               style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px; ${m.exclusiva ? 'background: rgba(179, 84, 30, 0.14); color: #b3541e; border: 1px solid rgba(179, 84, 30, 0.35); font-weight: 600;' : ''}"
+               title="${m.exclusiva ? 'Abrir apresentação exclusiva desta matéria no site' : 'Abrir apresentação do professor para esta matéria'}">
+              ${m.exclusiva ? '✨' : '👁️'} ${utils.escapeHtml(m.nome)}
+            </a>
+          `).join('')}
+        </div>
+      ` : '';
 
       return `
         <div class="teacher-card">
@@ -860,9 +900,10 @@
             <div style="margin-top: 10px; font-size: 12px; color: var(--text-dim);">
               Turmas atreladas: <strong>${turmasCount}</strong>
             </div>
+            ${materiasLinksHtml}
           </div>
           <div class="teacher-card-footer">
-            <a href="professor.html?professor=${encodeURIComponent(p.id)}" target="_blank" class="btn btn-ghost btn-sm" title="Abrir perfil no site">👁️ Ver no Site</a>
+            <a href="professor.html?professor=${encodeURIComponent(p.id)}" target="_blank" class="btn btn-ghost btn-sm" title="Abrir perfil padrão no site">👁️ Ver no Site</a>
             <div style="display: flex; gap: 6px;">
               <button class="btn btn-secondary btn-sm" onclick="app.editProfessor(${p.originalIndex})">✏️ Editar</button>
               <button class="btn btn-ghost btn-sm" style="color:var(--danger);" onclick="app.deleteProfessor(${p.originalIndex})" title="Excluir professor">🗑️</button>
@@ -1483,6 +1524,150 @@
   }
 
   // --- PROFESSORES ---
+  function getMateriaOptionsForProfessor() {
+    const optionsMap = new Map();
+    (state.data?.ofertas || []).forEach(o => {
+      if (o.id) optionsMap.set(o.id, o.nome || o.id);
+    });
+    (state.data?.materias || []).forEach(m => {
+      if (m.id && !optionsMap.has(m.id)) optionsMap.set(m.id, m.nome || m.id);
+    });
+    if (!optionsMap.has('astronomia-e-fe')) {
+      optionsMap.set('astronomia-e-fe', 'Astronomia e Fé');
+    }
+    return Array.from(optionsMap.entries()).map(([id, nome]) => ({ id, nome }));
+  }
+
+  function addProfessorMateriaRow(initialKey = '', initialConfig = {}) {
+    const container = document.getElementById('prof-materias-custom-list');
+    if (!container) return;
+
+    const options = getMateriaOptionsForProfessor();
+    const isKnownKey = !initialKey || options.some(o => o.id === initialKey);
+    const selectVal = initialKey ? (isKnownKey ? initialKey : '__custom__') : (options[0]?.id || '__custom__');
+
+    const row = document.createElement('div');
+    row.className = 'prof-materia-custom-item';
+    row.style.background = 'var(--bg-elevated, rgba(0, 0, 0, 0.03))';
+    row.style.border = '1px solid var(--border-subtle)';
+    row.style.borderRadius = '10px';
+    row.style.padding = '12px';
+
+    const bioText = Array.isArray(initialConfig.biografia)
+      ? initialConfig.biografia.join('\n\n')
+      : (initialConfig.biografia || '');
+    const audioUrl = initialConfig.audio?.url || initialConfig.audioUrl || '';
+    const audioDesc = initialConfig.audio?.descricao || initialConfig.audioDescricao || '';
+
+    row.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 8px;">
+        <strong style="font-size: 13px; color: var(--text-main);">✨ Apresentação Exclusiva da Matéria</strong>
+        <button type="button" class="btn btn-ghost btn-sm btn-remove-prof-materia" style="color: var(--danger);">🗑️ Remover</button>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Matéria / Disciplina <span class="req">*</span></label>
+          <select class="form-select prof-mat-select">
+            ${options.map(o => `<option value="${utils.escapeHtml(o.id)}" ${selectVal === o.id ? 'selected' : ''}>${utils.escapeHtml(o.nome)} (${utils.escapeHtml(o.id)})</option>`).join('')}
+            <option value="__custom__" ${selectVal === '__custom__' ? 'selected' : ''}>➕ Outra matéria (digitar código/slug)...</option>
+          </select>
+        </div>
+        <div class="form-group prof-mat-custom-key-group" style="display: ${selectVal === '__custom__' ? 'block' : 'none'};">
+          <label class="form-label">Código / Slug da Matéria <span class="req">*</span></label>
+          <input type="text" class="form-input prof-mat-custom-key" placeholder="ex: astronomia-e-fe" value="${utils.escapeHtml(!isKnownKey ? initialKey : '')}" />
+        </div>
+        <div class="form-group form-full">
+          <label class="form-label">Imagem de Fundo Exclusiva desta Matéria (opcional)</label>
+          <input type="text" class="form-input prof-mat-foto" placeholder="ex: assets/img/ticiano-astronomia.png (em branco = usa a foto padrão)" value="${utils.escapeHtml(initialConfig.fotoUrl || '')}" />
+        </div>
+        <div class="form-group form-full">
+          <label class="form-label">Biografia / Apresentação Exclusiva desta Matéria (opcional)</label>
+          <textarea class="form-textarea prof-mat-bio" rows="4" placeholder="Separe cada parágrafo com uma linha em branco (em branco = usa a biografia padrão)...">${utils.escapeHtml(bioText)}</textarea>
+        </div>
+        <div class="form-group form-full">
+          <label class="form-label">Versículo Bíblico Exclusivo (opcional)</label>
+          <input type="text" class="form-input prof-mat-versiculo" placeholder="Em branco = usa o versículo padrão do professor" value="${utils.escapeHtml(initialConfig.versiculo || '')}" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Áudio de Apresentação Exclusivo (opcional)</label>
+          <input type="text" class="form-input prof-mat-audio-url" placeholder="ex: assets/audio/turmas/..." value="${utils.escapeHtml(audioUrl)}" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Descrição do Áudio Exclusivo (opcional)</label>
+          <input type="text" class="form-input prof-mat-audio-desc" placeholder="ex: Ouça a apresentação da matéria" value="${utils.escapeHtml(audioDesc)}" />
+        </div>
+      </div>
+    `;
+
+    const sel = row.querySelector('.prof-mat-select');
+    const customGroup = row.querySelector('.prof-mat-custom-key-group');
+    sel.addEventListener('change', () => {
+      customGroup.style.display = sel.value === '__custom__' ? 'block' : 'none';
+    });
+
+    row.querySelector('.btn-remove-prof-materia').addEventListener('click', () => {
+      row.remove();
+    });
+
+    container.appendChild(row);
+  }
+
+  function renderProfessorMateriasList(apresentacoesPorMateria) {
+    const container = document.getElementById('prof-materias-custom-list');
+    if (!container) return;
+    container.innerHTML = '';
+    if (!apresentacoesPorMateria || typeof apresentacoesPorMateria !== 'object') return;
+
+    Object.entries(apresentacoesPorMateria).forEach(([matKey, cfg]) => {
+      if (cfg && typeof cfg === 'object') {
+        addProfessorMateriaRow(matKey, cfg);
+      }
+    });
+  }
+
+  function collectProfessorMateriasList(tratamento, nome) {
+    const container = document.getElementById('prof-materias-custom-list');
+    if (!container) return null;
+    const rows = container.querySelectorAll('.prof-materia-custom-item');
+    const result = {};
+
+    rows.forEach(row => {
+      const selVal = row.querySelector('.prof-mat-select')?.value;
+      const customVal = row.querySelector('.prof-mat-custom-key')?.value.trim();
+      const rawKey = selVal === '__custom__' ? customVal : selVal;
+      const matKey = utils.slugify(rawKey || '');
+      if (!matKey) return;
+
+      const fotoUrl = row.querySelector('.prof-mat-foto')?.value.trim() || '';
+      const bioRaw = row.querySelector('.prof-mat-bio')?.value || '';
+      const versiculo = row.querySelector('.prof-mat-versiculo')?.value.trim() || '';
+      const audioUrl = row.querySelector('.prof-mat-audio-url')?.value.trim() || '';
+      const audioDesc = row.querySelector('.prof-mat-audio-desc')?.value.trim() || '';
+
+      const biografia = bioRaw
+        .split(/\n\s*\n/)
+        .map(p => p.trim())
+        .filter(p => p.length > 0);
+
+      const entry = {};
+      if (fotoUrl) entry.fotoUrl = fotoUrl;
+      if (biografia.length > 0) entry.biografia = biografia;
+      if (versiculo) entry.versiculo = versiculo;
+      if (audioUrl) {
+        entry.audio = {
+          url: audioUrl,
+          descricao: audioDesc || `Conheça ${tratamento} ${nome} em sua própria voz.`
+        };
+      }
+
+      if (Object.keys(entry).length > 0) {
+        result[matKey] = entry;
+      }
+    });
+
+    return Object.keys(result).length > 0 ? result : null;
+  }
+
   function openProfessorModal(index = null) {
     if (!state.data) return;
     state.editingProfIndex = index;
@@ -1502,6 +1687,7 @@
       document.getElementById('prof-form-versiculo').value = prof.versiculo || '';
       document.getElementById('prof-form-instagram').value = prof.instagram || '';
       document.getElementById('prof-form-ativo').checked = prof.ativo !== false;
+      renderProfessorMateriasList(prof.apresentacoesPorMateria);
     } else {
       document.getElementById('prof-form-id').value = '';
       document.getElementById('prof-form-nome').value = '';
@@ -1513,6 +1699,7 @@
       document.getElementById('prof-form-versiculo').value = '';
       document.getElementById('prof-form-instagram').value = '';
       document.getElementById('prof-form-ativo').checked = true;
+      renderProfessorMateriasList(null);
     }
 
     const nomeInput = document.getElementById('prof-form-nome');
@@ -1550,7 +1737,12 @@
       .map(p => p.trim())
       .filter(p => p.length > 0);
 
+    const oldProf = (state.editingProfIndex !== null && state.data.professores)
+      ? (state.data.professores[state.editingProfIndex] || {})
+      : {};
+
     const profObj = {
+      ...oldProf,
       id,
       nome,
       tratamento: tratamento || 'Professor(a)',
@@ -1561,12 +1753,25 @@
     };
 
     if (versiculo) profObj.versiculo = versiculo;
+    else delete profObj.versiculo;
+
     if (instagram) profObj.instagram = instagram;
+    else delete profObj.instagram;
+
     if (audioUrl) {
       profObj.audio = {
         url: audioUrl,
         descricao: audioDesc || `Conheça ${tratamento} ${nome} em sua própria voz.`
       };
+    } else {
+      delete profObj.audio;
+    }
+
+    const apresentacoesPorMateria = collectProfessorMateriasList(tratamento || 'Professor(a)', nome);
+    if (apresentacoesPorMateria) {
+      profObj.apresentacoesPorMateria = apresentacoesPorMateria;
+    } else {
+      delete profObj.apresentacoesPorMateria;
     }
 
     if (!state.data.professores) state.data.professores = [];
@@ -1984,6 +2189,7 @@
 
     document.getElementById('btn-add-turma')?.addEventListener('click', () => openTurmaModal());
     document.getElementById('btn-add-professor')?.addEventListener('click', () => openProfessorModal());
+    document.getElementById('btn-add-prof-materia')?.addEventListener('click', () => addProfessorMateriaRow());
     document.getElementById('btn-add-depoimento')?.addEventListener('click', () => openDepoimentoModal());
     document.getElementById('btn-add-materia')?.addEventListener('click', () => openMateriaModal());
     document.getElementById('btn-add-oferta')?.addEventListener('click', () => openOfertaModal());
