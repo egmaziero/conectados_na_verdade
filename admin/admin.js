@@ -136,8 +136,9 @@
     }
   };
 
-  // Senha padrão inicial: 'conectados2026' (hash SHA-256)
-  const DEFAULT_PASSWORD_HASH = '094e49f9271ae260488daec0774f964dd23f4f31b090dcc8f213e07d561d6c1f';
+  // Hash SHA-256 da senha padrão de acesso
+  const DEFAULT_PASSWORD_HASH = '6c906a9e40cea00ff2e5fa3c81eb8bc371628edf2e70b499488ed2d6ab1fabf9';
+  const LEGACY_WEAK_PASSWORD_HASH = '094e49f9271ae260488daec0774f964dd23f4f31b090dcc8f213e07d561d6c1f';
 
   async function sha256(message) {
     const msgBuffer = new TextEncoder().encode(message);
@@ -147,7 +148,11 @@
   }
 
   function getStoredPasswordHash() {
-    return localStorage.getItem('conectados_admin_pwd_hash') || DEFAULT_PASSWORD_HASH;
+    const stored = localStorage.getItem('conectados_admin_pwd_hash');
+    if (!stored || stored === LEGACY_WEAK_PASSWORD_HASH) {
+      return DEFAULT_PASSWORD_HASH;
+    }
+    return stored;
   }
 
   // Configuração da Tela de Bloqueio (Autenticação)
@@ -239,8 +244,8 @@
       return;
     }
 
-    if (!newVal || newVal.length < 4) {
-      alert('A nova senha deve ter no mínimo 4 caracteres.');
+    if (!newVal || newVal.length < 8) {
+      alert('A nova senha deve ter no mínimo 8 caracteres.');
       newInput.focus();
       return;
     }
@@ -262,7 +267,7 @@
   }
 
   function handleResetPassword() {
-    if (confirm('Deseja realmente redefinir a senha de acesso para o padrão inicial ("conectados2026")?')) {
+    if (confirm('Deseja realmente redefinir a senha de acesso para o padrão inicial?')) {
       localStorage.removeItem('conectados_admin_pwd_hash');
       const currentInput = document.getElementById('pwd-current');
       const newInput = document.getElementById('pwd-new');
@@ -270,7 +275,7 @@
       if (currentInput) currentInput.value = '';
       if (newInput) newInput.value = '';
       if (confirmInput) confirmInput.value = '';
-      utils.showToast('Senha redefinida para a padrão: "conectados2026"', 'success');
+      utils.showToast('Senha redefinida para o padrão inicial.', 'success');
     }
   }
 

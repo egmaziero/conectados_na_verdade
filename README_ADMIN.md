@@ -7,7 +7,6 @@ Este aplicativo web local foi desenvolvido para permitir que qualquer pessoa ger
 ## 🔒 Proteção por Senha
 
 O painel conta com uma tela de bloqueio por senha:
-- **Senha Inicial Padrão:** `conectados2026`
 - **Sessão Segura:** Ao fechar a aba ou navegador, o painel é bloqueado automaticamente.
 - **Bloqueio Manual:** Você pode clicar em **"🔒 Bloquear / Sair"** no menu lateral a qualquer momento.
 - **Como Alterar a Senha:** Na aba **⚙️ Configurações & PIX**, há o bloco **"Segurança & Senha de Acesso"** onde você pode definir uma nova senha ou redefinir para a padrão.
@@ -24,7 +23,7 @@ Você não precisa abrir o terminal e nem de Python instalado!
    admin.html
    ```
    *(Ele abrirá diretamente no Google Chrome, Safari, Edge ou Firefox)*.
-3. Digite a senha: `conectados2026`.
+3. Digite a senha de acesso do administrador.
 4. No topo da tela, clique em **"📂 Abrir Arquivo JSON"** e selecione o arquivo:
    ```text
    assets/data/site-data.example.json
